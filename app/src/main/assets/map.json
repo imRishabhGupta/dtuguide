@@ -1,0 +1,2610 @@
+{
+"map":
+[
+
+ {
+"title": "OAT",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.75007207311156",
+"longitude": "77.11772996932268"
+},
+
+{
+"title": "SBGF1",
+"subtitle": "Chemistry Lab",
+"floor": "Ground",
+"type": "Lab",
+"latitude": "28.75136748222652",
+"longitude": "77.1180622279644"
+},
+
+{
+"title": "SBGF2",
+"subtitle": "Processing Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.75128988158836",
+"longitude": "77.11803004145622"
+},
+
+{
+"title": "SBGF3",
+"subtitle": "Polymer Testing Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.751279299678668",
+"longitude": "77.1179549396038"
+},
+
+{
+"title": "SBGF4",
+"subtitle": "Instrumentation Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.751244908464837",
+"longitude": "77.11793214082718"
+},
+
+{
+"title": "SBGF5",
+"subtitle": "M.E. Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.751195820131453",
+"longitude": "77.11789324879646"
+},
+
+{
+"title": "Ladies Washroom(Science Block)",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.7510805947313",
+"longitude": "77.11761698126793"
+},
+
+{
+"title": "SBGF5",
+"subtitle": "M.E. Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.75115114090976",
+"longitude": "77.11783155798912"
+},
+
+
+{
+"title": "SBGF8",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.75089482290007",
+"longitude": "77.11758244782686"
+},
+
+{
+"title": "SBGF9",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750835446390656",
+"longitude": "77.11752612143755"
+},
+
+{
+"title": "SBGF10",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.75088071363356",
+"longitude": "77.11745034903288"
+},
+
+{
+"title": "SBGF11",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750763430281932",
+"longitude": "77.11732495576143"
+},
+
+{
+"title": "SBGF12",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750763136338556",
+"longitude": "77.1174667775631"
+},
+
+{
+"title": "SBFF1",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.75144390704104",
+"longitude": "77.11814805865288"
+},
+
+{
+"title": "SBFF2",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.751365130692854",
+"longitude": "77.11806558072567"
+},
+
+{
+"title": "SBFF3",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.751322803078256",
+"longitude": "77.11803808808327"
+},
+
+
+{
+"title": "SBFF4",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.751233444724374",
+"longitude": "77.11792811751366"
+},
+
+{
+"title": "SBFF5",
+"subtitle": "Computational Lab 2",
+"floor": "First",
+"type": "",
+"latitude": "28.751162898601535",
+"longitude": "77.11787950247526"
+},
+
+{
+"title": "SBFF6",
+"subtitle": "Organic Electric Center, D Kumar",
+"floor": "First",
+"type": "",
+"latitude": "28.751090000891192",
+"longitude": "77.11782954633236"
+},
+
+{
+"title": "SBFF7",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.751139383216657",
+"longitude": "77.11769644171"
+},
+
+
+{
+"title": "Ladies Washroom2(Science Block)",
+"subtitle": "SBFF8",
+"floor": "First",
+"type": "Washroom",
+"latitude": "28.75107941896127",
+"longitude": "77.11765486747026"
+},
+
+{
+"title": "SBFF9",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.750868955910025",
+"longitude": "77.1175529435277"
+},
+
+{
+"title": "SBFF10",
+"subtitle": "Research Lab 2, AP Gupta",
+"floor": "First",
+"type": "",
+"latitude": "28.75085719818517",
+"longitude": "77.11751371622086"
+},
+
+{
+"title": "Science Block",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.7508501435496",
+"longitude": "77.1173920109868"
+},
+
+{
+"title": "Gents Washroom(Science Block)",
+"subtitle": "SBFF12",
+"floor": "First",
+"type": "Washroom",
+"latitude": "28.750793706447986",
+"longitude": "77.11733568459749"
+},
+
+{
+"title": "SBFF13",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.75073726931589",
+"longitude": "77.11741078644991"
+},
+
+{
+"title": "MechC",
+"subtitle": "Mechanical Canteen",
+"floor": "Ground",
+"type": "Canteen",
+"latitude": "28.74928723608313",
+"longitude": "77.11879916489124"
+},
+
+{
+"title": "Water Cooler(MechC)",
+"subtitle": "",
+"floor": "Ground",
+"type": "Water",
+"latitude": "28.74937659610225",
+"longitude": "77.1189497038722"
+},
+
+{
+"title": "Photocopy Shop",
+"subtitle": "Shop",
+"floor": "Ground",
+"type": "",
+"latitude": "28.74943538554681",
+"longitude": "77.11880553513765"
+},
+
+{
+"title": "Stationery Shop",
+"subtitle": "Pens Pencils Notebooks",
+"floor": "Ground",
+"type": "",
+"latitude": "28.74918993939641",
+"longitude": "77.11869690567255"
+},
+
+{
+"title": "Gents Washroom(MechC)",
+"subtitle": "",
+"floor": "Ground",
+"type": "Washroom",
+"latitude": "28.749465074203755",
+"longitude": "77.11894299834967"
+},
+
+{
+"title": "Water Cooler2(MechC)",
+"subtitle": "",
+"floor": "Ground",
+"type": "Water",
+"latitude": "28.749198463883165",
+"longitude": "77.11895875632763"
+},
+
+{
+"title": "Ladies Washroom(MechC)",
+"subtitle": "",
+"floor": "Ground",
+"type": "Washroom",
+"latitude": "28.749115276620657",
+"longitude": "77.11882632225752"
+},
+
+{
+"title": "Bookshop",
+"subtitle": "Shop",
+"floor": "Ground",
+"type": "",
+"latitude": "28.749181414908968",
+"longitude": "77.11872205138206"
+},
+
+
+
+{
+"title": "LW5TF1",
+"subtitle": "Classroom",
+"floor": "Third",
+"type": "",
+"latitude": "28.749568837463165",
+"longitude": "77.11914584040642"
+},
+
+{
+"title": "LW5TF2",
+"subtitle": "Classroom",
+"floor": "Third",
+"type": "",
+"latitude": "28.74959000162806",
+"longitude": "77.11903586983681"
+},
+
+{
+"title": "LW5TF4",
+"subtitle": "Classroom",
+"floor": "Third",
+"type": "",
+"latitude": "28.74966290038544",
+"longitude": "77.11911365389824"
+},
+
+
+{
+"title": "LW5TF3",
+"subtitle": "Classroom",
+"floor": "Third",
+"type": "",
+"latitude": "28.74968406453128",
+"longitude": "77.1190519630909"
+},
+
+{
+"title": "LW5TF5",
+"subtitle": "Momentum Transfer Thermal Engineering Lab",
+"floor": "Third",
+"type": "",
+"latitude": "28.749622923653842",
+"longitude": "77.11890812963247"
+},
+
+{
+"title": "LW5TF6",
+"subtitle": "Electric Room",
+"floor": "Third",
+"type": "",
+"latitude": "28.749639384662814",
+"longitude": "77.11877066642046"
+},
+
+{
+"title": "Ladies Washroom(Mech)",
+"subtitle": "LW5TF7",
+"floor": "Third",
+"type": "Washroom",
+"latitude": "28.749676421923564",
+"longitude": "77.11860939860344"
+},
+
+{
+"title": "LW5TF8",
+"subtitle": "KOM DOM Kinetics of Machines Dynamics of Machines Lab",
+"floor": "Third",
+"type": "",
+"latitude": "28.74969405870976",
+"longitude": "77.11847897619009"
+},
+
+{
+"title": "TW4TF1",
+"subtitle": "Classroom",
+"floor": "Third",
+"type": "",
+"latitude": "28.74981575245346",
+"longitude": "77.11853966116905"
+},
+
+{
+"title": "TW4TF2",
+"subtitle": "Classroom",
+"floor": "Third",
+"type": "",
+"latitude": "28.749836916568334",
+"longitude": "77.11852088570595"
+},
+
+{
+"title": "TW4TF3",
+"subtitle": "Classroom",
+"floor": "Third",
+"type": "",
+"latitude": "28.74991040304497",
+"longitude": "77.11853697896004"
+},
+
+{
+"title": "TW4TF4",
+"subtitle": "Classroom",
+"floor": "Third",
+"type": "",
+"latitude": "28.75004385435435",
+"longitude": "77.11835492402315"
+},
+
+{
+"title": "TW4TF5",
+"subtitle": "Classroom",
+"floor": "Third",
+"type": "",
+"latitude": "28.750081479362294",
+"longitude": "77.118552736938"
+},
+
+{
+"title": "LW6TF1",
+"subtitle": "Classroom",
+"floor": "Third",
+"type": "",
+"latitude": "28.750194354304806",
+"longitude": "77.1189983189106"
+},
+
+{
+"title": "LW6TF2",
+"subtitle": "Classroom",
+"floor": "Third",
+"type": "",
+"latitude": "28.75022521852565",
+"longitude": "77.11904726922512"
+},
+
+{
+"title": "LW6TF3",
+"subtitle": "Classroom",
+"floor": "Third",
+"type": "",
+"latitude": "28.750321926358602",
+"longitude": "77.11898557841778"
+},
+
+{
+"title": "LW6TF4",
+"subtitle": "Classroom",
+"floor": "Third",
+"type": "",
+"latitude": "28.75035572998727",
+"longitude": "77.11905732750893"
+},
+
+{
+"title": "LW6TF5",
+"subtitle": "DSM Computer Lab",
+"floor": "Third",
+"type": "",
+"latitude": "28.75024373705379",
+"longitude": "77.11887493729591"
+},
+
+{
+"title": "LW6TF6",
+"subtitle": "Electric Lab",
+"floor": "Third",
+"type": "",
+"latitude": "28.750267252640317",
+"longitude": "77.11877837777138"
+},
+
+{
+"title": "Ladies Washrooms2(Mech)",
+"subtitle": "",
+"floor": "Every",
+"type": "Washroom",
+"latitude": "28.750257846406360",
+"longitude": "77.11871434003115"
+},
+
+{
+"title": "LW6TF8",
+"subtitle": "Engineering Drawing ED Room",
+"floor": "Third",
+"type": "",
+"latitude": "28.75023197925853",
+"longitude": "77.11861845105886"
+},
+
+{
+"title": "LW6TF9",
+"subtitle": "Biotech Lab",
+"floor": "Third",
+"type": "",
+"latitude": "28.750184948064252",
+"longitude": "77.11852222681046"
+},
+
+{
+"title": "LW6TF12",
+"subtitle": "Biotech Labs",
+"floor": "Third",
+"type": "",
+"latitude": "28.75015202621564",
+"longitude": "77.11834385991096"
+},
+
+{
+"title": "LW6FF1",
+"subtitle": "Heat Transfer Lab",
+"floor": "First",
+"type": "",
+"latitude": "28.750283713547766",
+"longitude": "77.11918339133263"
+},
+
+{
+"title": "LW6FF2",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.750255788792558",
+"longitude": "77.11909085512161"
+},
+
+{
+"title": "LW6FF3",
+"subtitle": "CAM and Automation Lab",
+"floor": "First",
+"type": "",
+"latitude": "28.75022815797477",
+"longitude": "77.11894936859608"
+},
+
+{
+"title": "LW6FF4",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.75020052714971",
+"longitude": "77.1188621968031"
+},
+
+{
+"title": "LW6FF6",
+"subtitle": "Analysis and Synthesis of Linkages Lab (ASL)",
+"floor": "First",
+"type": "",
+"latitude": "28.75022962769932",
+"longitude": "77.11864426732063"
+},
+
+{
+"title": "LW6FF7",
+"subtitle": "CAD Lab",
+"floor": "First",
+"type": "",
+"latitude": "28.750177305493175",
+"longitude": "77.11848199367523"
+},
+
+{
+"title": "LW6FF8",
+"subtitle": "Design Centre",
+"floor": "First",
+"type": "",
+"latitude": "28.750144971532464",
+"longitude": "77.1184578537941"
+},
+
+{
+"title": "LW6FF9",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.75016378401991",
+"longitude": "77.11835995316505"
+},
+
+{
+"title": "LW6FF10",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.750107346547395",
+"longitude": "77.11832944303751"
+},
+
+{
+"title": "TW4FF1",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.74989541180795",
+"longitude": "77.11826775223017"
+},
+
+{
+"title": "TW4FF2",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.750001820149734",
+"longitude": "77.11826305836439"
+},
+
+{
+"title": "TW4FF3",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.75001563558948",
+"longitude": "77.11823422461748"
+},
+
+{
+"title": "TW4FF4",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.749913930394563",
+"longitude": "77.11822886019945"
+},
+
+{
+"title": "Titanic Point",
+"subtitle": ";-)",
+"floor": "First",
+"type": "",
+"latitude": "28.749974483210394",
+"longitude": "77.11816247552633"
+},
+
+{
+"title": "LW5FF1",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.749567661676092",
+"longitude": "77.11917366832495"
+},
+
+{
+"title": "LW5FF2",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.749632329945005",
+"longitude": "77.11889136582613"
+},
+
+{
+"title": "Gents Washroom(Mech)",
+"subtitle": "LW5FF3",
+"floor": "First",
+"type": "Washroom",
+"latitude": "28.749646145433605",
+"longitude": "77.11872573941946"
+},
+
+
+{
+"title": "LW5FF4",
+"subtitle": "Mechanical Science Lab",
+"floor": "First",
+"type": "",
+"latitude": "28.749664664064436",
+"longitude": "77.11867712438107"
+},
+
+{
+"title": "LW5FF5",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.749710813653916",
+"longitude": "77.11853563785553"
+},
+
+{
+"title": "LW5FF6",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.74971992599084",
+"longitude": "77.11850177496672"
+},
+
+{
+"title": "LW5FF7",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.749729332273276",
+"longitude": "77.11843337863684"
+},
+
+{
+"title": "LW5FF8",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.74971992599084",
+"longitude": "77.11837504059076"
+},
+
+{
+"title": "LW5GF1",
+"subtitle": "Strength of Materials Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.74959999581555",
+"longitude": "77.11915422230959"
+},
+
+{
+"title": "LW5GF2",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.749641442288773",
+"longitude": "77.11875725537539"
+},
+
+{
+"title": "LW5GF3",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.749627626799512",
+"longitude": "77.11873546242714"
+},
+
+{
+"title": "LW5GF4",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.74967377640538",
+"longitude": "77.1186476200819"
+},
+
+{
+"title": "LW5GF5",
+"subtitle": "Fluid Mechanics Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.749715516795643",
+"longitude": "77.11851619184017"
+},
+
+{
+"title": "LW5GF6",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.749701407369827",
+"longitude": "77.11857486516237"
+},
+
+{
+"title": "LW5GF7",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.749715516795643",
+"longitude": "77.11847260594368"
+},
+
+{
+"title": "LW5GF8",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.749756963223017",
+"longitude": "77.1184092387557"
+},
+
+{
+"title": "TW4GF1",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.749835446838265",
+"longitude": "77.11849674582481"
+},
+
+{
+"title": "TW4GF2",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750047969590238",
+"longitude": "77.11850211024284"
+},
+
+{
+"title": "TW4GF3",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750006523278383",
+"longitude": "77.11823388934135"
+},
+
+{
+"title": "TW4GF4",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.74989100262016",
+"longitude": "77.11825333535671"
+},
+
+{
+"title": "LW6GF1",
+"subtitle": "Refrigeration and Air Conditioner Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750260491909756",
+"longitude": "77.11916897445917"
+},
+
+{
+"title": "LW6GF2",
+"subtitle": "Sand Testing Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750237270266553",
+"longitude": "77.11892053484917"
+},
+
+{
+"title": "LW6GF3",
+"subtitle": "Metal Forming Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750219045682226",
+"longitude": "77.11885716766119"
+},
+
+
+{
+"title": "LW6GF5",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.75019112090971",
+"longitude": "77.11862817406654"
+},
+
+{
+"title": "LW6GF6",
+"subtitle": "Biodiesel Centre",
+"floor": "Ground",
+"type": "",
+"latitude": "28.75018200861391",
+"longitude": "77.11846757680178"
+},
+
+{
+"title": "LW6GF7",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750168193196174",
+"longitude": "77.11842365562916"
+},
+
+{
+"title": "LW6GF8",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.75017260237226",
+"longitude": "77.11838476359844"
+},
+
+{
+"title": "LW4GF1",
+"subtitle": "Material Engineering Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.74864819213895",
+"longitude": "77.11849674582481"
+},
+
+{
+"title": "LW4GF2",
+"subtitle": "Concrete Tech Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.74879604856019",
+"longitude": "77.118439078331"
+},
+
+{
+"title": "LW4GF3",
+"subtitle": "Hydraulics Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.748865420486894",
+"longitude": "77.11837504059076"
+},
+
+{
+"title": "Ladies Washroom(Civil)",
+"subtitle": "",
+"floor": "Ground",
+"type": "Washroom",
+"latitude": "28.749017979773736",
+"longitude": "77.11822416633368"
+},
+
+{
+"title": "TW3GF1",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.749133207449617",
+"longitude": "77.11782485246658"
+},
+
+{
+"title": "TW3GF2",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.749156429338306",
+"longitude": "77.11790766566992"
+},
+
+{
+"title": "TW3GF3",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.74922580102563",
+"longitude": "77.11790263652802"
+},
+
+{
+"title": "TW3GF4",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.749188763605087",
+"longitude": "77.11778093129396"
+},
+
+{
+"title": "LW3GF1",
+"subtitle": "Environmental Microbiology Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.748569707631493",
+"longitude": "77.11784429848194"
+},
+
+{
+"title": "LW3GF2",
+"subtitle": "Environmental Engineering and Solid Waste Monitoring Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.74860204207992",
+"longitude": "77.11781848222017"
+},
+
+{
+"title": "",
+"subtitle": "Seminar Services Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.748755483598664",
+"longitude": "77.11779065430164"
+},
+
+{
+"title": "Gents Washroom4(ECE)",
+"subtitle": "LW3GF4",
+"floor": "Ground",
+"type": "Washroom",
+"latitude": "28.748809864159444",
+"longitude": "77.1177564561367"
+},
+
+{
+"title": "LW3GF5",
+"subtitle": "Transport Engineering Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.748980942279506",
+"longitude": "77.1176877245307"
+},
+
+{
+"title": "Water Cooler(ECE)",
+"subtitle": "",
+"floor": "Ground",
+"type": "Water",
+"latitude": "28.749022388998394",
+"longitude": "77.11766358464956"
+},
+
+{
+"title": "TW2GF1",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.749088233397398",
+"longitude": "77.11742587387562"
+},
+
+{
+"title": "TW2GF2",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.74911939189316",
+"longitude": "77.11757641285658"
+},
+
+{
+"title": "LW2GF1",
+"subtitle": "Power System and Flexible AC Transmission System Research Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.748560889143832",
+"longitude": "77.11723811924458"
+},
+
+{
+"title": "LW2GF2",
+"subtitle": "Junior Machine Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.748675235476178",
+"longitude": "77.11725488305092"
+},
+
+{
+"title": "LW2GF3",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.748763714171837",
+"longitude": "77.11730819195509"
+},
+
+{
+"title": "Gents Washroom(Electrical)",
+"subtitle": "LW2GF4",
+"floor": "Ground",
+"type": "Washroom",
+"latitude": "28.748813685495083",
+"longitude": "77.1172159910202"
+},
+
+{
+"title": "LW2GF5",
+"subtitle": "Electrical Science Lab and Electrical Workshop",
+"floor": "Ground",
+"type": "",
+"latitude": "28.749097051840533",
+"longitude": "77.1173182502389"
+},
+
+{
+"title": "TW1GF1",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.74914702300427",
+"longitude": "77.1170748397708"
+},
+
+{
+"title": "TW1GF2",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.749104694490665",
+"longitude": "77.11718179285526"
+},
+
+{
+"title": "TW1GF3",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.749197875987555",
+"longitude": "77.11709931492805"
+},
+
+{
+"title": "TW1GF4",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.749156429338306",
+"longitude": "77.11717709898949"
+},
+
+{
+"title": "LW1GF1",
+"subtitle": "Senior Machine and Electrical Energy Utilization Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.748888642435098",
+"longitude": "77.11674392223358"
+},
+
+{
+"title": "LW1GF3",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.74904561091169",
+"longitude": "77.11677275598049"
+},
+
+{
+"title": "LW1GF4",
+"subtitle": "Metro Testing and Research Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.749207282316988",
+"longitude": "77.1169239655137"
+},
+
+{
+"title": "LW1GF5",
+"subtitle": "Power Electronics Lab",
+"floor": "Ground",
+"type": "",
+"latitude": "28.74925754737563",
+"longitude": "77.11693368852139"
+},
+
+{
+"title": "LW4FF1",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.748680820512337",
+"longitude": "77.1184541657567"
+},
+
+{
+"title": "LW4FF2",
+"subtitle": "",
+"floor": "ground",
+"type": "",
+"latitude": "28.74869463612683",
+"longitude": "77.11841896176338"
+},
+
+{
+"title": "LW4FF1",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.74867611732402",
+"longitude": "77.11844813078642"
+},
+
+{
+"title": "LW4FF2",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.7487498985665",
+"longitude": "77.11838979274035"
+},
+
+{
+"title": "LW4FF3",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.74878958168334",
+"longitude": "77.11836565285921"
+},
+
+{
+"title": "LW4FF4",
+"subtitle": "",
+"floor": "First ",
+"type": "",
+"latitude": "28.7488421985335",
+"longitude": "77.11831167340279"
+},
+
+{
+"title": "LW4FF5",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.748893051665203",
+"longitude": "77.11825333535671"
+},
+
+{
+"title": "LW4FF6",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.748939201595636",
+"longitude": "77.11822919547558"
+},
+
+{
+"title": "LW4FF7",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.748967126702897",
+"longitude": "77.11819969117641"
+},
+
+{
+"title": "LW4FF8",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.749006809737192",
+"longitude": "77.11816113442183"
+},
+
+{
+"title": "LW4FF9",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.749040907739786",
+"longitude": "77.11817052215338"
+},
+
+{
+"title": "LW4FF10",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.749079121005362",
+"longitude": "77.11819063872099"
+},
+
+{
+"title": "LW4FF11",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.749096169996253",
+"longitude": "77.11812190711498"
+},
+
+{
+"title": "Ladies Washroom2(Civil)",
+"subtitle": "LW4FF12",
+"floor": "First",
+"type": "Washroom",
+"latitude": "28.749133207449617",
+"longitude": "77.1181071549654"
+},
+
+{
+"title": "TW3FF1",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.749137910617375",
+"longitude": "77.11779031902552"
+},
+
+{
+"title": "TW3FF2",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.74917965122183",
+"longitude": "77.1179123595357"
+},
+
+{
+"title": "TW3FF3",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.74931339741242",
+"longitude": "77.11776651442051"
+},
+
+{
+"title": "Edusat Hall",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.74860439367577",
+"longitude": "77.11782485246658"
+},
+
+{
+"title": "LW3FF4",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.748777529775367",
+"longitude": "77.11773063987494"
+},
+
+{
+"title": "Gents Washroom(ECE)",
+"subtitle": "LW3FF5",
+"floor": "First",
+"type": "Washroom",
+"latitude": "28.74883749535246",
+"longitude": "77.11774203926325"
+},
+
+{
+"title": "LW3FF6",
+"subtitle": "Soil Mechanics Lab",
+"floor": "First",
+"type": "",
+"latitude": "28.74915172617139",
+"longitude": "77.11764447391033"
+},
+
+{
+"title": "TW2FF1",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.74908029679793",
+"longitude": "77.11743526160717"
+},
+
+{
+"title": "TW2FF2",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.749096463944337",
+"longitude": "77.11754221469164"
+},
+
+{
+"title": "LW2FF1",
+"subtitle": "Optical Communication Lab",
+"floor": "first",
+"type": "",
+"latitude": "28.748555892000482",
+"longitude": "77.11724549531937"
+},
+
+{
+"title": "LW2FF2",
+"subtitle": "Microwave Engineering Lab",
+"floor": "First",
+"type": "",
+"latitude": "28.74862879147967",
+"longitude": "77.11725018918514"
+},
+
+{
+"title": "LW2FF3",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.748722267350306",
+"longitude": "77.11725991219282"
+},
+
+{
+"title": "Gents Washroom2(Electrical)",
+"subtitle": "LW2FF4",
+"floor": "First",
+"type": "Washroom",
+"latitude": "28.748793696968665",
+"longitude": "77.11725488305092"
+},
+
+{
+"title": "LW2FF5",
+"subtitle": "Telecommunications Lab",
+"floor": "First",
+"type": "",
+"latitude": "28.74905031408339",
+"longitude": "77.11729779839516"
+},
+
+{
+"title": "LW2FF6",
+"subtitle": "Robotics and Machine Intelligence Lab",
+"floor": "First",
+"type": "",
+"latitude": "28.74908264838302",
+"longitude": "77.11731355637312"
+},
+
+{
+"title": "TW1FF1",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.7491655417236",
+"longitude": "77.11708925664425"
+},
+
+{
+"title": "TW1FF2",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.74914731695223",
+"longitude": "77.1171623468399"
+},
+
+{
+"title": "TW1FF3",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.749248728946057",
+"longitude": "77.11713787168264"
+},
+
+{
+"title": "LW1FF1",
+"subtitle": "Electrical Science Lab",
+"floor": "First",
+"type": "",
+"latitude": "28.74880075174311",
+"longitude": "77.11671441793442"
+},
+
+{
+"title": "LW1FF2",
+"subtitle": "Instrumentation and IEAI Lab",
+"floor": "First",
+"type": "",
+"latitude": "28.748893051665203",
+"longitude": "77.1167378872633"
+},
+
+{
+"title": "LW1FF3",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.749017979773736",
+"longitude": "77.11677208542824"
+},
+
+{
+"title": "LW1FF5",
+"subtitle": "Control System Lab",
+"floor": "First",
+"type": "",
+"latitude": "28.74915172617139",
+"longitude": "77.11688909679651"
+},
+
+{
+"title": "LW1FF6",
+"subtitle": "Process Control and Microprocessor Lab",
+"floor": "First",
+"type": "",
+"latitude": "28.749202579152385",
+"longitude": "77.11693368852139"
+},
+
+{
+"title": "LW1FF7",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.749228152607433",
+"longitude": "77.11696285754442"
+},
+
+{
+"title": "LW1FF8",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.7492995818798",
+"longitude": "77.11699705570936"
+},
+
+{
+"title": "LW1SF1",
+"subtitle": "CA Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.748773120540402",
+"longitude": "77.1166704967618"
+},
+
+{
+"title": "LW1SF2",
+"subtitle": "Senior Measurement Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.748833086120015",
+"longitude": "77.116729170084"
+},
+
+{
+"title": "LW1SF3",
+"subtitle": "Linear Integrated Circuits Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.748943904772123",
+"longitude": "77.11678247898817"
+},
+
+{
+"title": "LW1SF4",
+"subtitle": "",
+"floor": "Second",
+"type": "",
+"latitude": "28.749022388998394",
+"longitude": "77.11675833910704"
+},
+
+{
+"title": "Ladies Washroom(Electrical)",
+"subtitle": "LW1SF5",
+"floor": "Every",
+"type": "Washroom",
+"latitude": "28.74905472330665",
+"longitude": "77.11677275598049"
+},
+
+{
+"title": "LW1SF6",
+"subtitle": "Microprocessor Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.74921198548141",
+"longitude": "77.11694341152906"
+},
+
+{
+"title": "LW1SF7",
+"subtitle": "TI Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.749239616568016",
+"longitude": "77.11697727441788"
+},
+
+{
+"title": "LW1SF8",
+"subtitle": "IPM Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.749336619261033",
+"longitude": "77.11706981062889"
+},
+
+{
+"title": "LW2SF1",
+"subtitle": "",
+"floor": "Second",
+"type": "",
+"latitude": "28.748712860977186",
+"longitude": "77.11727432906628"
+},
+
+{
+"title": "Gents Washroom3(Electrical)",
+"subtitle": "LW2SF2",
+"floor": "Second",
+"type": "Washroom",
+"latitude": "28.748809864159444",
+"longitude": "77.11725756525993"
+},
+
+{
+"title": "LW2SF3",
+"subtitle": "Edusat Lecture Hall",
+"floor": "Second",
+"type": "",
+"latitude": "28.74892891339635",
+"longitude": "77.1172646060586"
+},
+
+{
+"title": "LW2SF4",
+"subtitle": "Computational and Instrumentation Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.749040319843285",
+"longitude": "77.11728807538748"
+},
+
+{
+"title": "LW2SF5",
+"subtitle": "VLSI - CAD Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.74905972042613",
+"longitude": "77.11730182170868"
+},
+
+{
+"title": "LW3SF1",
+"subtitle": "",
+"floor": "Second",
+"type": "",
+"latitude": "28.74872697053656",
+"longitude": "77.11780540645123"
+},
+
+{
+"title": "Gents Washroom2(ECE)",
+"subtitle": "LW3SF2",
+"floor": "Second",
+"type": "Washroom",
+"latitude": "28.748810158108345",
+"longitude": "77.1177564561367"
+},
+
+{
+"title": "LW3SF3",
+"subtitle": "",
+"floor": "Second",
+"type": "",
+"latitude": "28.74890686725161",
+"longitude": "77.11769811809063"
+},
+
+{
+"title": "LW3SF4",
+"subtitle": "Geology Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.749027092171115",
+"longitude": "77.11766861379147"
+},
+
+{
+"title": "LW4SF1",
+"subtitle": "Structures Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.748837789301284",
+"longitude": "77.11841393262148"
+},
+
+{
+"title": "LW4SF2",
+"subtitle": "AIR2 Noise Monitoring Lab and GIS and Remote Sensing Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.748953311124456",
+"longitude": "77.11830195039511"
+},
+
+{
+"title": "Ladies Washroom3(Civil)",
+"subtitle": "LW4SF3",
+"floor": "Second",
+"type": "Washroom",
+"latitude": "28.74917494805596",
+"longitude": "77.11808770895004"
+},
+
+{
+"title": "LW4SF4",
+"subtitle": "Surveying Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.74921198548141",
+"longitude": "77.11804378777742"
+},
+
+{
+"title": "LW4SF5",
+"subtitle": "Department Library ( Civil and Environmental Engineering )",
+"floor": "Second",
+"type": "",
+"latitude": "28.74924902289371",
+"longitude": "77.11802937090397"
+},
+
+{
+"title": "LW4SF6",
+"subtitle": "",
+"floor": "Second",
+"type": "",
+"latitude": "28.749309576095072",
+"longitude": "77.1179847791791"
+},
+
+{
+"title": "LW4TF1",
+"subtitle": "ED Lab ( Engineering Graphics Lab )",
+"floor": "Third",
+"type": "",
+"latitude": "28.74887453289758",
+"longitude": "77.11832106113434"
+},
+
+{
+"title": "LW4TF2",
+"subtitle": "",
+"floor": "Third",
+"type": "",
+"latitude": "28.74895830824877",
+"longitude": "77.11822416633368"
+},
+
+{
+"title": "Ladies Washroom4(Civil)",
+"subtitle": "LW4TF3",
+"floor": "Third",
+"type": "Washroom",
+"latitude": "28.748994757854284",
+"longitude": "77.11819466203451"
+},
+
+{
+"title": "LW4TF4",
+"subtitle": "",
+"floor": "Third",
+"type": "",
+"latitude": "28.7491655417236",
+"longitude": "77.11807295680046"
+},
+
+{
+"title": "LW3TF1",
+"subtitle": "",
+"floor": "Third",
+"type": "",
+"latitude": "28.748721091553715",
+"longitude": "77.11780037730932"
+},
+
+{
+"title": "Gents Washroom3(ECE)",
+"subtitle": "LW3TF2",
+"floor": "Third",
+"type": "Wwashroom",
+"latitude": "28.74882397370572",
+"longitude": "77.11774203926325"
+},
+
+{
+"title": "LW3TF3",
+"subtitle": "",
+"floor": "Third",
+"type": "",
+"latitude": "28.748916273607275",
+"longitude": "77.11773231625557"
+},
+
+{
+"title": "LW3TF4",
+"subtitle": "Web Engineering Lab and Networking Lab",
+"floor": "Third",
+"type": "",
+"latitude": "28.749096169996253",
+"longitude": "77.11764950305223"
+},
+
+{
+"title": "LW2TF1",
+"subtitle": "",
+"floor": "Third",
+"type": "",
+"latitude": "28.748706100145963",
+"longitude": "77.11724516004324"
+},
+
+{
+"title": "LW2TF3",
+"subtitle": "Electronics 1 Lab",
+"floor": "Third",
+"type": "",
+"latitude": "28.748893051665203",
+"longitude": "77.11727935820818"
+},
+
+{
+"title": "LW2TF4",
+"subtitle": "",
+"floor": "Third",
+"type": "",
+"latitude": "28.749040907739786",
+"longitude": "77.11727432906628"
+},
+
+{
+"title": "Electronics Lab",
+"subtitle": "",
+"floor": "Third",
+"type": "",
+"latitude": "28.749097639736704",
+"longitude": "77.11732428520918"
+},
+
+{
+"title": "LW1TF1",
+"subtitle": "DBMS Lab",
+"floor": "Third",
+"type": "",
+"latitude": "28.748897754843775",
+"longitude": "77.11677275598049"
+},
+
+{
+"title": "LW1TF2",
+"subtitle": "",
+"floor": "Third",
+"type": "",
+"latitude": "28.7489897607317",
+"longitude": "77.11677275598049"
+},
+
+
+{
+"title": "LW1TF4",
+"subtitle": "Computation Lab",
+"floor": "Third",
+"type": "",
+"latitude": "28.74912409506153",
+"longitude": "77.11687501519918"
+},
+
+{
+"title": "LW1TF5",
+"subtitle": "AI Lab",
+"floor": "Third",
+"type": "",
+"latitude": "28.74915672328624",
+"longitude": "77.11687501519918"
+},
+
+{
+"title": "LW1TF6",
+"subtitle": "",
+"floor": "Third",
+"type": "",
+"latitude": "28.749216100750072",
+"longitude": "77.11693033576012"
+},
+
+{
+"title": "LW1TF7",
+"subtitle": "Programming Lab ( Department Of IT )",
+"floor": "Third",
+"type": "",
+"latitude": "28.749281063184238",
+"longitude": "77.11700174957514"
+},
+
+{
+"title": "WS1",
+"subtitle": "V Jegannathan Arul Moli",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750908344278677",
+"longitude": "77.11852055042982"
+},
+
+{
+"title": "WS3",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750883653064257",
+"longitude": "77.11852122098207"
+},
+
+{
+"title": "WS4",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750851613265368",
+"longitude": "77.11846020072699"
+},
+
+{
+"title": "WS5",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750803700520287",
+"longitude": "77.1185027807951"
+},
+
+{
+"title": "WS6",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750814282478146",
+"longitude": "77.11852490901947"
+},
+
+{
+"title": "WS7",
+"subtitle":"",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750835152447458",
+"longitude": "77.11855106055737"
+},
+
+{
+"title": "WS8",
+"subtitle":"",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750836622163458",
+"longitude": "77.11855877190828"
+},
+
+{
+"title": "WS9",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750870131682444",
+"longitude": "77.11858190596104"
+},
+
+{
+"title": "WS11",
+"subtitle": "Workshop : Sheet Metal",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750995057426017",
+"longitude": "77.11865734308958"
+},
+
+{
+"title": "WS12",
+"subtitle": "Workshop : Fitting Shop",
+"floor": "Ground",
+"type": "",
+"latitude": "28.75106413394947",
+"longitude": "77.11849808692932"
+},
+
+{
+"title": "WS13",
+"subtitle": "Workshop : CNC Shop",
+"floor": "Ground",
+"type": "",
+"latitude": "28.751045909509436",
+"longitude": "77.11834084242582"
+},
+
+{
+"title": "WS14",
+"subtitle": "Workshop : Carpentry Shop",
+"floor": "Ground",
+"type": "",
+"latitude": "28.751045909509436",
+"longitude": "77.11823858320713"
+},
+
+{
+"title": "WS15",
+"subtitle":"",
+"floor": "Ground",
+"type": "",
+"latitude": "28.75101475158841",
+"longitude": "77.11826305836439"
+},
+
+{
+"title": "WS16",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750930390000946",
+"longitude": "77.11829289793968"
+},
+
+{
+"title": "WS17",
+"subtitle": "Workshop : Project Shop",
+"floor": "Ground",
+"type": "",
+"latitude": "28.75083779793623",
+"longitude": "77.11828753352165"
+},
+
+{
+"title": "WS19",
+"subtitle": "Workshop : Welding Shop",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750751084658337",
+"longitude": "77.11833614856005"
+},
+
+{
+"title": "WS20",
+"subtitle": "Workshop : Metal Cutting Shop",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750704053697817",
+"longitude": "77.11843371391296"
+},
+
+{
+"title": "WS21",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.75062086763458",
+"longitude": "77.11853329092264"
+},
+
+{
+"title": "WS22",
+"subtitle": "Workshop : Machine Shop",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750545324049757",
+"longitude": "77.11867846548557"
+},
+
+{
+"title": "WS23",
+"subtitle": "Workshop : Smithy and Forgoing Shop",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750717869044664",
+"longitude": "77.11876261979342"
+},
+
+{
+"title": "WS24",
+"subtitle": "Workshop : Foundry Shop",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750888650096208",
+"longitude": "77.11871635168791"
+},
+
+{
+"title": "CCGF1",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.75010528893062",
+"longitude": "77.11710166186094"
+},
+
+{
+"title": "CCGF2",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750232861093217",
+"longitude": "77.11708422750235"
+},
+
+{
+"title": "CCGF4",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750329862863694",
+"longitude": "77.11716737598181"
+},
+
+{
+"title": "CCGF4",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750325159749625",
+"longitude": "77.11738664656878"
+},
+
+{
+"title": "CCGF5",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.75019023907467",
+"longitude": "77.11736116558313"
+},
+
+{
+"title": "CCFF1",
+"subtitle": "RS Walia ( Association Head TnP )",
+"floor": "First",
+"type": "",
+"latitude": "28.750085006706083",
+"longitude": "77.11709629744291"
+},
+
+{
+"title": "CCFF2",
+"subtitle": "Office TnP",
+"floor": "First",
+"type": "",
+"latitude": "28.750149380709516",
+"longitude": "77.11708456277847"
+},
+
+{
+"title": "Washroom(TnP)",
+"subtitle": "CCFF3",
+"floor": "First",
+"type": "",
+"latitude": "28.750265195026724",
+"longitude": "77.1170724928379"
+},
+
+{
+"title": "CCFF4",
+"subtitle": "DCE - DTI Alumni Association",
+"floor": "First",
+"type": "",
+"latitude": "28.75037601215924",
+"longitude": "77.11712345480919"
+},
+
+{
+"title": "CCFF5",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.750338387257397",
+"longitude": "77.11734674870968"
+},
+
+{
+"title": "CCFF7",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.75021669412271",
+"longitude": "77.11739636957645"
+},
+
+{
+"title": "CCSF",
+"subtitle": "Windows based application laboratories and Advanced Programming",
+"floor": "Second",
+"type": "",
+"latitude": "28.750241973384593",
+"longitude": "77.11708959192038"
+},
+
+{
+"title": "CCTF",
+"subtitle": "Linux based application laboratories and Computer Aided Design",
+"floor": "Third",
+"type": "",
+"latitude": "28.750232861093217",
+"longitude": "77.11711373180151"
+},
+
+{
+"title": "Smart Classroom",
+"subtitle": "Smart Classroom L1 / Smart Classroom L2",
+"floor": "First",
+"type": "",
+"latitude": "28.750168193196174",
+"longitude": "77.11643680930138"
+},
+
+{
+"title": "Senate Hall",
+"subtitle": "",
+"floor": "First",
+"type": "",
+"latitude": "28.749913930394563",
+"longitude": "77.11632013320923"
+},
+
+{
+"title": "Dr. K Singh",
+"subtitle": "Joint Registrar",
+"floor": "First",
+"type": "",
+"latitude": "28.749830743701935",
+"longitude": "77.11621787399054"
+},
+
+{
+"title": "Juice Corner",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.74949829021586",
+"longitude": "77.11813163012266"
+},
+
+
+{
+"title": "Library",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750627922285624",
+"longitude": "77.11653001606464"
+},
+
+{
+"title": "Library Registration",
+"subtitle": "",
+"floor": "Ground",
+"type": "",
+"latitude": "28.750517399364494",
+"longitude": "77.116594389081"
+},
+
+{
+"title": "Technology Incubator",
+"subtitle": "",
+"floor": "Second",
+"type": "",
+"latitude": "28.750495941443386",
+"longitude": "77.11629565805197"
+},
+
+{
+"title": "SBTF13",
+"subtitle": "",
+"floor": "Third",
+"type": "",
+"latitude": "28.750741678467932",
+"longitude": "77.11733367294073"
+},
+
+{
+"title": "Gents Washroom2(Science Block)",
+"subtitle": "SBTF12",
+"floor": "Third",
+"type": "Washroom",
+"latitude": "28.750796645881127",
+"longitude": "77.11733300238848"
+},
+
+{
+"title": "SBTF11",
+"subtitle": "",
+"floor": "Third",
+"type": "",
+"latitude": "28.75083485850426",
+"longitude": "77.11738128215075"
+},
+
+{
+"title": "SBTF10",
+"subtitle": "Physic Lab 1",
+"floor": "Third",
+"type": "",
+"latitude": "28.750808991499355",
+"longitude": "77.11751941591501"
+},
+
+{
+"title": "SBTF9",
+"subtitle": "Physics Lab 2",
+"floor": "Third",
+"type": "",
+"latitude": "28.750872483227226",
+"longitude": "77.11758110672235"
+},
+
+{
+"title": "Ladies Washroom3(Science Block)",
+"subtitle": "SBTF8",
+"floor": "Third",
+"type": "Washroom",
+"latitude": "28.751092058488553",
+"longitude": "77.11761966347694"
+},
+
+{
+"title": "SBTF7",
+"subtitle": "Generator Room",
+"floor": "Third",
+"type": "",
+"latitude": "28.751148201486615",
+"longitude": "77.11767062544823"
+},
+
+{
+"title": "SBTF6",
+"subtitle": "TIFAC - Core ( Fibre Optics Lab )",
+"floor": "Third",
+"type": "",
+"latitude": "28.751134974081406",
+"longitude": "77.11780741810799"
+},
+
+{
+"title": "SBTF5",
+"subtitle": "Computational Lab",
+"floor": "Third",
+"type": "",
+"latitude": "28.75112204061693",
+"longitude": "77.11782854050398"
+},
+
+{
+"title": "SBTF4",
+"subtitle": "",
+"floor": "Third",
+"type": "",
+"latitude": "28.751199347437613",
+"longitude": "77.1179123595357"
+},
+
+{
+"title": "SBTF3",
+"subtitle": "Advanced Electronics and Optical Communication Lab",
+"floor": "Third",
+"type": "",
+"latitude": "28.75125196307374",
+"longitude": "77.11795929819345"
+},
+
+{
+"title": "SBTF2",
+"subtitle": "Fibre Optics Sensor Lab",
+"floor": "Third",
+"type": "",
+"latitude": "28.75128106333036",
+"longitude": "77.1179861202836"
+},
+
+{
+"title": "SBTF1",
+"subtitle": "Optical Fibre Characterization",
+"floor": "Third",
+"type": "",
+"latitude": "28.751358663975083",
+"longitude": "77.11806055158377"
+},
+
+{
+"title": "Nuclear Engineering Lab",
+"subtitle": "",
+"floor": "Third",
+"type": "",
+"latitude": "28.75149181949242",
+"longitude": "77.11811922490597"
+},
+
+{
+"title": "LW6SF1",
+"subtitle": "",
+"floor": "",
+"type": "",
+"latitude": "28.750323690026452",
+"longitude": "77.11916796863079"
+},
+
+{
+"title": "LW6SF2",
+"subtitle": "",
+"floor": "",
+"type": "",
+"latitude": "28.750348087428712",
+"longitude": "77.11914785206318"
+},
+
+{
+"title": "LW6SF3",
+"subtitle": "Instrumentation Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.750272543646588",
+"longitude": "77.11899194866419"
+},
+
+{
+"title": "LW6SF4",
+"subtitle": "Experimental Stress Analysis Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.75023638843189",
+"longitude": "77.11886286735535"
+},
+
+
+{
+"title": "LW6SF5",
+"subtitle": "",
+"floor": "Second",
+"type": "",
+"latitude": "28.750268134474727",
+"longitude": "77.11876831948757"
+},
+
+{
+"title": "LW6SF6",
+"subtitle": "",
+"floor": "Second",
+"type": "",
+"latitude": "28.750285771161003",
+"longitude": "77.1187498793006"
+},
+
+{
+"title": "Water Cooler(Mech)",
+"subtitle": "",
+"floor": "Second",
+"type": "Water",
+"latitude": "28.750285477216277",
+"longitude": "77.11872842162848"
+},
+
+{
+"title": "LW6SF8",
+"subtitle": "",
+"floor": "Second",
+"type": "",
+"latitude": "28.75022962769932",
+"longitude": "77.11868114769459"
+},
+
+{
+"title": "LW6SF9",
+"subtitle": "Metrology Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.750219633572083",
+"longitude": "77.11865533143282"
+},
+
+{
+"title": "LW6SF10",
+"subtitle": "Industrial Engineering S.Q.C Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.750161726404283",
+"longitude": "77.11845651268959"
+},
+
+{
+"title": "LW6SF11",
+"subtitle": "",
+"floor": "Second",
+"type": "",
+"latitude": "28.750186417789383",
+"longitude": "77.11840622127056"
+},
+
+{
+"title": "LW6SF12",
+"subtitle": "",
+"floor": "Second",
+"type": "",
+"latitude": "28.75014879281925",
+"longitude": "77.11839079856873"
+},
+
+{
+"title": "TW4SF2",
+"subtitle": "",
+"floor": "Second",
+"type": "",
+"latitude": "28.750035623882038",
+"longitude": "77.11825266480446"
+},
+
+{
+"title": "TW4SF1",
+"subtitle": "",
+"floor": "Second",
+"type": "",
+"latitude": "28.74992774584591",
+"longitude": "77.1182432770729"
+},
+
+{
+"title": "LW5SF1",
+"subtitle": "DSM",
+"floor": "Second",
+"type": "",
+"latitude": "28.74959529266863",
+"longitude": "77.11912740021944"
+},
+
+{
+"title": "LW5SF2",
+"subtitle": "DSM",
+"floor": "Second",
+"type": "",
+"latitude": "28.749646145433605",
+"longitude": "77.11908515542746"
+},
+
+{
+"title": "LW5SF3",
+"subtitle": "Mass Transfer Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.749604405015603",
+"longitude": "77.11898859590292"
+},
+
+{
+"title": "LW5SF4",
+"subtitle": "Applied Mechanics Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.749622923653842",
+"longitude": "77.11887661367655"
+},
+
+{
+"title": "LW5SF5",
+"subtitle": "Metallurgy Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.74966730958285",
+"longitude": "77.11878340691328"
+},
+
+{
+"title": "LW5SF6",
+"subtitle": "",
+"floor": "Second",
+"type": "",
+"latitude": "28.749664664064436",
+"longitude": "77.11872573941946"
+},
+
+{
+"title": "LW5SF7",
+"subtitle": "Research Lab",
+"floor": "Second",
+"type": "",
+"latitude": "28.749706110511962",
+"longitude": "77.11868181824684"
+},
+
+{
+"title": "LW5SF8",
+"subtitle": "",
+"floor": "Second",
+"type": "",
+"latitude": "28.749715516795643",
+"longitude": "77.11857486516237"
+},
+
+{
+"title": "LW5SF9",
+"subtitle": "",
+"floor": "Second",
+"type": "",
+"latitude": "28.749715516795643",
+"longitude": "77.11850646883249"
+},
+
+{
+"title": "LW5SF10",
+"subtitle": "",
+"floor": "Second",
+"type": "",
+"latitude": "28.749791942819133",
+"longitude": "77.1183230727911"
+},
+
+{
+"title": "LW5SF11",
+"subtitle": "",
+"floor": "Second",
+"type": "",
+"latitude": "28.74981692823774",
+"longitude": "77.11827479302883"
+},
+
+{
+"title": "BR Ambedkar Auditorium",
+"subtitle": "Auditorium",
+"floor": "Ground",
+"type": "Auditorium",
+"latitude": "28.7501652537453",
+"longitude": "77.1163885295391"
+}
+]
+}
+
+
