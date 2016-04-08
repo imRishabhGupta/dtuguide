@@ -28,7 +28,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-
+        app:rippleColor="#BCAAA4"
+        app:backgroundTint="#8D6E63"
         android:src="@android:drawable/ic_menu_revert" />
 
 </RelativeLayout>
