@@ -6,4 +6,5 @@
     <color name="tabsScrollColor">#004D40</color>
     <color name="fill_color">#6600FFFF</color>
     <color name="stroke_color">#BB00FFFF</color>
+    <color name="grey">#EEEEEE</color>
 </resources>
