@@ -16,6 +16,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 
+import java.util.ArrayList;
+
 /**
  * Created by rohanpc on 10/18/2015.
  */
@@ -25,6 +27,7 @@ public class Tab2 extends Fragment {
     RecyclerView.LayoutManager mLayoutManager;
     RecyclerView.Adapter mAdapter;
     LinearLayout cll;
+    ArrayList<Society> items;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -37,8 +40,8 @@ public class Tab2 extends Fragment {
         // The number of Columns
         mLayoutManager = new GridLayoutManager(getActivity(), 2);
         mRecyclerView.setLayoutManager(mLayoutManager);
-
-        mAdapter = new GridAdapter();
+        items=new ArrayList<>();
+        mAdapter = new GridAdapter(items);
         mRecyclerView.setAdapter(mAdapter);
 
 
@@ -51,9 +54,18 @@ public class Tab2 extends Fragment {
                 .MyClickListener() {
             @Override
             public void onItemClick(int position, View v) {
+                final Society society=items.get(position);
+                final String title=society.getTitle();
+                final String description=getString(society.getDescription()).toString();
+                final String contactName=society.getContactName();
+                final String contactNumber=society.getContactNumber();
                 Intent intent=new Intent(getActivity(),ContactActivity.class);
                 if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP) {
                     Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle();
+                    intent.putExtra("title",title);
+                    intent.putExtra("description",description);
+                    intent.putExtra("contactName",contactName);
+                    intent.putExtra("contactNumber",contactNumber);
                     getContext().startActivity(intent, bundle);
                 }
                 else {
@@ -63,8 +75,12 @@ public class Tab2 extends Fragment {
 
                         @Override
                         public void run() {
-                            Intent intent=new Intent(getActivity(),ContactActivity.class);
 
+                            Intent intent=new Intent(getActivity(),ContactActivity.class);
+                            intent.putExtra("title",title);
+                            intent.putExtra("description",description);
+                            intent.putExtra("contactName",contactName);
+                            intent.putExtra("contactNumber",contactNumber);
                             startActivity(intent);
 
 

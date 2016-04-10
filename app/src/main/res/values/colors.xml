@@ -7,4 +7,6 @@
     <color name="fill_color">#6600FFFF</color>
     <color name="stroke_color">#BB00FFFF</color>
     <color name="grey">#EEEEEE</color>
+    <color name="grey2">#F5F5F5</color>
+    <color name="white">#FFFFFF</color>
 </resources>
