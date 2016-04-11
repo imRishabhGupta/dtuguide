@@ -305,11 +305,6 @@ public class EndangeredItemAdapter extends BaseAdapter {
             mItems.add(species);
 
             species = new EndangeredItem();
-            species.setName("6th Sem MCE Sec-B");
-            species.setThumbnail(R.drawable.mce_b6);
-            mItems.add(species);
-
-            species = new EndangeredItem();
             species.setName("6th Sem PSCT");
             species.setThumbnail(R.drawable.psct6);
             mItems.add(species);

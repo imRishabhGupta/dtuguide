@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             intent.setType("text/plain");
             intent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
             intent.putExtra(Intent.EXTRA_TEXT, "Body of email");
-            intent.setData(Uri.parse("mailto:dtuadda@gmail.com")); // or just "mailto:" for blank
+            intent.setData(Uri.parse("mailto:dtuapp16@gmail.com")); // or just "mailto:" for blank
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // this will make such that when user returns to your app, your app is displayed, instead of the email app.
             startActivity(intent);
         }
