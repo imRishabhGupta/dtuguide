@@ -87,7 +87,10 @@ public class MainActivity extends AppCompatActivity {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // this will make such that when user returns to your app, your app is displayed, instead of the email app.
             startActivity(intent);
         }
-        else if(id==R.id.aboutApp){
+        else if(id==R.id.aboutDevelopers){
+
+            Intent intent=new Intent(getApplicationContext(),AboutDevelopers.class);
+            startActivity(intent);
 
         }
 

@@ -89,6 +89,7 @@ The team is composed of a undergraduate students from various branches headed by
 The team is developing it's 5th Generation AUV with a completely new mechanical design and improved electronics and software."
 </string>
     <string name="defianz">TEAM DEFIANZ RACING is an Undergraduate Level Motorsports Team under DELHI TECHNOLOGICAL UNIVERSITY (DTU)</string>
+    <string name="title_activity_about_developers">AboutDevelopers</string>
 
 
 </resources>

@@ -5,7 +5,7 @@
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/rate" android:title="Rate app"
         android:orderInCategory="100" app:showAsAction="never" />
-    <item android:id="@+id/aboutApp" android:title="About app"
+    <item android:id="@+id/aboutDevelopers" android:title="About Developers"
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/feedback" android:title="Send Feedback"
         android:orderInCategory="100" app:showAsAction="never" />
