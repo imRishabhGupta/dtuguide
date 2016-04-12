@@ -56,6 +56,7 @@ public class Tab2 extends Fragment {
             public void onItemClick(int position, View v) {
                 final Society society=items.get(position);
                 final String title=society.getTitle();
+                final int image=society.getImage();
                 final String description=getString(society.getDescription()).toString();
                 final String contactName=society.getContactName();
                 final String contactNumber=society.getContactNumber();
@@ -63,6 +64,7 @@ public class Tab2 extends Fragment {
                 if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP) {
                     Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle();
                     intent.putExtra("title",title);
+                    intent.putExtra("image",image);
                     intent.putExtra("description",description);
                     intent.putExtra("contactName",contactName);
                     intent.putExtra("contactNumber",contactNumber);
@@ -78,6 +80,7 @@ public class Tab2 extends Fragment {
 
                             Intent intent=new Intent(getActivity(),ContactActivity.class);
                             intent.putExtra("title",title);
+                            intent.putExtra("image",image);
                             intent.putExtra("description",description);
                             intent.putExtra("contactName",contactName);
                             intent.putExtra("contactNumber",contactNumber);

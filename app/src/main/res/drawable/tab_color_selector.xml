@@ -3,6 +3,6 @@
 <item android:state_pressed="true"
     android:drawable="@color/white"/>
     <item android:state_selected="true"
-        android:drawable="@color/white"/>
+        android:drawable="@drawable/cross_button"/>
     <item android:drawable="@color/grey2"/>
 </selector>

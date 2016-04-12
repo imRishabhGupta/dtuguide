@@ -63,14 +63,15 @@
                     android:id="@+id/imageButton3"
                     android:background="@drawable/twitter"
                     android:layout_marginLeft="10dp"
-                    android:onClick="clickme"/>
+                    android:onClick="onClick"/>
 
                 <ImageButton
                     android:layout_width="38dp"
                     android:layout_height="34dp"
                     android:id="@+id/imageButton4"
+                    android:onClick="onClick"
                     android:background="@drawable/linkedin"
-                    android:onClick="clickme2"/>
+                    />
             </LinearLayout>
 
             <TextView
@@ -88,15 +89,17 @@
                 <ImageButton
                     android:layout_width="36dp"
                     android:layout_height="36dp"
+                    android:onClick="onClick"
                     android:id="@+id/imageButton"
                     android:background="@drawable/twitter"
                     android:layout_marginLeft="10dp"
-                    android:onClick="clickme3"/>
+                   />
 
                 <ImageButton
                     android:layout_width="38dp"
                     android:layout_height="34dp"
                     android:id="@+id/imageButton2"
+                    android:onClick="onClick"
                     android:background="@drawable/linkedin"
                     />
             </LinearLayout>
@@ -116,13 +119,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tanmay"
+                android:text="Tanmay ECE(1st Year)"
                 android:textSize="17sp"
                 android:padding="10dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pratik"
+                android:text="Pratik IT(1st Year)"
                 android:textSize="17sp"
                 android:padding="10dp"/>
         </LinearLayout>

@@ -71,20 +71,16 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        else if(id==R.id.rate){
+        if(id==R.id.rate){
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + this.getPackageName())));
         }
         else if(id==R.id.feedback){
-            Intent intent = new Intent(Intent.ACTION_SENDTO); // it's not ACTION_SEND
+            Intent intent = new Intent(Intent.ACTION_SENDTO);
             intent.setType("text/plain");
             intent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
             intent.putExtra(Intent.EXTRA_TEXT, "Body of email");
-            intent.setData(Uri.parse("mailto:dtuapp16@gmail.com")); // or just "mailto:" for blank
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // this will make such that when user returns to your app, your app is displayed, instead of the email app.
+            intent.setData(Uri.parse("mailto:dtuapp16@gmail.com"));
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         }
         else if(id==R.id.aboutDevelopers){

@@ -24,12 +24,14 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
         Society society=new Society();
         society.setTitle("Sahitya");
         society.setDescription(R.string.sahitya);
+        society.setImage(R.drawable.sahitya);
         society.setContactName("Vidushi tyagi (president)");
         society.setContactNumber("9871739158");
         mItems.add(society);
 
         society=new Society();
         society.setTitle("Madhurima");
+        society.setImage(R.drawable.madhurima);
         society.setDescription(R.string.madhurima);
         society.setContactName("Anurag Saika");
         society.setContactNumber("9899581945");
@@ -44,6 +46,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         society=new Society();
         society.setTitle("NSS-DTU");
+        society.setImage(R.drawable.nss);
         society.setDescription(R.string.nssdtu);
         society.setContactName("Md. Khurshid Hussain");
         society.setContactNumber("9899897831");
@@ -51,6 +54,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         society=new Society();
         society.setTitle("UAS-DTU");
+        society.setImage(R.drawable.uas);
         society.setDescription(R.string.uasdtu);
         society.setContactName("uas.dce@gmail.com");
         society.setContactNumber(null);
@@ -65,6 +69,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         society=new Society();
         society.setTitle("SR-DTU");
+        society.setImage(R.drawable.srdtu);
         society.setDescription(R.string.srdtu);
         society.setContactName("Nakul Sharma");
         society.setContactNumber("9650356007");
@@ -72,6 +77,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         society=new Society();
         society.setTitle("IEEE DTU");
+        society.setImage(R.drawable.ieee);
         society.setDescription(R.string.ieeedtu);
         society.setContactName("Chirag");
         society.setContactNumber("9910443068");
@@ -93,6 +99,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         society=new Society();
         society.setTitle("Kalakriti");
+        society.setImage(R.drawable.kalakriti);
         society.setDescription(R.string.kalakritidtu);
         society.setContactName("Nayan Lal");
         society.setContactNumber("9540669462");
@@ -107,6 +114,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         society=new Society();
         society.setTitle("Quizzing Inc");
+        society.setImage(R.drawable.quizzinc);
         society.setDescription(R.string.quizzinc);
         society.setContactName("Saket Saurav");
         society.setContactNumber("9958984709");
@@ -114,6 +122,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         society=new Society();
         society.setTitle("ASCE DTU");
+        society.setImage(R.drawable.asce);
         society.setDescription(R.string.asce);
         society.setContactName("Aporv");
         society.setContactNumber("9971542618");
@@ -128,6 +137,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         society=new Society();
         society.setTitle("Cognitive Minds");
+        society.setImage(R.drawable.cognitive);
         society.setDescription(R.string.cognitive);
         society.setContactName("Simrat Singh");
         society.setContactNumber("9990003470");
@@ -135,6 +145,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         society=new Society();
         society.setTitle("Solaris");
+        society.setImage(R.drawable.solaris);
         society.setDescription(R.string.solaris);
         society.setContactName("solaris.dtu.ac.in");
         society.setContactNumber(null);
@@ -142,6 +153,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         society=new Society();
         society.setTitle("AUV");
+        society.setImage(R.drawable.auv);
         society.setDescription(R.string.auv);
         society.setContactName("auv.dce.edu");
         society.setContactNumber(null);
@@ -169,7 +181,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
         Society nature = mItems.get(i);
         viewHolder.tvspecies.setText(nature.getTitle());
 
-        //viewHolder.imgThumbnail.setImageResource(nature.getThumbnail());
+        viewHolder.imgThumbnail.setImageResource(nature.getImage());
     }
 
     @Override
@@ -185,7 +197,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         public ViewHolder(View itemView) {
             super(itemView);
-            //imgThumbnail = (ImageView)itemView.findViewById(R.id.img_thumbnail);
+            imgThumbnail = (ImageView)itemView.findViewById(R.id.img_thumbnail);
             tvspecies = (TextView)itemView.findViewById(R.id.tv_species);
             itemView.setOnClickListener(this);
         }

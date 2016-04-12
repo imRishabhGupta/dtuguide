@@ -7,6 +7,7 @@ public class Society {
 
     private String title;
     private int description;
+    private int image;
     private String contactName;
     private String contactNumber;
 
@@ -40,5 +41,13 @@ public class Society {
 
     public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 }
