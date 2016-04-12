@@ -28,6 +28,7 @@
                 android:id="@+id/person_name"
                 android:textSize="15sp"
                 android:layout_marginBottom="10dp"
+                android:textIsSelectable="true"
                 />
 
             <ImageView
