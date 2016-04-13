@@ -37,5 +37,15 @@ public class AboutDevelopers extends AppCompatActivity implements View.OnClickLi
             i.setData(Uri.parse("https://in.linkedin.com/in/rishabh-gupta-8b9626a0"));
             startActivity(i);
         }
+        else if(v.getId()==R.id.imageButton5){
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse("https://github.com/rohanagarwal94"));
+            startActivity(i);
+        }
+        else if(v.getId()==R.id.imageButton6){
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse("https://github.com/imRishabhGupta"));
+            startActivity(i);
+        }
     }
 }
