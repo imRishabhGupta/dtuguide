@@ -36,7 +36,7 @@ public class Tab2 extends Fragment {
         mLayoutManager = new GridLayoutManager(getActivity(), 2);
         mRecyclerView.setLayoutManager(mLayoutManager);
         items=new ArrayList<>();
-        mAdapter = new GridAdapter(items);
+        mAdapter = new GridAdapter(items,getContext());
         mRecyclerView.setAdapter(mAdapter);
 
 

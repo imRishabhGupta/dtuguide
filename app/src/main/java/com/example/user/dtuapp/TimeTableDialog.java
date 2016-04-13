@@ -41,9 +41,22 @@ public class TimeTableDialog extends Dialog {
         ZoomableImageView iv = (ZoomableImageView) findViewById(R.id.ttiv);
 
             try {
-                Bitmap bitmap = BitmapFactory.decodeStream((InputStream) new URL(getContext().getResources().getString(image).toString()).getContent());
-                iv.setImageBitmap(Bitmap.createScaledBitmap(bitmap, 1200, 800, false));
-                //iv.setImageBitmap(bitmap);
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inJustDecodeBounds = true;
+                String url=getContext().getResources().getString(image).toString();
+                Bitmap bitmap = BitmapFactory.decodeStream((InputStream) new URL(url).getContent(),null,options);
+                /*int displayWidth=iv.getWidth();
+                int width = options.outWidth;
+                if (width > displayWidth) {
+                    int widthRatio = Math.round((float) width / (float) displayWidth);
+                    options.inSampleSize = widthRatio;
+                }
+                options.inJustDecodeBounds = false;
+                Bitmap scaledBitmap =  BitmapFactory.decodeStream((InputStream) new URL(getContext().getResources().getString(image).toString()).getContent(),null,options);
+                */
+                //iv.setImageBitmap(decodeSampledBitmapFromResource(getContext().getResources(),url,1600,1200));
+                //iv.setImageBitmap(scaledBitmap);
+                iv.setImageBitmap(Bitmap.createScaledBitmap(bitmap,1000,1000,false));
 
             }  catch (Exception e) {
                 e.printStackTrace();
@@ -59,20 +72,30 @@ public class TimeTableDialog extends Dialog {
 
     }
 
-    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
+    public static Bitmap decodeSampledBitmapFromResource(Resources res, String url,
                                                          int reqWidth, int reqHeight) {
 
         // First decode with inJustDecodeBounds=true to check dimensions
         final BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
-        BitmapFactory.decodeResource(res, resId, options);
+        try {
+             BitmapFactory.decodeStream((InputStream) new URL(url).getContent(), null, options);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
         // Calculate inSampleSize
         options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
 
         // Decode bitmap with inSampleSize set
         options.inJustDecodeBounds = false;
-        return BitmapFactory.decodeResource(res, resId, options);
+        Bitmap bitmap=null;
+        try {
+            bitmap = BitmapFactory.decodeStream((InputStream) new URL(url).getContent(), null, options);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return bitmap;
     }
 
     public static int calculateInSampleSize(

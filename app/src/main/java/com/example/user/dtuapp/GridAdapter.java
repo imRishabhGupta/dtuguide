@@ -1,6 +1,10 @@
 package com.example.user.dtuapp;
 
 
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,10 +20,13 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
     ArrayList<Society> mItems;
     private static MyClickListener myClickListener;
+    private Context mContext;
 
-    public GridAdapter(ArrayList<Society> items) {
+
+    public GridAdapter(ArrayList<Society> items,Context context) {
         super();
         mItems=items;
+        mContext=context;
 
         Society society=new Society();
         society.setTitle("Sahitya");
@@ -39,6 +46,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         society=new Society();
         society.setTitle("Pratibimb");
+        society.setImage(R.drawable.pratibimb);
         society.setDescription(R.string.pratibimb);
         society.setContactName("Vineet Maurya");
         society.setContactNumber("9810383175");
@@ -62,6 +70,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         society=new Society();
         society.setTitle("Parchayi");
+        society.setImage(R.drawable.parchayi);
         society.setDescription(R.string.parchayi);
         society.setContactName("Ayush Goel");
         society.setContactNumber("9999882000");
@@ -85,6 +94,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         society=new Society();
         society.setTitle("SITE");
+        society.setImage(R.drawable.site);
         society.setDescription(R.string.site);
         society.setContactName("Snehal Toppo");
         society.setContactNumber("9718441404");
@@ -107,6 +117,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         society=new Society();
         society.setTitle("Rotaract");
+        society.setImage(R.drawable.rotaract);
         society.setDescription(R.string.rotract);
         society.setContactName("Himanshu Yadav");
         society.setContactNumber("9971485952");
@@ -130,6 +141,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         society=new Society();
         society.setTitle("Dance Society");
+        society.setImage(R.drawable.dance);
         society.setDescription(R.string.dance);
         society.setContactName("Sarthak");
         society.setContactNumber("9582500216");
@@ -161,6 +173,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         society=new Society();
         society.setTitle("Team Defianz");
+        society.setImage(R.drawable.defianz);
         society.setDescription(R.string.defianz);
         society.setContactName("Harsh");
         society.setContactNumber("8800910345");
@@ -180,8 +193,60 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
         Society nature = mItems.get(i);
         viewHolder.tvspecies.setText(nature.getTitle());
+/*
+        int displayWidth=viewHolder.imgThumbnail.getWidth();
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(mContext.getResources(),nature.getImage(), options);
+        int width = options.outWidth;
+        if (width > displayWidth) {
+            int widthRatio = Math.round((float) width / (float) displayWidth);
+            options.inSampleSize = widthRatio;
+        }
+        options.inJustDecodeBounds = false;
+        Bitmap scaledBitmap =  BitmapFactory.decodeResource(mContext.getResources(),nature.getImage(), options);*/
 
-        viewHolder.imgThumbnail.setImageResource(nature.getImage());
+
+        viewHolder.imgThumbnail.setImageBitmap(decodeSampledBitmapFromResource(mContext.getResources(),nature.getImage(), 220, 200));
+
+    }
+    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
+                                                         int reqWidth, int reqHeight) {
+
+        // First decode with inJustDecodeBounds=true to check dimensions
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(res, resId, options);
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeResource(res, resId, options);
+    }
+
+    public static int calculateInSampleSize(
+            BitmapFactory.Options options, int reqWidth, int reqHeight) {
+        // Raw height and width of image
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth) {
+
+            final int halfHeight = height / 2;
+            final int halfWidth = width / 2;
+
+            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
+            // height and width larger than the requested height and width.
+            while ((halfHeight / inSampleSize) > reqHeight
+                    && (halfWidth / inSampleSize) > reqWidth) {
+                inSampleSize *= 2;
+            }
+        }
+
+        return inSampleSize;
     }
 
     @Override

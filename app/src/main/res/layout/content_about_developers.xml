@@ -68,6 +68,7 @@
                 <ImageButton
                     android:layout_width="35dp"
                     android:layout_height="34dp"
+                    android:layout_marginLeft="10dp"
                     android:id="@+id/imageButton4"
                     android:onClick="onClick"
                     android:background="@drawable/linkedin"
@@ -77,6 +78,7 @@
                     android:layout_width="37dp"
                     android:layout_height="36dp"
                     android:id="@+id/imageButton5"
+                    android:layout_marginLeft="10dp"
                     android:onClick="onClick"
                     android:background="@drawable/github"/>
             </LinearLayout>
@@ -107,6 +109,7 @@
                     android:layout_height="34dp"
                     android:id="@+id/imageButton2"
                     android:onClick="onClick"
+                    android:layout_marginLeft="10dp"
                     android:background="@drawable/linkedin"
                     />
 
@@ -115,6 +118,7 @@
                     android:layout_height="36dp"
                     android:id="@+id/imageButton6"
                     android:onClick="onClick"
+                    android:layout_marginLeft="10dp"
                     android:background="@drawable/github"/>
             </LinearLayout>
 
