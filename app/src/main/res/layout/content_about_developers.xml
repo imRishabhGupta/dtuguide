@@ -66,12 +66,19 @@
                     android:onClick="onClick"/>
 
                 <ImageButton
-                    android:layout_width="38dp"
+                    android:layout_width="35dp"
                     android:layout_height="34dp"
                     android:id="@+id/imageButton4"
                     android:onClick="onClick"
                     android:background="@drawable/linkedin"
                     />
+
+                <ImageButton
+                    android:layout_width="37dp"
+                    android:layout_height="36dp"
+                    android:id="@+id/imageButton5"
+                    android:onClick="onClick"
+                    android:background="@drawable/github"/>
             </LinearLayout>
 
             <TextView
@@ -96,12 +103,19 @@
                    />
 
                 <ImageButton
-                    android:layout_width="38dp"
+                    android:layout_width="35dp"
                     android:layout_height="34dp"
                     android:id="@+id/imageButton2"
                     android:onClick="onClick"
                     android:background="@drawable/linkedin"
                     />
+
+                <ImageButton
+                    android:layout_width="37dp"
+                    android:layout_height="36dp"
+                    android:id="@+id/imageButton6"
+                    android:onClick="onClick"
+                    android:background="@drawable/github"/>
             </LinearLayout>
 
         </LinearLayout>
