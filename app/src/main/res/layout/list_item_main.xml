@@ -19,7 +19,7 @@
         android:id="@+id/iv"
         android:layout_below="@+id/tv"
         android:padding="10dp"
-        android:src="@drawable/common_ic_googleplayservices"
+        android:src="@drawable/nointernet"
         />
 
 </RelativeLayout>

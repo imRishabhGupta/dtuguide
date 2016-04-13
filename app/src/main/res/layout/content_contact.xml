@@ -31,8 +31,9 @@
         android:layout_height="60dp"
         android:id="@+id/title11"
         android:text="Title"
+        android:textColor="#FFFFFF"
         android:gravity="center"
-        android:background="#B2DFDB"
+        android:background="#8D6E63"
         android:textAllCaps="true"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textAlignment="center"/>
@@ -51,9 +52,10 @@
         android:id="@+id/description"
         android:padding="20dp"
         android:layout_margin="10dp"
-        android:background="#DCEDC8"
+        android:background="#CFD8DC"
         android:textAlignment="center"
         android:textSize="16sp"
+        android:textColor="#000000"
         android:text="Description"/>
     <TextView
         android:layout_width="wrap_content"

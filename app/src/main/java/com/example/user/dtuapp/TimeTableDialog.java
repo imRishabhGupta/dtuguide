@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
 
+import java.io.InputStream;
+import java.net.URL;
+
 /**
  * Created by user on 07-04-2016.
  */
@@ -35,12 +38,17 @@ public class TimeTableDialog extends Dialog {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.time_table_dialog);
-        //setTitle(text);
         ZoomableImageView iv = (ZoomableImageView) findViewById(R.id.ttiv);
-        //Bitmap bitmap = BitmapFactory.decodeResource(getContext().getResources(), image);
-        iv.setImageBitmap(
-                decodeSampledBitmapFromResource(getContext().getResources(), image, 600, 400));
-        //iv.setImageBitmap(bitmap);
+
+            try {
+                Bitmap bitmap = BitmapFactory.decodeStream((InputStream) new URL(getContext().getResources().getString(image).toString()).getContent());
+                iv.setImageBitmap(Bitmap.createScaledBitmap(bitmap, 1200, 800, false));
+                //iv.setImageBitmap(bitmap);
+
+            }  catch (Exception e) {
+                e.printStackTrace();
+            }
+
         ok = (ImageButton) findViewById(R.id.ttb);
         ok.setOnClickListener(new View.OnClickListener() {
             @Override

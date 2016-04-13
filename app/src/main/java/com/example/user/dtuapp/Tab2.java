@@ -1,10 +1,7 @@
 package com.example.user.dtuapp;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -12,8 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
@@ -61,37 +56,14 @@ public class Tab2 extends Fragment {
                 final String contactName=society.getContactName();
                 final String contactNumber=society.getContactNumber();
                 Intent intent=new Intent(getActivity(),ContactActivity.class);
-                if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP) {
-                    Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle();
+
                     intent.putExtra("title",title);
                     intent.putExtra("image",image);
                     intent.putExtra("description",description);
                     intent.putExtra("contactName",contactName);
                     intent.putExtra("contactNumber",contactNumber);
-                    getContext().startActivity(intent, bundle);
-                }
-                else {
-                    Animation animation1 = AnimationUtils.loadAnimation(getContext(), R.anim.fade);
-                    cll.startAnimation(animation1);
-                    new Handler().postDelayed(new Runnable() {
-
-                        @Override
-                        public void run() {
-
-                            Intent intent=new Intent(getActivity(),ContactActivity.class);
-                            intent.putExtra("title",title);
-                            intent.putExtra("image",image);
-                            intent.putExtra("description",description);
-                            intent.putExtra("contactName",contactName);
-                            intent.putExtra("contactNumber",contactNumber);
                             startActivity(intent);
 
-
-                        }
-
-                    }, 1000);
-
-                }
             }
         });
     }

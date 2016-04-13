@@ -1,6 +1,7 @@
 package com.example.user.dtuapp;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
@@ -10,7 +11,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.content.res.Resources;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,287 +38,287 @@ public class EndangeredItemAdapter extends BaseAdapter {
 
         EndangeredItem species = new EndangeredItem();
         species.setName("2nd Sem Group A1");
-        species.setThumbnail(R.drawable.a1);
+        species.setThumbnail(R.string.a1);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group A2");
-        species.setThumbnail(R.drawable.a2);
+        species.setThumbnail(R.string.a2);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group A3");
-        species.setThumbnail(R.drawable.a3);
+        species.setThumbnail(R.string.a3);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group A4");
-        species.setThumbnail(R.drawable.a4);
+        species.setThumbnail(R.string.a4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group A5");
-        species.setThumbnail(R.drawable.a5);
+        species.setThumbnail(R.string.a5);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group A6");
-        species.setThumbnail(R.drawable.a6);
+        species.setThumbnail(R.string.a6);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group A7");
-        species.setThumbnail(R.drawable.a7);
+        species.setThumbnail(R.string.a7);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group A8");
-        species.setThumbnail(R.drawable.a8);
+        species.setThumbnail(R.string.a8);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group A9");
-        species.setThumbnail(R.drawable.a9);
+        species.setThumbnail(R.string.a9);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group A10");
-        species.setThumbnail(R.drawable.a10);
+        species.setThumbnail(R.string.a10);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group B1");
-        species.setThumbnail(R.drawable.b1);
+        species.setThumbnail(R.string.b1);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group B2");
-        species.setThumbnail(R.drawable.b2);
+        species.setThumbnail(R.string.b2);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group B3");
-        species.setThumbnail(R.drawable.b3);
+        species.setThumbnail(R.string.b3);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group B4");
-        species.setThumbnail(R.drawable.b4);
+        species.setThumbnail(R.string.b4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group B5");
-        species.setThumbnail(R.drawable.b5);
+        species.setThumbnail(R.string.b5);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group B6");
-        species.setThumbnail(R.drawable.b6);
+        species.setThumbnail(R.string.b6);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group B7");
-        species.setThumbnail(R.drawable.b7);
+        species.setThumbnail(R.string.b7);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group B8");
-        species.setThumbnail(R.drawable.b8);
+        species.setThumbnail(R.string.b8);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group B9");
-        species.setThumbnail(R.drawable.b9);
+        species.setThumbnail(R.string.b9);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("2nd Sem Group B10");
-        species.setThumbnail(R.drawable.b10);
+        species.setThumbnail(R.string.b10);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem COE Sec-A");
-        species.setThumbnail(R.drawable.coe_a4);
+        species.setThumbnail(R.string.coe_a4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem COE Sec-B");
-        species.setThumbnail(R.drawable.coe_b4);
+        species.setThumbnail(R.string.coe_b4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem IT Sec-A");
-        species.setThumbnail(R.drawable.it_a4);
+        species.setThumbnail(R.string.it_a4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem IT Sec-B");
-        species.setThumbnail(R.drawable.it_b4);
+        species.setThumbnail(R.string.it_b4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem SE Sec-A");
-        species.setThumbnail(R.drawable.se_a4);
+        species.setThumbnail(R.string.se_a4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem SE Sec-A");
-        species.setThumbnail(R.drawable.se_b4);
+        species.setThumbnail(R.string.se_b4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem ECE Sec-C");
-        species.setThumbnail(R.drawable.ece_c4);
+        species.setThumbnail(R.string.ece_c4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem ECE Sec-D");
-        species.setThumbnail(R.drawable.ece_d4);
+        species.setThumbnail(R.string.ece_d4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem ECE Sec-E");
-        species.setThumbnail(R.drawable.ece_e4);
+        species.setThumbnail(R.string.ece_e4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem EEE Sec-1");
-        species.setThumbnail(R.drawable.eee14);
+        species.setThumbnail(R.string.eee14);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem EEE Sec-2");
-        species.setThumbnail(R.drawable.eee24);
+        species.setThumbnail(R.string.eee24);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem MECH Sec-LMN");
-        species.setThumbnail(R.drawable.mechlmn4);
+        species.setThumbnail(R.string.mechlmn4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem MECH Sec-OPQ");
-        species.setThumbnail(R.drawable.mechopq4);
+        species.setThumbnail(R.string.mechopq4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem CIVIL Sec-A");
-        species.setThumbnail(R.drawable.civil_a4);
+        species.setThumbnail(R.string.civil_a4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem CIVIL Sec-A");
-        species.setThumbnail(R.drawable.civil_b4);
+        species.setThumbnail(R.string.civil_b4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem EE Sec-1");
-        species.setThumbnail(R.drawable.ee14);
+        species.setThumbnail(R.string.ee14);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem EE Sec-2");
-        species.setThumbnail(R.drawable.ee24);
+        species.setThumbnail(R.string.ee24);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem PSCT");
-        species.setThumbnail(R.drawable.psct4);
+        species.setThumbnail(R.string.psct4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem EP");
-        species.setThumbnail(R.drawable.ep4);
+        species.setThumbnail(R.string.ep4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem PRODUCTION");
-        species.setThumbnail(R.drawable.prod4);
+        species.setThumbnail(R.string.prod4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem EN");
-        species.setThumbnail(R.drawable.en4);
+        species.setThumbnail(R.string.en4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("4th Sem BIOTECH");
-        species.setThumbnail(R.drawable.bt4);
+        species.setThumbnail(R.string.bt4);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("6th Sem COE Sec-A");
-        species.setThumbnail(R.drawable.coe_a6);
+        species.setThumbnail(R.string.coe_a6);
         mItems.add(species);
 
         species = new EndangeredItem();
         species.setName("6th Sem COE Sec-B");
-        species.setThumbnail(R.drawable.coe_b6);
+        species.setThumbnail(R.string.coe_b6);
         mItems.add(species);
 
             species = new EndangeredItem();
             species.setName("6th Sem IT Sec-A");
-            species.setThumbnail(R.drawable.it_a6);
+            species.setThumbnail(R.string.it_a6);
             mItems.add(species);
 
             species = new EndangeredItem();
             species.setName("6th Sem ECE Sec-C");
-            species.setThumbnail(R.drawable.ece_c6);
+            species.setThumbnail(R.string.ece_c6);
             mItems.add(species);
 
             species = new EndangeredItem();
             species.setName("6th Sem ECE Sec-D");
-            species.setThumbnail(R.drawable.ece_d6);
+            species.setThumbnail(R.string.ece_d6);
             mItems.add(species);
 
             species = new EndangeredItem();
             species.setName("6th Sem ECE Sec-E");
-            species.setThumbnail(R.drawable.ece_e6);
+            species.setThumbnail(R.string.ece_e6);
             mItems.add(species);
 
             species = new EndangeredItem();
             species.setName("6th Sem MECH Sec-IJK");
-            species.setThumbnail(R.drawable.mechijk6);
+            species.setThumbnail(R.string.mechijk6);
             mItems.add(species);
 
             species = new EndangeredItem();
             species.setName("6th Sem MECH Sec-LMN");
-            species.setThumbnail(R.drawable.mechlmn6);
+            species.setThumbnail(R.string.mechlmn6);
             mItems.add(species);
 
             species = new EndangeredItem();
             species.setName("6th Sem MECH Sec-OPQ");
-            species.setThumbnail(R.drawable.mechopq6);
+            species.setThumbnail(R.string.mechopq6);
             mItems.add(species);
 
             species = new EndangeredItem();
             species.setName("6th Sem CIVIL Sec-A");
-            species.setThumbnail(R.drawable.civil_a6);
+            species.setThumbnail(R.string.civil_a6);
             mItems.add(species);
 
             species = new EndangeredItem();
-            species.setName("6th Sem CIVIL Sec-A");
-            species.setThumbnail(R.drawable.civil_b6);
+            species.setName("6th Sem CIVIL Sec-B");
+            species.setThumbnail(R.string.civil_b6);
             mItems.add(species);
 
             species = new EndangeredItem();
             species.setName("6th Sem MCE Sec-A");
-            species.setThumbnail(R.drawable.mce_a6);
+            species.setThumbnail(R.string.mce_a6);
             mItems.add(species);
 
             species = new EndangeredItem();
             species.setName("6th Sem PSCT");
-            species.setThumbnail(R.drawable.psct6);
+            species.setThumbnail(R.string.psct6);
             mItems.add(species);
 
             species = new EndangeredItem();
             species.setName("6th Sem EP");
-            species.setThumbnail(R.drawable.ep6);
+            species.setThumbnail(R.string.ep6);
             mItems.add(species);
 
             species = new EndangeredItem();
             species.setName("6th Sem PRODUCTION");
-            species.setThumbnail(R.drawable.prod6);
+            species.setThumbnail(R.string.prod6);
             mItems.add(species);
 
         if(db.isEmpty()){
@@ -348,10 +350,15 @@ public class EndangeredItemAdapter extends BaseAdapter {
         ImageView iv = (ImageView) convertView.findViewById(R.id.iv);
 
         tv.setText(endangeredItem.getName());
-        iv.setImageResource(endangeredItem.getThumbnail());
-        iv.setImageBitmap(
-                decodeSampledBitmapFromResource(mContext.getResources(), endangeredItem.getThumbnail(), 100, 100));
 
+
+        try {
+            Picasso.with(mContext).load(mContext.getResources().getString(endangeredItem.getThumbnail()).toString()).into(iv);
+        }
+        catch (Exception e){
+            iv.setImageResource(R.drawable.nointernet);
+            e.printStackTrace();
+        }
         return convertView;
     }
 

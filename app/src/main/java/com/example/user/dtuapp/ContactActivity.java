@@ -3,14 +3,10 @@ package com.example.user.dtuapp;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.transition.Slide;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,13 +26,6 @@ public class ContactActivity extends AppCompatActivity {
         setContentView(R.layout.activity_contact);
 
 
-        if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP) {
-            Slide slide = new Slide(Gravity.BOTTOM);
-            slide.addTarget(R.id.ll);
-            slide.setInterpolator(AnimationUtils.loadInterpolator(this, android.R.interpolator.linear_out_slow_in));
-            slide.setDuration(3000);
-            getWindow().setEnterTransition(slide);
-        }
 
         title=(TextView)findViewById(R.id.title11);
         description=(TextView)findViewById(R.id.description);
