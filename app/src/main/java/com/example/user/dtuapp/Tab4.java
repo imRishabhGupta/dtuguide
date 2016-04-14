@@ -13,7 +13,6 @@ import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -53,8 +52,6 @@ public class Tab4 extends Fragment {
 
                 int image=mItems.get(position).getThumbnail();
                 String url=getContext().getResources().getString(image).toString();
-                int displayWidth=iv.getWidth();
-                Toast.makeText(getContext(), displayWidth+"url is "+url, Toast.LENGTH_SHORT).show();
 
                 try {
                     Picasso.with(getContext()).load(url).into(iv);
