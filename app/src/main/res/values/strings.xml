@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DtuApp</string>
+    <string name="app_name">DtuGuide</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_maptab">Maptab</string>
     <string name="page_name">Dce Speaks Up</string>

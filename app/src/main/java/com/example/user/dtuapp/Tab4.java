@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -71,7 +72,8 @@ public class Tab4 extends Fragment {
         download_timetable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                File file=new File("/sdcard/DtuApp/Timetables");
+                String location="/sdcard/DtuApp/Timetables";
+                File file=new File(location);
                 if(!file.exists()) {
                     File wallpaperDirectory = new File("/sdcard/DtuApp/Timetables/");
                     wallpaperDirectory.mkdirs();
@@ -81,11 +83,15 @@ public class Tab4 extends Fragment {
                     FileOutputStream out = new FileOutputStream(file1);
                     Bitmap bitmap=((BitmapDrawable)iv.getDrawable()).getBitmap();
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+                    Toast.makeText(getContext(),"Timetable saved at "+location,Toast.LENGTH_LONG).show();
                     out.flush();
                     out.close();
+
                 } catch (Exception e) {
+                    Toast.makeText(getContext()," Error ocurred while downloading! ",Toast.LENGTH_LONG).show();
                     e.printStackTrace();
                 }
+
             }
         });
 

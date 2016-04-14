@@ -16,7 +16,7 @@
     <AutoCompleteTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter   'sem'   'branch'   'group'"
+        android:hint="Enter (Eg. 4th Sem COE Sec-A)"
         android:id="@+id/actv"
         android:background="@drawable/autocomplete_view"
         android:padding="5dp"

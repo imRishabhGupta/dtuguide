@@ -15,3 +15,7 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-dontwarn android.support.**
+-dontwarn org.apache.http.**
+-dontwarn com.squareup.okhttp.**
+-dontwarn com.google.**

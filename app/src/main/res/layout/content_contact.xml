@@ -52,6 +52,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/description"
         android:padding="20dp"
+        android:textIsSelectable="true"
         android:layout_margin="10dp"
         android:background="#CFD8DC"
         android:textAlignment="center"
