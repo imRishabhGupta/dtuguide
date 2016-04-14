@@ -29,7 +29,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
         mContext=context;
 
         Society society=new Society();
-        society.setTitle("Student's Association");
+        society.setTitle("DTU-SA");
         society.setDescription(R.string.student_association);
         society.setImage(R.mipmap.dtulogo);
         mItems.add(society);
@@ -81,7 +81,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
         mItems.add(society);
 
         society=new Society();
-        society.setTitle("Parchayi");
+        society.setTitle("Parchhayi");
         society.setImage(R.drawable.parchayi);
         society.setDescription(R.string.parchayi);
         society.setContactName("Ayush Goel");

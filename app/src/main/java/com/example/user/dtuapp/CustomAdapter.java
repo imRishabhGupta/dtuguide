@@ -153,7 +153,7 @@ public class CustomAdapter extends ArrayAdapter<EndangeredItem> {
         mItems.add(species);
 
         species = new EndangeredItem();
-        species.setName("4th Sem SE Sec-A");
+        species.setName("4th Sem SE Sec-B");
         species.setThumbnail(R.string.se_b4);
         mItems.add(species);
 
@@ -198,7 +198,7 @@ public class CustomAdapter extends ArrayAdapter<EndangeredItem> {
         mItems.add(species);
 
         species = new EndangeredItem();
-        species.setName("4th Sem CIVIL Sec-A");
+        species.setName("4th Sem CIVIL Sec-B");
         species.setThumbnail(R.string.civil_b4);
         mItems.add(species);
 
