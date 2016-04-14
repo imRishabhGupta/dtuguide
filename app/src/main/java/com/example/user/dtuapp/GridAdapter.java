@@ -29,6 +29,18 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
         mContext=context;
 
         Society society=new Society();
+        society.setTitle("Student's Association");
+        society.setDescription(R.string.student_association);
+        society.setImage(R.mipmap.dtulogo);
+        mItems.add(society);
+
+        society=new Society();
+        society.setTitle("Cultural Council");
+        society.setDescription(R.string.cultural_council);
+        society.setImage(R.drawable.cultural_council);
+        mItems.add(society);
+
+        society=new Society();
         society.setTitle("Sahitya");
         society.setDescription(R.string.sahitya);
         society.setImage(R.drawable.sahitya);

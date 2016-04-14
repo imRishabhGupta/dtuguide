@@ -90,6 +90,16 @@ The team is developing it's 5th Generation AUV with a completely new mechanical 
 </string>
     <string name="defianz">TEAM DEFIANZ RACING is an Undergraduate Level Motorsports Team under DELHI TECHNOLOGICAL UNIVERSITY (DTU)</string>
     <string name="title_activity_about_developers">AboutDevelopers</string>
+    <string name="student_association">                  PRESIDENT :             \nVISHAL RANA        \nM:   +91-9899033311
+                                                     \n\nVICE PRESIDENT:         \nNITHIN VYTLA       \nM:   +91-9650498607
+                                                     \n\nSECRETARY :             \nSNEHAL TOPPO       \nM:   +91-9718441404
+                                                     \n\nJOINT SECRETARY :       \nASEEM BANSAL       \nM:   +91-9582920037
+                                                     \n\nMAIL ID :                 dtustudentsassociation@gmail.com</string>
+
+<string name="cultural_council">       CULTURAL SECRETARY :         \nNalin Chaudhary        \nM:   +91-8588001179
+                                   \n\nJOINT CULTURAL SECRETARY :   \nAditi Maheshwari       \nM:   +91-9717481156
+                                   \n                               \nNISHANT ANEJA          \nM :  +91-9811991514
+                                    \n\nTREASURER  :                \nSHEIKH FARHAN RAZA</string>
 
     <string name="a1">"https://i.imgur.com/16yNRsT.jpg"</string>
     <string name="a2">"https://i.imgur.com/NXfJyly.jpg"</string>

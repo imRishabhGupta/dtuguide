@@ -1,40 +1,31 @@
 package com.example.user.dtuapp;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.squareup.picasso.Picasso;
+import android.widget.Filter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
- * Created by user on 31-01-2016.
+ * Created by user on 13-04-2016.
  */
-public class EndangeredItemAdapter extends BaseAdapter {
+public class CustomAdapter extends ArrayAdapter<EndangeredItem> {
+    private final String MY_DEBUG_TAG = "CustomerAdapter";
+    private ArrayList<EndangeredItem> mItems;
+    private ArrayList<EndangeredItem> itemsAll;
+    private ArrayList<EndangeredItem> suggestions;
+    private int viewResourceId;
+    private Context context;
 
-    List<EndangeredItem> mItems;
-    Context mContext;
-    Counter db;
-    public static final int TYPE_REGULAR = 0;
-    public static final int TYPE_MAIN = 1;
+    public CustomAdapter(Context context, int viewResourceId, ArrayList<EndangeredItem> items) {
+        super(context, viewResourceId, items);
 
-    public EndangeredItemAdapter(Context context,ArrayList<EndangeredItem> arrayList) {
-        super();
-
-        mContext=context;
-        mItems = arrayList;
-        db=new Counter(mContext);
-
+        this.mItems = items;
+        this.context=context;
 
         EndangeredItem species = new EndangeredItem();
         species.setName("2nd Sem Group A1");
@@ -256,169 +247,134 @@ public class EndangeredItemAdapter extends BaseAdapter {
         species.setThumbnail(R.string.coe_b6);
         mItems.add(species);
 
-            species = new EndangeredItem();
-            species.setName("6th Sem IT Sec-A");
-            species.setThumbnail(R.string.it_a6);
-            mItems.add(species);
+        species = new EndangeredItem();
+        species.setName("6th Sem IT Sec-A");
+        species.setThumbnail(R.string.it_a6);
+        mItems.add(species);
 
-            species = new EndangeredItem();
-            species.setName("6th Sem ECE Sec-C");
-            species.setThumbnail(R.string.ece_c6);
-            mItems.add(species);
+        species = new EndangeredItem();
+        species.setName("6th Sem ECE Sec-C");
+        species.setThumbnail(R.string.ece_c6);
+        mItems.add(species);
 
-            species = new EndangeredItem();
-            species.setName("6th Sem ECE Sec-D");
-            species.setThumbnail(R.string.ece_d6);
-            mItems.add(species);
+        species = new EndangeredItem();
+        species.setName("6th Sem ECE Sec-D");
+        species.setThumbnail(R.string.ece_d6);
+        mItems.add(species);
 
-            species = new EndangeredItem();
-            species.setName("6th Sem ECE Sec-E");
-            species.setThumbnail(R.string.ece_e6);
-            mItems.add(species);
+        species = new EndangeredItem();
+        species.setName("6th Sem ECE Sec-E");
+        species.setThumbnail(R.string.ece_e6);
+        mItems.add(species);
 
-            species = new EndangeredItem();
-            species.setName("6th Sem MECH Sec-IJK");
-            species.setThumbnail(R.string.mechijk6);
-            mItems.add(species);
+        species = new EndangeredItem();
+        species.setName("6th Sem MECH Sec-IJK");
+        species.setThumbnail(R.string.mechijk6);
+        mItems.add(species);
 
-            species = new EndangeredItem();
-            species.setName("6th Sem MECH Sec-LMN");
-            species.setThumbnail(R.string.mechlmn6);
-            mItems.add(species);
+        species = new EndangeredItem();
+        species.setName("6th Sem MECH Sec-LMN");
+        species.setThumbnail(R.string.mechlmn6);
+        mItems.add(species);
 
-            species = new EndangeredItem();
-            species.setName("6th Sem MECH Sec-OPQ");
-            species.setThumbnail(R.string.mechopq6);
-            mItems.add(species);
+        species = new EndangeredItem();
+        species.setName("6th Sem MECH Sec-OPQ");
+        species.setThumbnail(R.string.mechopq6);
+        mItems.add(species);
 
-            species = new EndangeredItem();
-            species.setName("6th Sem CIVIL Sec-A");
-            species.setThumbnail(R.string.civil_a6);
-            mItems.add(species);
+        species = new EndangeredItem();
+        species.setName("6th Sem CIVIL Sec-A");
+        species.setThumbnail(R.string.civil_a6);
+        mItems.add(species);
 
-            species = new EndangeredItem();
-            species.setName("6th Sem CIVIL Sec-B");
-            species.setThumbnail(R.string.civil_b6);
-            mItems.add(species);
+        species = new EndangeredItem();
+        species.setName("6th Sem CIVIL Sec-B");
+        species.setThumbnail(R.string.civil_b6);
+        mItems.add(species);
 
-            species = new EndangeredItem();
-            species.setName("6th Sem MCE Sec-A");
-            species.setThumbnail(R.string.mce_a6);
-            mItems.add(species);
+        species = new EndangeredItem();
+        species.setName("6th Sem MCE Sec-A");
+        species.setThumbnail(R.string.mce_a6);
+        mItems.add(species);
 
-            species = new EndangeredItem();
-            species.setName("6th Sem PSCT");
-            species.setThumbnail(R.string.psct6);
-            mItems.add(species);
+        species = new EndangeredItem();
+        species.setName("6th Sem PSCT");
+        species.setThumbnail(R.string.psct6);
+        mItems.add(species);
 
-            species = new EndangeredItem();
-            species.setName("6th Sem EP");
-            species.setThumbnail(R.string.ep6);
-            mItems.add(species);
+        species = new EndangeredItem();
+        species.setName("6th Sem EP");
+        species.setThumbnail(R.string.ep6);
+        mItems.add(species);
 
-            species = new EndangeredItem();
-            species.setName("6th Sem PRODUCTION");
-            species.setThumbnail(R.string.prod6);
-            mItems.add(species);
+        species = new EndangeredItem();
+        species.setName("6th Sem PRODUCTION");
+        species.setThumbnail(R.string.prod6);
+        mItems.add(species);
 
-        if(db.isEmpty()){
-            for (EndangeredItem item : mItems) {
-                db.add(item.getThumbnail(),item.getName());
-            }
-        }
-        else{
-            arrayList=db.getAllDetails();
 
-            mItems=arrayList;
 
-        }
+        this.itemsAll = (ArrayList<EndangeredItem>) items.clone();
+        this.suggestions = new ArrayList<EndangeredItem>();
+        this.viewResourceId = viewResourceId;
     }
 
-    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
+        View v = convertView;
+        if (v == null) {
+            LayoutInflater vi = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            v = vi.inflate(viewResourceId, null);
+        }
         EndangeredItem endangeredItem = mItems.get(position);
-
-
-            LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        if(position==0)
-            convertView = inflater.inflate(R.layout.list_item_main, null);
-        else
-            convertView = inflater.inflate(R.layout.list_item, null);
-
-        TextView tv = (TextView) convertView.findViewById(R.id.tv);
-        ImageView iv = (ImageView) convertView.findViewById(R.id.iv);
-
-        tv.setText(endangeredItem.getName());
-
-
-        try {
-            Picasso.with(mContext).load(mContext.getResources().getString(endangeredItem.getThumbnail()).toString()).into(iv);
-        }
-        catch (Exception e){
-            iv.setImageResource(R.drawable.nointernet);
-            e.printStackTrace();
-        }
-        return convertView;
-    }
-
-    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
-                                                         int reqWidth, int reqHeight) {
-
-        // First decode with inJustDecodeBounds=true to check dimensions
-        final BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-        BitmapFactory.decodeResource(res, resId, options);
-
-        // Calculate inSampleSize
-        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
-
-        // Decode bitmap with inSampleSize set
-        options.inJustDecodeBounds = false;
-        return BitmapFactory.decodeResource(res, resId, options);
-    }
-
-    public static int calculateInSampleSize(
-            BitmapFactory.Options options, int reqWidth, int reqHeight) {
-        // Raw height and width of image
-        final int height = options.outHeight;
-        final int width = options.outWidth;
-        int inSampleSize = 1;
-
-        if (height > reqHeight || width > reqWidth) {
-
-            final int halfHeight = height / 2;
-            final int halfWidth = width / 2;
-
-            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
-            // height and width larger than the requested height and width.
-            while ((halfHeight / inSampleSize) > reqHeight
-                    && (halfWidth / inSampleSize) > reqWidth) {
-                inSampleSize *= 2;
+        if (endangeredItem != null) {
+            TextView textView = (TextView) v.findViewById(R.id.tv);
+            if (textView!= null) {
+//              Log.i(MY_DEBUG_TAG, "getView Customer Name:"+customer.getName());
+                textView.setText(endangeredItem.getName());
             }
         }
-
-        return inSampleSize;
+        return v;
     }
+
     @Override
-    public int getCount() {
-        return mItems.size();
-
-    }
-    public Object getItem(int position) {
-        // TODO Auto-generated method stub
-        return position;
+    public Filter getFilter() {
+        return nameFilter;
     }
 
-    public long getItemId(int position) {
-        // TODO Auto-generated method stub
-        return position;
-    }
-    public void show(int position){
-       db.update(mItems.get(position).getThumbnail());
-        Toast.makeText(mContext, "item clicked" + String.valueOf(db.getDetail(mItems.get(position).getThumbnail())),
-                Toast.LENGTH_SHORT).show();
-    }
-
+    Filter nameFilter = new Filter() {
+        @Override
+        public String convertResultToString(Object resultValue) {
+            String str = ((EndangeredItem)(resultValue)).getName();
+            return str;
+        }
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            if(constraint != null) {
+                suggestions.clear();
+                for (EndangeredItem endangeredItem : itemsAll) {
+                    if(endangeredItem.getName().toLowerCase().startsWith(constraint.toString().toLowerCase())){
+                        suggestions.add(endangeredItem);
+                    }
+                }
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = suggestions;
+                filterResults.count = suggestions.size();
+                return filterResults;
+            } else {
+                return new FilterResults();
+            }
+        }
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            ArrayList<EndangeredItem> filteredList = (ArrayList<EndangeredItem>) results.values;
+            if(results != null && results.count > 0) {
+                clear();
+                for (EndangeredItem c : filteredList) {
+                    add(c);
+                }
+                notifyDataSetChanged();
+            }
+        }
+    };
 
 }

@@ -32,11 +32,12 @@
         android:id="@+id/title11"
         android:text="Title"
         android:textColor="#FFFFFF"
-        android:gravity="center"
+        android:paddingLeft="70dp"
+        android:gravity="center_vertical"
+        android:textAlignment="gravity"
         android:background="#8D6E63"
         android:textAllCaps="true"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textAlignment="center"/>
+        android:textSize="20sp" />
         </android.support.v7.widget.CardView>
         <ImageView
             android:layout_width="60dp"
@@ -60,6 +61,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/contact"
         android:text="Contact -"
         android:textSize="20sp"
         android:textColor="#000000"

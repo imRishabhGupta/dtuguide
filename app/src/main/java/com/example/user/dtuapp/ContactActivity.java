@@ -35,6 +35,15 @@ public class ContactActivity extends AppCompatActivity {
         image=(ImageView)findViewById(R.id.title_image);
         final String str1=getIntent().getExtras().getString("contactName");
         final String str2=getIntent().getExtras().getString("contactNumber");
+        if(str1==null){
+            conatctNumber.setVisibility(View.GONE);
+            contactName.setVisibility(View.GONE);
+            imageButton.setVisibility(View.GONE);
+            TextView contact=(TextView)findViewById(R.id.contact);
+            contact.setVisibility(View.GONE);
+            title.setTextSize(18);
+            description.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START);
+        }
 
         title.setText(getIntent().getExtras().getString("title"));
         description.setText(getIntent().getExtras().getString("description"));
@@ -48,8 +57,10 @@ public class ContactActivity extends AppCompatActivity {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(str2!=null){
                     try {
+
                         Intent callIntent = new Intent(Intent.ACTION_CALL);
                         callIntent.setData(Uri.parse("tel:"+str2));
                         startActivity(callIntent);

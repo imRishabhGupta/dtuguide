@@ -1,56 +1,94 @@
 package com.example.user.dtuapp;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.ListView;
+import android.widget.AutoCompleteTextView;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
+
+import uk.co.senab.photoview.PhotoViewAttacher;
 
 /**
  * Created by user on 31-01-2016.
  */
 public class Tab4 extends Fragment {
 
-    private  EndangeredItemAdapter endangeredItemAdapter;
+    private  CustomAdapter endangeredItemAdapter;
     ArrayList<EndangeredItem> mItems;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
 
-        View v =inflater.inflate(R.layout.tab_4,container,false);
+        View v =inflater.inflate(R.layout.tab_5,container,false);
+
+        final AutoCompleteTextView actv=(AutoCompleteTextView)v.findViewById(R.id.actv);
+        final ImageView iv=(ImageView)v.findViewById(R.id.iv);
+        final CardView cardView=(CardView)v.findViewById(R.id.timetable);
+        final ImageButton download_timetable=(ImageButton)v.findViewById(R.id.download_timetable);
+
 
         mItems=new ArrayList<>();
-        endangeredItemAdapter=new EndangeredItemAdapter(getContext(),mItems);
+        endangeredItemAdapter=new CustomAdapter(getContext(),R.layout.list_item,mItems);
+        actv.setAdapter(endangeredItemAdapter);
 
-        final ListView listView=(ListView)v.findViewById(R.id.list_view);
-        listView.setAdapter(endangeredItemAdapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        actv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick (AdapterView<?> parent, View view, int position, long id) {
 
-                endangeredItemAdapter.db.update(endangeredItemAdapter.mItems.get(position).getThumbnail());
+                int image=mItems.get(position).getThumbnail();
+                String url=getContext().getResources().getString(image).toString();
+                int displayWidth=iv.getWidth();
+                Toast.makeText(getContext(), displayWidth+"url is "+url, Toast.LENGTH_SHORT).show();
 
-                final TimeTableDialog dialog = new TimeTableDialog(getActivity(),endangeredItemAdapter.mItems.get(position).getThumbnail(),endangeredItemAdapter.mItems.get(position).getName());
-                //dialog.setTitle(endangeredItemAdapter.mItems.get(position).getName());
-                //ImageView iv = (ImageView) dialog.findViewById(R.id.ttiv);
-                //iv.setImageResource(endangeredItemAdapter.mItems.get(position).getThumbnail());
-                //Button button=(Button)dialog.findViewById(R.id.ttb);
-                //button.setOnClickListener(new View.OnClickListener() {
-                //    @Override
-                //    public void onClick(View v) {
-                //        dialog.dismiss();
-                //    }
-                //});
-                dialog.show();
-                Window window = dialog.getWindow();
-                //window.setLayout(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+                try {
+                    Picasso.with(getContext()).load(url).into(iv);
+                    //bitmap= BitmapFactory.decodeStream((InputStream)new URL(url).getContent());
+                     PhotoViewAttacher photoViewAttacher=new PhotoViewAttacher(iv);
+                    cardView.setVisibility(View.VISIBLE);
+                    download_timetable.setVisibility(View.VISIBLE);
+                }
+                catch (Exception e){
+                    iv.setImageResource(R.drawable.nointernet);
+                    e.printStackTrace();
+                }
+            }
+
+        });
+
+        download_timetable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                File file=new File("/sdcard/DtuApp/Timetables");
+                if(!file.exists()) {
+                    File wallpaperDirectory = new File("/sdcard/DtuApp/Timetables/");
+                    wallpaperDirectory.mkdirs();
+                }
+                File file1 = new File(new File("/sdcard/DtuApp/Timetables/"), actv.getText().toString()+".jpg");
+                try {
+                    FileOutputStream out = new FileOutputStream(file1);
+                    Bitmap bitmap=((BitmapDrawable)iv.getDrawable()).getBitmap();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+                    out.flush();
+                    out.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
 
