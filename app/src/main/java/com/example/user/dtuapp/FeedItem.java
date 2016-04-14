@@ -1,25 +1,79 @@
 package com.example.user.dtuapp;
 
 /**
- * Created by rohanpc on 2/21/2016.
+ * Created by rohanpc on 4/10/2016.
  */
 public class FeedItem {
-    private String title;
-    private String thumbnail;
 
-    public String getTitle() {
-        return title;
+    private String  id,status, image, timeStamp, url;
+
+    public FeedItem() {
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public FeedItem(String id, String image, String status, String timeStamp, String url) {
+        super();
+        this.id = id;
+//        this.name = name;
+        this.image = image;
+        this.status = status;
+//        this.profilePic = profilePic;
+        this.timeStamp = timeStamp;
+        this.url = url;
     }
 
-    public String getThumbnail() {
-        return thumbnail;
+    public String getId() {
+        return id;
     }
 
-    public void setThumbnail(String thumbnail) {
-        this.thumbnail = thumbnail;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+
+    public String getImge() {
+        return image;
+    }
+
+    public void setImge(String image) {
+        this.image = image;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+//    public String getProfilePic() {
+//        return profilePic;
+//    }
+//
+//    public void setProfilePic(String profilePic) {
+//        this.profilePic = profilePic;
+//    }
+
+    public String getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(String timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
