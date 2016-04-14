@@ -1,226 +1,174 @@
 package com.example.user.dtuapp;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.AsyncTask;
-import android.os.Bundle;
-import android.os.StrictMode;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.SimpleAdapter;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.os.Bundle;
+
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import android.annotation.SuppressLint;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import com.android.volley.Cache;
+import com.android.volley.Cache.Entry;
+import com.android.volley.Request.Method;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 
 /**
  * Created by rohanpc on 2/8/2016.
  */
 public class Tab0 extends Fragment {
 
-    private static final String TAG = "RecyclerViewExample";
 
-    private List<FeedItem> feedItemList = new ArrayList<FeedItem>();
-
-    private RecyclerView mRecyclerView;
-    String url;
-
-
-
-    private MyRecyclerAdapter adapter;
+    private ListView listView;
+    private FeedListAdapter listAdapter;
+    private List<FeedItem> feedItems;
     SwipeRefreshLayout mSwipeRefreshLayout;
-    private JSONObject newpage;
-    LinearLayoutManager linearLayoutManager;private boolean mLoading = false;
-    private static int count=0;
+    private String URL_FEED = "https://graph.facebook.com/382057938566656/feed?fields=id,full_picture,message,story,created_time,link&access_token=1610382879221507|eQEEkGV4wk9PHCBzrw9Whbdzyuc";
 
-
+    @SuppressLint("NewApi")
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.tab_0, container, false);
+        View v =inflater.inflate(R.layout.tab_0,container,false);
 
+        listView = (ListView)v.findViewById(R.id.list);
 
+        feedItems = new ArrayList<FeedItem>();
 
+        listAdapter = new FeedListAdapter(getActivity(), feedItems);
+        listView.setAdapter(listAdapter);
 
-        /* Initialize recyclerview */
-        mRecyclerView = (RecyclerView)v. findViewById(R.id.rv);
-        linearLayoutManager=new LinearLayoutManager(getActivity());
-        mRecyclerView.setLayoutManager(linearLayoutManager);
+        // We first check for cached request
+        Cache cache = AppController.getInstance().getRequestQueue().getCache();
+        Entry entry = cache.get(URL_FEED);
+        if (entry != null) {
+            // fetch the data from cache
+            try {
+                String data = new String(entry.data, "UTF-8");
+                try {
+                    parseJsonFeed(new JSONObject(data));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
 
-        /*Downloading data from below url*/
-        url = "https://graph.facebook.com/382057938566656/feed?fields=message,story,id,full_picture&access_token=1610382879221507|eQEEkGV4wk9PHCBzrw9Whbdzyuc";
-        new AsyncHttpTask().execute(url);
+        } else {
+            // making fresh volley request and getting json
+            JsonObjectRequest jsonReq = new JsonObjectRequest(Method.GET,
+                    URL_FEED, null, new Response.Listener<JSONObject>() {
+
+                @Override
+                public void onResponse(JSONObject response) {
+
+                    if (response != null) {
+                        parseJsonFeed(response);
+                    }
+                }
+            }, new Response.ErrorListener() {
+
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                    Toast.makeText(getActivity(),"NO INTERNET",Toast.LENGTH_LONG).show();
+                }
+            });
+
+            // Adding request to volley request queue
+            AppController.getInstance().addToRequestQueue(jsonReq);
+        }
 
         mSwipeRefreshLayout = (SwipeRefreshLayout)v.findViewById(R.id.swipeContainer);
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 //Refreshing data on server
-                feedItemList.clear();
-                new AsyncHttpTask().execute(url);
+                feedItems.clear();
+                JsonObjectRequest jsonReq = new JsonObjectRequest(Method.GET,
+                        URL_FEED, null, new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                        if (response != null) {
+                            parseJsonFeed(response);
+                        }
+                    }
+                }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                        mSwipeRefreshLayout.setRefreshing(false);
+                    }
+                });
+
+                // Adding request to volley request queue
+                AppController.getInstance().addToRequestQueue(jsonReq);
+
 
             }
         });
 
-//        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
-//            @Override
-//            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-//                super.onScrolled(recyclerView, dx, dy);
-//                int totalItem = linearLayoutManager.getItemCount();
-//                int lastVisibleItem = linearLayoutManager.findLastVisibleItemPosition();
-//
-//                if (!mLoading && lastVisibleItem == totalItem - 1) {
-//                    mLoading = true;
-//                    parsenewpage();
-//                    mLoading = false;
-//                }
-//            }
-//        });
-
-            return v;
-
+        return v;
     }
 
-
-
-
-
-    public class AsyncHttpTask extends AsyncTask<String, Void, Integer> {
-
-        @Override
-        protected void onPreExecute() {
-
-        }
-
-        @Override
-        protected Integer doInBackground(String... params) {
-            InputStream inputStream = null;
-            Integer result = 0;
-            HttpURLConnection urlConnection = null;
-
-            try {
-                /* forming th java.net.URL object */
-                URL url = new URL(params[0]);
-
-                urlConnection = (HttpURLConnection) url.openConnection();
-
-                /* for Get request */
-                urlConnection.setRequestMethod("GET");
-
-                int statusCode = urlConnection.getResponseCode();
-
-                /* 200 represents HTTP OK */
-                if (statusCode ==  200) {
-
-                    BufferedReader r = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-                    StringBuilder response = new StringBuilder();
-                    String line;
-                    while ((line = r.readLine()) != null) {
-                        response.append(line);
-                    }
-
-                    parseResult(response.toString());
-                    result = 1; // Successful
-                }else{
-                    result = 0; //"Failed to fetch data!";
-                }
-
-            } catch (Exception e) {
-                Log.d(TAG, e.getLocalizedMessage());
-            }
-
-            return result; //"Failed to fetch data!";
-        }
-
-        @Override
-        protected void onPostExecute(Integer result) {
-
-            /* Download complete. Lets update UI */
-            if (result == 1) {
-
-                if(adapter==null)
-                adapter = new MyRecyclerAdapter(getActivity(), feedItemList);
-//                int cursize=adapter.getItemCount();
-//                adapter.notifyItemRangeInserted(cursize,feedItemList.size());
-                mRecyclerView.setAdapter(adapter);
-
-
-                if (mSwipeRefreshLayout.isRefreshing()) {
-                    mSwipeRefreshLayout.setRefreshing(false);
-                }
-
-            } else {
-                Log.e(TAG, "Failed to fetch data!");
-            }
-        }
-    }
-
-//    private void parsenewpage()
-//    {
-//
-//        new AsyncHttpTask().execute(newpage.optString("next"));
-//    }
-
-
-
-
-    private void parseResult(String result) {
+    /**
+     * Parsing json reponse and passing the data to feed view list adapter
+     * */
+    private void parseJsonFeed(JSONObject response) {
+        mSwipeRefreshLayout.setRefreshing(true);
         try {
-            JSONObject response = new JSONObject(result);
-            JSONArray posts = response.optJSONArray("data");
-//            newpage=response.optJSONObject("paging");
+            JSONArray feedArray = response.getJSONArray("data");
 
-
-            /*Initialize array if null*/
-            if (null == feedItemList) {
-                feedItemList = new ArrayList<FeedItem>();
-            }
-
-            for (int i = 0; i < posts.length(); i++) {
-                JSONObject post = posts.optJSONObject(i);
+            for (int i = 0; i < feedArray.length(); i++) {
+                JSONObject feedObj = (JSONObject) feedArray.get(i);
 
                 FeedItem item = new FeedItem();
-                if(post.opt("message")!=null)
-                    item.setTitle(post.optString("message"));
+                item.setId(feedObj.getString("id"));
+
+
+                // Image might be null sometimes
+                String image = feedObj.isNull("full_picture") ? null : feedObj
+                        .getString("full_picture");
+                item.setImge(image);
+
+                if(feedObj.opt("message")!=null)
+                    item.setStatus(feedObj.getString("message"));
                 else
-                item.setTitle(post.optString("story"));
+                    item.setStatus(feedObj.getString("story"));
 
-                    if (post.opt("full_picture") != null) {
-                        item.setThumbnail(post.optString("full_picture"));
-                    }
+                item.setTimeStamp(feedObj.getString("created_time"));
 
+                // url might be null sometimes
+                String feedUrl = feedObj.isNull("link") ? null : feedObj
+                        .getString("link");
+                item.setUrl(feedUrl);
 
-                feedItemList.add(item);
+                feedItems.add(item);
             }
+
+            // notify data changes to list adapter
+            listAdapter.notifyDataSetChanged();
+            mSwipeRefreshLayout.setRefreshing(false);
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
+
 
 }

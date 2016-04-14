@@ -9,4 +9,9 @@
     <color name="grey">#EEEEEE</color>
     <color name="grey2">#F5F5F5</color>
     <color name="white">#FFFFFF</color>
+    <color name="feed_bg">#d3d6db</color>
+    <color name="feed_item_bg">#ffffff</color>
+    <color name="feed_item_border">#c2c3c8</color>
+    <color name="link">#0a80d1</color>
+    <color name="timestamp">#a0a3a7</color>
 </resources>
