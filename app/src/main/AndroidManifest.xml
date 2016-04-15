@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.user.dtuapp">
+    package="com.rnrapps.user.dtuguide">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -16,26 +16,26 @@
         android:required="true" />
 
     <permission
-        android:name="com.example.user.dtuapp.permission.MAPS_RECEIVE"
+        android:name="com.rnrapps.user.dtuguide.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
 
     <!-- Permission to receive Google Maps -->
-    <uses-permission android:name="com.example.user.dtuapp.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.rnrapps.user.dtuguide.permission.MAPS_RECEIVE" />
 
     <application
-        android:name=".AppController"
+        android:name="com.rnrapps.user.dtuguide.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.rnrapps.user.dtuguide.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".Splashscreen"
+            android:name="com.rnrapps.user.dtuguide.Splashscreen"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
@@ -54,24 +54,24 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".ContactActivity"
+            android:name="com.rnrapps.user.dtuguide.ContactActivity"
             android:label="@string/title_activity_contact"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.rnrapps.user.dtuguide.MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.user.dtuapp.MainActivity" />
+                android:value="com.rnrapps.user.dtuguide.MainActivity" />
         </activity>
         <activity
-            android:name=".AboutDevelopers"
+            android:name="com.rnrapps.user.dtuguide.AboutDevelopers"
             android:label="@string/title_activity_about_developers"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.rnrapps.user.dtuguide.MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.user.dtuapp.MainActivity" />
+                android:value="com.rnrapps.user.dtuguide.MainActivity" />
         </activity>
     </application>
 

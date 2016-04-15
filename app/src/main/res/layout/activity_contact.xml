@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.user.dtuapp.ContactActivity">
+    tools:context="com.rnrapps.user.dtuguide.ContactActivity">
 
 
     <include layout="@layout/content_contact" />

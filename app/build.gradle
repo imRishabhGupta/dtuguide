@@ -6,7 +6,7 @@ android {
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        applicationId "com.example.user.dtuapp"
+        applicationId "com.rnrapps.user.dtuguide"
         minSdkVersion 17
         targetSdkVersion 23
         versionCode 1
