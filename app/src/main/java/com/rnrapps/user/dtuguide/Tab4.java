@@ -12,10 +12,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.NetworkImageView;
+import com.android.volley.toolbox.Volley;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -37,7 +38,7 @@ public class Tab4 extends Fragment {
         View v =inflater.inflate(R.layout.tab_5,container,false);
 
         final AutoCompleteTextView actv=(AutoCompleteTextView)v.findViewById(R.id.actv);
-        final ImageView iv=(ImageView)v.findViewById(R.id.iv);
+        final NetworkImageView iv=(NetworkImageView)v.findViewById(R.id.iv);
         final CardView cardView=(CardView)v.findViewById(R.id.timetable);
         final ImageButton download_timetable=(ImageButton)v.findViewById(R.id.download_timetable);
 
@@ -55,7 +56,10 @@ public class Tab4 extends Fragment {
                 String url=getContext().getResources().getString(image).toString();
 
                 try {
-                    Picasso.with(getContext()).load(url).into(iv);
+                    ImageLoader.ImageCache imageCache = new LruBitmapCache();
+                    ImageLoader imageLoader = new ImageLoader(Volley.newRequestQueue(getContext()), imageCache);
+                    iv.setImageUrl(url,imageLoader);
+                    //Picasso.with(getContext()).load(url).into(iv);
                     //bitmap= BitmapFactory.decodeStream((InputStream)new URL(url).getContent());
                      PhotoViewAttacher photoViewAttacher=new PhotoViewAttacher(iv);
                     cardView.setVisibility(View.VISIBLE);

@@ -37,10 +37,11 @@
         card_view:cardCornerRadius="3dp"
         card_view:cardBackgroundColor="#D7CCC8"
         card_view:cardElevation="3dp">
-    <ImageView
+    <com.android.volley.toolbox.NetworkImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:id="@+id/iv"
+        android:scaleType="fitCenter"
         android:background="@drawable/autocomplete_view"
         android:layout_margin="2dp"
         android:layout_centerHorizontal="true"
