@@ -35,16 +35,15 @@
         android:paddingLeft="70dp"
         android:gravity="center_vertical"
         android:textAlignment="gravity"
-        android:background="#8D6E63"
+        android:background="@color/colorPrimary"
         android:textAllCaps="true"
         android:textSize="20sp" />
         </android.support.v7.widget.CardView>
         <ImageView
-            android:layout_width="60dp"
+            android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_margin="10dp"
             android:scaleType="centerCrop"
-            android:paddingLeft="15dp"
-            android:paddingTop="10dp"
             android:id="@+id/title_image"/>
     </RelativeLayout>
     <TextView

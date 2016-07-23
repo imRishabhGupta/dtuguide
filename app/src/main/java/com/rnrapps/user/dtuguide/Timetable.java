@@ -3,7 +3,7 @@ package com.rnrapps.user.dtuguide;
 /**
  * Created by rohanpc on 10/19/2015.
  */
-public class EndangeredItem {
+public class Timetable {
     private String mName;
     private int mThumbnail;
 

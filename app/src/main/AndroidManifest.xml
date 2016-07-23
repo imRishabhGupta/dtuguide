@@ -23,22 +23,22 @@
     <uses-permission android:name="com.rnrapps.user.dtuguide.permission.MAPS_RECEIVE" />
 
     <application
-        android:name="com.rnrapps.user.dtuguide.AppController"
+        android:name=".AppController"
         android:allowBackup="true"
-        android:icon="@mipmap/logo_guide"
+        android:icon="@mipmap/logo3"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.rnrapps.user.dtuguide.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.rnrapps.user.dtuguide.Splashscreen"
+            android:name=".Splashscreen"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.ActionBar.Transparent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -54,24 +54,64 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name="com.rnrapps.user.dtuguide.ContactActivity"
+            android:name=".ContactActivity"
             android:label="@string/title_activity_contact"
-            android:parentActivityName="com.rnrapps.user.dtuguide.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.rnrapps.user.dtuguide.MainActivity" />
         </activity>
         <activity
-            android:name="com.rnrapps.user.dtuguide.AboutDevelopers"
+            android:name=".AboutDevelopers"
             android:label="@string/title_activity_about_developers"
-            android:parentActivityName="com.rnrapps.user.dtuguide.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.rnrapps.user.dtuguide.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SocietyActivity"
+            android:label="@string/title_activity_society"
+            android:parentActivityName=".Main2Activity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rnrapps.user.dtuguide.Main2Activity" />
+        </activity>
+        <activity
+            android:name=".NotesActivity"
+            android:label="@string/title_activity_note"
+            android:parentActivityName=".Main2Activity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rnrapps.user.dtuguide.Main2Activity" />
+        </activity>
+        <activity
+            android:name=".TimetableActivity"
+            android:label="@string/title_activity_timetables"
+            android:parentActivityName=".Main2Activity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rnrapps.user.dtuguide.Main2Activity" />
+        </activity>
+        <activity
+            android:name=".CampusMap"
+            android:label="@string/title_activity_campus_map"
+            android:parentActivityName=".Main2Activity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rnrapps.user.dtuguide.Main2Activity" />
         </activity>
     </application>
 

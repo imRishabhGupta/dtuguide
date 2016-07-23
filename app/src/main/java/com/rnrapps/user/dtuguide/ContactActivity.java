@@ -13,26 +13,17 @@ import android.widget.TextView;
 
 public class ContactActivity extends AppCompatActivity {
 
-    private TextView title;
-    private TextView description;
-    private TextView contactName;
-    private TextView conatctNumber;
-    private ImageButton imageButton;
-    private ImageView image;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact);
 
-
-
-        title=(TextView)findViewById(R.id.title11);
-        description=(TextView)findViewById(R.id.description);
-        contactName=(TextView)findViewById(R.id.contact_name);
-        conatctNumber=(TextView)findViewById(R.id.contact_number);
-        imageButton=(ImageButton)findViewById(R.id.call);
-        image=(ImageView)findViewById(R.id.title_image);
+        TextView title = (TextView) findViewById(R.id.title11);
+        TextView description = (TextView) findViewById(R.id.description);
+        TextView contactName = (TextView) findViewById(R.id.contact_name);
+        TextView conatctNumber = (TextView) findViewById(R.id.contact_number);
+        ImageButton imageButton = (ImageButton) findViewById(R.id.call);
+        ImageView image = (ImageView) findViewById(R.id.title_image);
         final String str1=getIntent().getExtras().getString("contactName");
         final String str2=getIntent().getExtras().getString("contactNumber");
         if(str1==null){

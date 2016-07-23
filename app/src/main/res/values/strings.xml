@@ -15,6 +15,18 @@
     <string name="rate_message">Please rate and review the app.</string>
     <string name="rate_never">Never ask me again</string>
 
+    <string name="globalyouth">Global Youth India DTU Chapter\n\nTaresh Jerath 9013394755 (President)\n
+                Lakshay Singh 8447645838 (Vice President)\n
+                Shubham Bhardwaj 9654874829 (Secretary)</string>
+    <string name="delhi42">"While Delhi-42: The DTU Quiz Club is officially the quiz club of DTU, it is run more like an interest group than a society or club. Our members have consistently made us proud by making a mark in the Delhi Quizzing Circuit.
+        We organise weekly quiz meets aimed at improving the culture and spirit of quizzing in DTU and simultaneously provide a weekly platform for like-minded people to do what they love. Join us in our weekly tradition; being a quizzer isn't a pre-requisite, but being a knowledge enthusiast is!"</string>
+    <string name="deltechmun">"DelTech MUN and Debating Society is an open society for students interested in Model UN and debates. As the college's only free society dedicated to debating, we organize year-round events all including GDs, political debates, MUN trainings, etc. and keep ourselves open-for-all.
+The annual DelTech MUN conference is one of the most reputed in Delhi."
+</string>
+    <string name="supermileage">The DTU Supermileage Team is the first team from India to design a supermileage vehicle. It was established in 2005 keeping in mind the looming threat posed by future fuel crisis. The team aims to develop a vehicle which explores the maximum mileage that can be achieved from a single liter of gasoline and at the same time reduce the impact of gasoline powered vehicles on the environment without the need for major cost.
+ Our previous best mileage stands at 252 kmpl. The team has unique technical feats such as designing and manufacturing a custom cylinder head for our vehicle’s engine, as well as making one of the few Indian vehicles to use a full carbon fibre body.</string>
+    <string name="igts"> Indian game theory society (igts) DTU\n\nContacts: Divyanshu Goel 9899101508 (President)\n
+               Shubham Bhardwaj 9654874829 (Vice President)</string>
     <string name="sahitya">Sahitya- The Literary Society creates a comfortable atmosphere for university students to enthusiastically discuss their literature interests. We seek to enrich students’ taste in anything that revolves around the word “Literary” and to provide them an environment which promotes interaction between some of the sharpest brains in the campus to foster a process of collective creative exchange and development.</string>
     <string name="madhurima">Madhurima – the music society of DTU offers you a very good plateform to show,nurture and explore the things in the worlds of MUSIC. This society keeps active throughout the year and participates a lot of competitions and helps the budding singers a perfect environment.</string>
     <string name="pratibimb">"With a similar vision, Pratibimb was founded nearly half a century ago back in 1960's as the dramatic society of Delhi College of Engineering.At a time when most technical institutions rarerly focused on any such extra curricular activities,students of Delhi College of Engineering took a step in the field of theatre and founded Pratibimb.
@@ -96,8 +108,7 @@ The team is developing it's 5th Generation AUV with a completely new mechanical 
                                                      \n\nSECRETARY :             \nSNEHAL TOPPO       \nM:   +91-9718441404
                                                      \n\nJOINT SECRETARY :       \nASEEM BANSAL       \nM:   +91-9582920037
                                                      \n\nMAIL ID :                 dtustudentsassociation@gmail.com</string>
-
-<string name="cultural_council">       CULTURAL SECRETARY :         \nNalin Chaudhary        \nM:   +91-8588001179
+    <string name="cultural_council">       CULTURAL SECRETARY :         \nNalin Chaudhary        \nM:   +91-8588001179
                                    \n\nJOINT CULTURAL SECRETARY :   \nAditi Maheshwari       \nM:   +91-9717481156
                                    \n                               \nNISHANT ANEJA          \nM :  +91-9811991514
                                     \n\nTREASURER  :                \nSHEIKH FARHAN RAZA</string>
@@ -160,5 +171,15 @@ The team is developing it's 5th Generation AUV with a completely new mechanical 
     <string name="psct6">"https://i.imgur.com/x99GftJ.jpg"</string>
     <string name="ep6">"https://i.imgur.com/baqYyLp.jpg"</string>
     <string name="prod6">"https://i.imgur.com/d674K2c.jpg"</string>
+
+    <string name="title_activity_main2">DTU Guide</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_maps">Campus Map</string>
+    <string name="title_activity_society">Societies</string>
+    <string name="title_activity_note">Notes</string>
+    <string name="title_activity_timetables">Timetables</string>
+    <string name="title_activity_campus_map">Campus Map</string>
 
 </resources>

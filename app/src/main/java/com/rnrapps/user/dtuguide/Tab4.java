@@ -29,8 +29,8 @@ import uk.co.senab.photoview.PhotoViewAttacher;
  */
 public class Tab4 extends Fragment {
 
-    private  CustomAdapter endangeredItemAdapter;
-    ArrayList<EndangeredItem> mItems;
+    private TimetableAdapter endangeredItemAdapter;
+    ArrayList<Timetable> mItems;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
@@ -44,7 +44,7 @@ public class Tab4 extends Fragment {
 
 
         mItems=new ArrayList<>();
-        endangeredItemAdapter=new CustomAdapter(getContext(),R.layout.list_item,mItems);
+        endangeredItemAdapter=new TimetableAdapter(getContext(),R.layout.list_item,mItems);
         actv.setAdapter(endangeredItemAdapter);
 
 

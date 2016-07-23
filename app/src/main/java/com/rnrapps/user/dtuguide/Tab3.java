@@ -35,13 +35,7 @@ public class Tab3 extends Fragment {
         webView = (WebView) v.findViewById(R.id.webView);
         webView.setWebViewClient(new MyWebViewClient());
         progressBar=(ProgressBar)v.findViewById(R.id.progressBar);
-        //ImageButton imageButton=(ImageButton)v.findViewById(R.id.imageButton);
-        //imageButton.setOnClickListener(new View.OnClickListener() {
-          //  @Override
-            //public void onClick(View v) {
-              //  webView.goBack();
-            //}
-        //});
+
         FloatingActionButton fab=(FloatingActionButton)v.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,10 +94,5 @@ public class Tab3 extends Fragment {
             super.onReceivedError(view, request, error);
         }
     }
-    public String getFileName(String url) {
-        String filenameWithoutExtension = "";
-        filenameWithoutExtension = String.valueOf(System.currentTimeMillis()
-                + ".mp4");
-        return filenameWithoutExtension;
-    }
+
 }
