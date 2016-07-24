@@ -2,9 +2,6 @@ package com.rnrapps.user.dtuguide.ImpContacts;
 
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.rnrapps.user.dtuguide.R;
+import com.bumptech.glide.Glide;
+import com.rnrapps.user.dtuguide.*;
 
 import java.util.ArrayList;
 /**
@@ -25,7 +23,7 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
     private Context mContext;
 
 
-    public GridAdapter(ArrayList<Society> items,Context context) {
+    public GridAdapter(ArrayList<Society> items, Context context) {
         super();
         mItems=items;
         mContext=context;
@@ -186,6 +184,47 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
         society.setContactNumber("8800910345");
         mItems.add(society);
 
+        society=new Society();
+        society.setTitle("IGTS");
+        society.setImage(R.mipmap.dtulogo);
+        society.setDescription(R.string.igts);
+        society.setContactName("Divyanshu Goel");
+        society.setContactNumber("9899101508");
+        mItems.add(society);
+
+        society=new Society();
+        society.setTitle("Global Youth India DTU Chapter");
+        society.setImage(R.drawable.golbalyouth);
+        society.setDescription(R.string.globalyouth);
+        society.setContactName("Taresh Jerath ");
+        society.setContactNumber("9013394755");
+        mItems.add(society);
+
+        society=new Society();
+        society.setTitle("Supermileage");
+        society.setImage(R.mipmap.dtulogo);
+        society.setDescription(R.string.supermileage);
+        society.setContactName("Akash");//www.dtusmv.com
+        society.setContactNumber("9716715130");
+        mItems.add(society);
+
+        society=new Society();
+        society.setTitle("DelTech MUN Society");
+        society.setImage(R.drawable.dtmun);
+        society.setDescription(R.string.deltechmun);
+        society.setContactName("Manas Sahni");
+        society.setContactNumber("9582584875");
+        mItems.add(society);
+
+        society=new Society();
+        society.setTitle("Delhi-42");
+        society.setImage(R.drawable.delhi42);
+        society.setDescription(R.string.delhi42);
+        society.setContactName("Shreyam");
+        society.setContactNumber(" 9560600595");
+        mItems.add(society);
+
+
     }
 
     @Override
@@ -200,61 +239,14 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
         Society nature = mItems.get(i);
         viewHolder.tvspecies.setText(nature.getTitle());
-/*
-        int displayWidth=viewHolder.imgThumbnail.getWidth();
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-        BitmapFactory.decodeResource(mContext.getResources(),nature.getImage(), options);
-        int width = options.outWidth;
-        if (width > displayWidth) {
-            int widthRatio = Math.round((float) width / (float) displayWidth);
-            options.inSampleSize = widthRatio;
-        }
-        options.inJustDecodeBounds = false;
-        Bitmap scaledBitmap =  BitmapFactory.decodeResource(mContext.getResources(),nature.getImage(), options);*/
 
-
-        viewHolder.imgThumbnail.setImageBitmap(decodeSampledBitmapFromResource(mContext.getResources(),nature.getImage(), 220, 200));
+        Glide
+                .with(mContext)
+                .load(nature.getImage())
+                .into(viewHolder.imgThumbnail);
 
     }
-    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId,
-                                                         int reqWidth, int reqHeight) {
 
-        // First decode with inJustDecodeBounds=true to check dimensions
-        final BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-        BitmapFactory.decodeResource(res, resId, options);
-
-        // Calculate inSampleSize
-        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
-
-        // Decode bitmap with inSampleSize set
-        options.inJustDecodeBounds = false;
-        return BitmapFactory.decodeResource(res, resId, options);
-    }
-
-    public static int calculateInSampleSize(
-            BitmapFactory.Options options, int reqWidth, int reqHeight) {
-        // Raw height and width of image
-        final int height = options.outHeight;
-        final int width = options.outWidth;
-        int inSampleSize = 1;
-
-        if (height > reqHeight || width > reqWidth) {
-
-            final int halfHeight = height / 2;
-            final int halfWidth = width / 2;
-
-            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
-            // height and width larger than the requested height and width.
-            while ((halfHeight / inSampleSize) > reqHeight
-                    && (halfWidth / inSampleSize) > reqWidth) {
-                inSampleSize *= 2;
-            }
-        }
-
-        return inSampleSize;
-    }
 
     @Override
     public int getItemCount() {

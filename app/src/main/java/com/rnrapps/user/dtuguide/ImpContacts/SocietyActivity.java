@@ -19,7 +19,6 @@ public class SocietyActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     RecyclerView.LayoutManager mLayoutManager;
     RecyclerView.Adapter mAdapter;
-    LinearLayout cll;
     ArrayList<Society> items;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
