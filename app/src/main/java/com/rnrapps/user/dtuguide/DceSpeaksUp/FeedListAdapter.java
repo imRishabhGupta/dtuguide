@@ -38,12 +38,10 @@ public class FeedListAdapter extends BaseAdapter {
     private LayoutInflater inflater;
     private List<FeedItem> feedItems;
     private ArrayList<CommentItem> commentItems;
-    private Map<FeedItem,ArrayList<CommentItem>> feedsWithComments;
-    ImageLoader imageLoader = AppController.getInstance().getImageLoader();
+    private ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
-    public FeedListAdapter(Activity activity, Map<FeedItem,ArrayList<CommentItem>> feedsWithComments,List<FeedItem> feedItems) {
+    public FeedListAdapter(Activity activity,List<FeedItem> feedItems) {
         this.activity = activity;
-        this.feedsWithComments = feedsWithComments;
         this.feedItems=feedItems;
     }
 
@@ -67,10 +65,10 @@ public class FeedListAdapter extends BaseAdapter {
 
         final FeedItem item=feedItems.get(position);
 
-        if(feedsWithComments.get(item)!=null) {
-            commentItems = new ArrayList<>();
-            commentItems = feedsWithComments.get(item);
-        }
+        commentItems = new ArrayList<>();
+//        if(feedsWithComments.get(item)!=null) {
+//            commentItems.addAll(feedsWithComments.get(item));
+//        }
 
 
         if (inflater == null)
@@ -92,14 +90,14 @@ public class FeedListAdapter extends BaseAdapter {
         FeedImageView feedImageView = (FeedImageView) convertView
                 .findViewById(R.id.feedImage1);
 
-        final Button getComments=(Button)convertView.findViewById(R.id.commentsbutton);
+        Button getComments=(Button)convertView.findViewById(R.id.commentsbutton);
         getComments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                     Intent i = new Intent(activity, CommentActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putParcelable("status", item);
-                    bundle.putParcelableArrayList("comments",commentItems);
+//                    bundle.putParcelableArrayList("comments",commentItems);
                     i.putExtras(bundle);
                     activity.startActivity(i);
 
@@ -154,5 +152,7 @@ public class FeedListAdapter extends BaseAdapter {
 
         return convertView;
     }
+
+
 
 }

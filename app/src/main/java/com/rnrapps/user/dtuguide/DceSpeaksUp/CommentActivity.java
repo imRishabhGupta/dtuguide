@@ -52,9 +52,12 @@ public class CommentActivity extends AppCompatActivity {
         FeedItem feedItem;
         commentItems=new ArrayList<>();
         Bundle bundle=getIntent().getExtras();
-        if (bundle.getParcelableArrayList("comments")!=null)
-           commentItems=bundle.getParcelableArrayList("comments");
+//        if (bundle.getParcelableArrayList("comments")!=null)
+//           commentItems=bundle.getParcelableArrayList("comments");
         feedItem=bundle.getParcelable("status");
+
+//        if(feedItem.getCommentItems()!=null) {                //help here
+            commentItems = feedItem.;
 
         // Converting timestamp into x ago format
         String a=feedItem.getTimeStamp();

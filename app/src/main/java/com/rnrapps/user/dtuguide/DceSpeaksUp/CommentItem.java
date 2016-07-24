@@ -13,19 +13,13 @@ public class CommentItem implements Parcelable{
     public CommentItem() {
     }
 
-    public CommentItem(String id, String from, String comment, String timeStamp) {
-        this.id = id;
-        this.comment =comment;
-        this.timeStamp = timeStamp;
-        this.from= from;
-    }
-
     protected CommentItem(Parcel in) {
         id = in.readString();
         comment = in.readString();
         from = in.readString();
         timeStamp = in.readString();
     }
+    
 
     public static final Creator<CommentItem> CREATOR = new Creator<CommentItem>() {
         @Override

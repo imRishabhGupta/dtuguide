@@ -67,9 +67,10 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         feedItems=new ArrayList<>();
 
         listView=(ListView)findViewById(R.id.list);
-        feedsWithComments = Collections.synchronizedMap(new HashMap<FeedItem, ArrayList<CommentItem>>());
+//        feedsWithComments = Collections.synchronizedMap(new HashMap<FeedItem, ArrayList<CommentItem>>());
+        mSwipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipeContainer);
+        listAdapter = new FeedListAdapter(this,feedItems);
 
-        listAdapter = new FeedListAdapter(this, feedsWithComments,feedItems);
 
 
         // We first check for cached request
@@ -113,7 +114,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
             AppController.getInstance().addToRequestQueue(jsonReq);
         }
 
-        mSwipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipeContainer);
+
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -144,9 +145,11 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         });
 
         listView.setAdapter(listAdapter);
+
     }
 
     private void parseJsonFeed(final JSONObject response) {
+
         mSwipeRefreshLayout.setRefreshing(true);
 
         new Thread() {
@@ -184,6 +187,8 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                     }
                 }
 
+                item.setCommentItems(commentItems);
+
                 if(feedObj.opt("message")!=null)
                     item.setStatus(feedObj.getString("message"));
                 else
@@ -198,11 +203,19 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
 
                 feedItems.add(item);
 
-                if(comments!=null)
-                    feedsWithComments.put(item, commentItems);
-                else
-                    feedsWithComments.put(item,null);
+//                if(comments!=null)
+//                    feedsWithComments.put(item, commentItems);
+//                else
+//                    feedsWithComments.put(item,null);
             }
+
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    listAdapter.notifyDataSetChanged();
+                    mSwipeRefreshLayout.setRefreshing(false);
+                }
+            });
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -210,8 +223,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
             }
         }.start();
 
-        listAdapter.notifyDataSetChanged();
-        mSwipeRefreshLayout.setRefreshing(false);
+
     }
 
     @Override

@@ -3,24 +3,20 @@ package com.rnrapps.user.dtuguide.DceSpeaksUp;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by rohanpc on 4/10/2016.
  */
 public class FeedItem implements Parcelable {
 
     private String  id,status, image, timeStamp, url;
+    private ArrayList<CommentItem> commentItems = new ArrayList<>();
 
     public FeedItem() {
     }
 
-    public FeedItem(String id, String image, String status, String timeStamp, String url) {
-        super();
-        this.id = id;
-        this.image = image;
-        this.status = status;
-        this.timeStamp = timeStamp;
-        this.url = url;
-    }
 
     protected FeedItem(Parcel in) {
         id = in.readString();
@@ -28,6 +24,10 @@ public class FeedItem implements Parcelable {
         image = in.readString();
         timeStamp = in.readString();
         url = in.readString();
+        if(commentItems!=null) {
+//        in.readTypedList(commentItems,CommentItem.CREATOR);
+            in.createTypedArrayList(CommentItem.CREATOR);
+        }
     }
 
     public static final Creator<FeedItem> CREATOR = new Creator<FeedItem>() {
@@ -82,6 +82,15 @@ public class FeedItem implements Parcelable {
         this.url = url;
     }
 
+    public ArrayList<CommentItem> getCommentItems() {
+        return commentItems;
+    }
+
+    public void setCommentItems(ArrayList<CommentItem> commentItems)
+    {
+        this.commentItems=commentItems;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -94,5 +103,6 @@ public class FeedItem implements Parcelable {
         dest.writeString(image);
         dest.writeString(timeStamp);
         dest.writeString(url);
+        dest.writeTypedList(commentItems);
     }
 }

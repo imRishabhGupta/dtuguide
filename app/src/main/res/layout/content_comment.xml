@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.rnrapps.user.dtuguide.DceSpeaksUp.CommentActivity"
-    android:fillViewport="false">
-<LinearLayout
+    android:orientation="vertical"
+    >
+<ScrollView
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="false">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/feed_bg"
     android:orientation="vertical"
-    android:weightSum="1">
+    >
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -26,7 +34,7 @@
     android:paddingTop="@dimen/feed_item_padding_top_bottom" >
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingLeft="@dimen/feed_item_padding_left_right"
@@ -94,7 +102,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="304dp"
+        android:layout_height="470dp"
         android:layout_marginLeft="@dimen/feed_item_margin"
         android:layout_marginRight="@dimen/feed_item_margin"
         android:layout_marginTop="@dimen/feed_item_margin"
@@ -102,7 +110,7 @@
         android:orientation="vertical"
         android:paddingBottom="@dimen/feed_item_padding_top_bottom"
         android:paddingTop="@dimen/feed_item_padding_top_bottom"
-        android:layout_weight="6.65">
+        >
 
         <ListView
             android:layout_width="match_parent"
@@ -111,10 +119,12 @@
             android:layout_marginRight="@dimen/feed_item_margin"
             android:layout_marginTop="5dp"
             android:id="@+id/commentslist"
-            android:visibility="gone"/>
+            />
 
     </LinearLayout>
 
 </LinearLayout>
 
     </ScrollView>
+
+    </LinearLayout>
