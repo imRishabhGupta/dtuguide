@@ -164,7 +164,6 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                 FeedItem item = new FeedItem();
                 item.setId(feedObj.getString("id"));
 
-
                 // Image might be null sometimes
                 String image = feedObj.isNull("full_picture") ? null : feedObj
                         .getString("full_picture");
@@ -257,7 +256,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         } else if (id == R.id.nav_share) {
             Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
             sharingIntent.setType("text/plain");
-            String shareBody = "";
+            String shareBody = "share body";
             sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
             startActivity(Intent.createChooser(sharingIntent, "Share via"));
         } else if (id == R.id.nav_rate) {
@@ -269,7 +268,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         else if(id == R.id.nav_feedback){
             Intent intent = new Intent(Intent.ACTION_SENDTO);
             intent.setType("text/plain");
-            intent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
+            intent.putExtra(Intent.EXTRA_SUBJECT, "feedback");
             intent.putExtra(Intent.EXTRA_TEXT, "Body of email");
             intent.setData(Uri.parse("mailto:dtuapp16@gmail.com"));
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
