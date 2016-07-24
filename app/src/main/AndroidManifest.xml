@@ -61,7 +61,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.rnrapps.user.dtuguide.MainActivity" />
+                android:value="com.rnrapps.user.dtuguide.SocietyActivity" />
         </activity>
         <activity
             android:name=".AboutDevelopers"
@@ -71,7 +71,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.rnrapps.user.dtuguide.MainActivity" />
+                android:value="com.rnrapps.user.dtuguide.Main2Activity" />
         </activity>
         <activity
             android:name=".Main2Activity"

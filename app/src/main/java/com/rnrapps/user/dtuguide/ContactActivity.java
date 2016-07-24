@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -17,13 +18,13 @@ public class ContactActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact);
-
-        TextView title = (TextView) findViewById(R.id.title11);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         TextView description = (TextView) findViewById(R.id.description);
         TextView contactName = (TextView) findViewById(R.id.contact_name);
+        ImageView imageView = (ImageView)findViewById(R.id.imageView);
         TextView conatctNumber = (TextView) findViewById(R.id.contact_number);
         ImageButton imageButton = (ImageButton) findViewById(R.id.call);
-        ImageView image = (ImageView) findViewById(R.id.title_image);
         final String str1=getIntent().getExtras().getString("contactName");
         final String str2=getIntent().getExtras().getString("contactNumber");
         if(str1==null){
@@ -32,14 +33,14 @@ public class ContactActivity extends AppCompatActivity {
             imageButton.setVisibility(View.GONE);
             TextView contact=(TextView)findViewById(R.id.contact);
             contact.setVisibility(View.GONE);
-            title.setTextSize(18);
             description.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START);
         }
+        getSupportActionBar().setTitle(getIntent().getExtras().getString("title"));
 
-        title.setText(getIntent().getExtras().getString("title"));
         description.setText(getIntent().getExtras().getString("description"));
         contactName.setText(str1);
-        image.setImageResource(getIntent().getExtras().getInt("image"));
+        imageView.setImageResource(getIntent().getExtras().getInt("image"));
+        //toolbar.setLogo(getIntent().getExtras().getInt("image"));
         if(str2!=null){
             conatctNumber.setText(str2);
             imageButton.setImageResource(R.drawable.call_button);
@@ -51,7 +52,6 @@ public class ContactActivity extends AppCompatActivity {
 
                 if(str2!=null){
                     try {
-
                         Intent callIntent = new Intent(Intent.ACTION_CALL);
                         callIntent.setData(Uri.parse("tel:"+str2));
                         startActivity(callIntent);
@@ -72,7 +72,7 @@ public class ContactActivity extends AppCompatActivity {
                 }
             }
         });
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
 }

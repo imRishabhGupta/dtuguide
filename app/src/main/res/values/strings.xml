@@ -8,7 +8,7 @@
     <string name="dialog_play_services_unavailable">Google Play Services are unavailable.</string>
     <string name="dialog_download_play_services">Download Play Services</string>
     <string name="dialog_close_program">Close Program</string>
-    <string name="title_activity_contact">ContactActivity</string>
+    <string name="title_activity_contact">Society</string>
     <string name="rate_title">Rate This App</string>
     <string name="rate_positive">Rate Now</string>
     <string name="rate_remind_later">Remind me Later</string>
