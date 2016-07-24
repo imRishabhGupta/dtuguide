@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="450dp"
+    android:layout_width="300dp">
+    <com.rnrapps.user.dtuguide.ZoomableImageView
+
+        android:layout_width="match_parent"
+        android:rotation="90"
+        android:layout_height="match_parent"
+        android:id="@+id/ttiv"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ttb"
+        android:background="@drawable/cross_button"
+        android:layout_alignBottom="@+id/ttiv"
+        android:layout_alignParentEnd="true"
+        android:src="@mipmap/cross"/>
+</RelativeLayout>

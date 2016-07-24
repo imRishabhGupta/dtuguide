@@ -1,0 +1,187 @@
+<resources>
+    <string name="app_name">DtuGuide</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_maptab">Maptab</string>
+    <string name="page_name">Dce Speaks Up</string>
+
+
+    <string name="dialog_play_services_unavailable">Google Play Services are unavailable.</string>
+    <string name="dialog_download_play_services">Download Play Services</string>
+    <string name="dialog_close_program">Close Program</string>
+    <string name="title_activity_contact">ContactActivity</string>
+    <string name="rate_title">Rate This App</string>
+    <string name="rate_positive">Rate Now</string>
+    <string name="rate_remind_later">Remind me Later</string>
+    <string name="rate_message">Please rate and review the app.</string>
+    <string name="rate_never">Never ask me again</string>
+    <string name="comments">comments</string>
+
+    <string name="globalyouth">Global Youth India DTU Chapter\n\nTaresh Jerath 9013394755 (President)\n
+                Lakshay Singh 8447645838 (Vice President)\n
+                Shubham Bhardwaj 9654874829 (Secretary)</string>
+    <string name="delhi42">"While Delhi-42: The DTU Quiz Club is officially the quiz club of DTU, it is run more like an interest group than a society or club. Our members have consistently made us proud by making a mark in the Delhi Quizzing Circuit.
+        We organise weekly quiz meets aimed at improving the culture and spirit of quizzing in DTU and simultaneously provide a weekly platform for like-minded people to do what they love. Join us in our weekly tradition; being a quizzer isn't a pre-requisite, but being a knowledge enthusiast is!"</string>
+    <string name="deltechmun">"DelTech MUN and Debating Society is an open society for students interested in Model UN and debates. As the college's only free society dedicated to debating, we organize year-round events all including GDs, political debates, MUN trainings, etc. and keep ourselves open-for-all.
+The annual DelTech MUN conference is one of the most reputed in Delhi."
+</string>
+    <string name="supermileage">The DTU Supermileage Team is the first team from India to design a supermileage vehicle. It was established in 2005 keeping in mind the looming threat posed by future fuel crisis. The team aims to develop a vehicle which explores the maximum mileage that can be achieved from a single liter of gasoline and at the same time reduce the impact of gasoline powered vehicles on the environment without the need for major cost.
+ Our previous best mileage stands at 252 kmpl. The team has unique technical feats such as designing and manufacturing a custom cylinder head for our vehicle’s engine, as well as making one of the few Indian vehicles to use a full carbon fibre body.</string>
+    <string name="igts"> Indian game theory society (igts) DTU\n\nContacts: Divyanshu Goel 9899101508 (President)\n
+               Shubham Bhardwaj 9654874829 (Vice President)</string>
+    <string name="sahitya">Sahitya- The Literary Society creates a comfortable atmosphere for university students to enthusiastically discuss their literature interests. We seek to enrich students’ taste in anything that revolves around the word “Literary” and to provide them an environment which promotes interaction between some of the sharpest brains in the campus to foster a process of collective creative exchange and development.</string>
+    <string name="madhurima">Madhurima – the music society of DTU offers you a very good plateform to show,nurture and explore the things in the worlds of MUSIC. This society keeps active throughout the year and participates a lot of competitions and helps the budding singers a perfect environment.</string>
+    <string name="pratibimb">"With a similar vision, Pratibimb was founded nearly half a century ago back in 1960's as the dramatic society of Delhi College of Engineering.At a time when most technical institutions rarerly focused on any such extra curricular activities,students of Delhi College of Engineering took a step in the field of theatre and founded Pratibimb.
+Since then, Pratibimb has produced some of the finest actors,directors,writers etc. Pratibimb aims at contributing in the field of theatre and bringing a positive change in society through this 'finest form of art' by performing both stage and street plays."
+</string>
+    <string name="nssdtu">"National Service Scheme is to inculcate the social welfare thoughts in the students, and to provide service to the society without any prejudice.
+
+• NSS volunteers work to ensure that every one in our society who is needy gets the every possible help from them so that they can also enhance their standards and lead a life of dignity in the society with all of us.
+
+• To inculcate social welfare thoughts in students and undertake actions reflecting the same.
+
+• To develop a sense of social and civic responsibility.
+
+• To identify practical solutions to problems of the community."
+</string>
+    <string name="uasdtu">"The DTU UAS project was initiated with the primary purpose of developing technologies so as to reduce India's dependance on foreign ISR (Intelligence, Surveillance and Reconnaisance) products.
+
+The team participates in the AUVSI Student UAS Competition (an international inter-university aerial robotics challenge) which is held annualy in Webster Field, Maryland, USA."
+</string>
+    <string name="parchayi">Parchhayi is the official photography society of Delhi Technological University and we stand for nurturing the art of photography and its technical aspects in our members and using this to achieve a standard of excellence in photography in our college and as a platform for social awareness.</string>
+    <string name="srdtu">      As the name suggests , SRDTU is the robotics society of  DTU. This society offers platform to learn and explore your interests in robotics. This society also announces annual robotics competitions. Currently society is working on a lot of Projects</string>
+    <string name="ieeedtu">IEEE DTU Student Branch is the oldest as well as the largest student branch in Delhi Section of Region 10. With the aim of instilling scientific temperament in the student community through a plethora of activities around the year it boasts of a colorful history spanning over three decades. Today, IEEE DTU claims to have under its wing a massive strength of more than 450 student members, working actively throughout the year.</string>
+    <string name="site">Society for Information Technology Engineers (SITE) is a technical society by the DEPARTMENT OF INFORMATION TECHNOLOGY
+SITE organizes its technical fest named as MELIORA.
+SITE holds number of events and workshops round the year to develop and test students technical skills as well as groom personality of students.
+</string>
+    <string name="bleedx">BleedX Photography is about capturing moments and emotions beyond imagination and expressing it in my way.
+Fashion photography | portraits | event |
+</string>
+    <string name="kalakritidtu">"KALAKRITI"- The Creative Arts Society of DTU has been created by the students of DTU(formerly DCE) for the upbringing of the talent and to offer a platform to all those artistic minds in the University. Further for the art lovers, you will get to discover a beautiful exhibition of art works by the students.
+
+The society will work on organizing art exhibitions, trips to museums and other places , lectures by known artists, graffiti making, wall painting, animation etc. by a sole aim to promote art among the students.
+</string>
+    <string name="rotract">At Rotaract DTU we provide service to others, promote integrity, and advance world understanding, goodwill, and peace through its fellowship of business, professional, and community leaders.
+?#?serviceaboveself?? ?#?helpothers??
+</string>
+    <string name="quizzinc">We are a Delhi based startup aiming to revolutionize quizzing as we know it and make people more aware of themselves and the world around. It is A START UP from our own college which conducts amazing quizzing contests with a lot of new things and excting Prizes To be WON….</string>
+    <string name="asce">DTU is one of the few Indian colleges to have an ASCE Students’ Chapter.
+Founded in 1852, the American Society of Civil Engineers (ASCE) represents more than 140,000 members of the civil engineering profession worldwide.
+</string>
+    <string name="dance">"Dance is the language of the soul."
+The passion for dance has sculpted Dance Society, DTU as the most prolific and vivacious society of the college.
+Having traveled the lengths and breadths of India setting benchmarks in various dance competition.
+SUBPARTS: ? Saltare (Western Dance Group)
+                     ? Souldiggers (The Hiphop or Streets Group)
+                     ? Nrityangana (Bhangra and Classical Group)
+</string>
+    <string name="cognitive">“Cognitive Minds” is a personality development society.
+
+We aim at turning an individual into a person who is “socially likeable and personally confident”, who has a repute among his friends and family, who speaks clearly and expresses himself to the throng with panache, has a strong self-image and a good listening ability.
+To add a zing, this automatically paves your way to phenomenal interview and GD experiences.
+
+How do we do it?
+
+One, to make one be able to make his own opinion on things and express it freely and firmly, we organise different forms of debates.
+Two, to build up one’s spontaneity, we come up with extempores.
+Most importantly, group discussions on general current and interesting topics so that one expresses himself freely among the multitude.
+Story narrations to improve upon the monotony. A series of turncoats in a fun way to remove hesitancy.
+
+</string>
+    <string name="solaris">
+Solaris is one of the most prestigious projects at DTU, a pioneer in the field of innovations. We aim to develop a new age solar car, thereby marking a new beginning in the field of solar automobile technology.
+
+Solar car is a concept vehicle that derives its energy solely from the
+Sun. The solar energy is trapped by highly efficient solar cells, and is converted to mechanical energy through complex mechanism.
+
+It is our aim that the work done here leads to the economical use of solar and other environmentally-friendly vehicles down the road.
+</string>
+    <string name="auv">"DTU AUV represents a technological dream achieved by a team of undergraduate Delhi Technological University (formerly Delhi College of Engineering) students to develop an Autonomous Underwater Vehicle of industrial standards. It tests its progress against the world by participating in reputed RoboSub competition organised by AUVSI every year in San Diego, USA.
+The vehicle has been designed by fusion of research work in the field of mechanical engineering, electronics , instrumentation, image processing and acoustics . It is a submersible, untethered robot that is capable of performing shallow water complex tasks without aid from human operators. This project showcases the viability of this kind of robot not only as a research test bed, but also as a useful platform for shallow water applications. It has been designed with a view to achieve maximum operational standards, minimal payload and power requirements and high level of modularity .
+The team is composed of a undergraduate students from various branches headed by their Faculty Advisor Prof. R.K.Sinha . Ever since its inception , the team has been collaborating intensively with local, national and international resources.
+
+The team is developing it's 5th Generation AUV with a completely new mechanical design and improved electronics and software."
+</string>
+    <string name="defianz">TEAM DEFIANZ RACING is an Undergraduate Level Motorsports Team under DELHI TECHNOLOGICAL UNIVERSITY (DTU)</string>
+    <string name="title_activity_about_developers">AboutDevelopers</string>
+    <string name="student_association">                  PRESIDENT :             \nVISHAL RANA        \nM:   +91-9899033311
+                                                     \n\nVICE PRESIDENT:         \nNITHIN VYTLA       \nM:   +91-9650498607
+                                                     \n\nSECRETARY :             \nSNEHAL TOPPO       \nM:   +91-9718441404
+                                                     \n\nJOINT SECRETARY :       \nASEEM BANSAL       \nM:   +91-9582920037
+                                                     \n\nMAIL ID :                 dtustudentsassociation@gmail.com</string>
+    <string name="cultural_council">       CULTURAL SECRETARY :         \nNalin Chaudhary        \nM:   +91-8588001179
+                                   \n\nJOINT CULTURAL SECRETARY :   \nAditi Maheshwari       \nM:   +91-9717481156
+                                   \n                               \nNISHANT ANEJA          \nM :  +91-9811991514
+                                    \n\nTREASURER  :                \nSHEIKH FARHAN RAZA</string>
+
+    <string name="a1">"https://i.imgur.com/16yNRsT.jpg"</string>
+    <string name="a2">"https://i.imgur.com/NXfJyly.jpg"</string>
+    <string name="a3">"https://i.imgur.com/ehgY8xv.jpg"</string>
+    <string name="a4">"https://i.imgur.com/3MgpJrm.jpg"</string>
+    <string name="a5">"https://i.imgur.com/yqjsw8S.jpg"</string>
+    <string name="a6">"https://i.imgur.com/SDSKGmF.jpg"</string>
+    <string name="a7">"https://i.imgur.com/SaIh71Q.jpg"</string>
+    <string name="a8">"https://i.imgur.com/fHr0DaR.jpg"</string>
+    <string name="a9">"https://i.imgur.com/KyxAsce.jpg"</string>
+    <string name="a10">"https://i.imgur.com/51VuCT0.jp"g</string>
+    <string name="b1">"https://i.imgur.com/rs1GAuz.jpg"</string>
+    <string name="b2">"https://i.imgur.com/pYV00CU.jpg"</string>
+    <string name="b3">"https://i.imgur.com/NZwnu8W.jpg"</string>
+    <string name="b4">"https://i.imgur.com/k5uJEW5.jpg"</string>
+    <string name="b5">"https://i.imgur.com/OeVgsaK.jpg"</string>
+    <string name="b6">"https://i.imgur.com/goXlbNx.jpg"</string>
+    <string name="b7">"https://i.imgur.com/VjgkEzt.jpg"</string>
+    <string name="b8">"https://i.imgur.com/V3S7wr8.jpg"</string>
+    <string name="b9">"https://i.imgur.com/qn7SJP9.jpg"</string>
+    <string name="b10">"https://i.imgur.com/45dYOIV.jpg"</string>
+    <string name="coe_a4">"https://i.imgur.com/YIIc30O.jpg"</string>
+    <string name="coe_b4">"https://i.imgur.com/q6BDcRF.jpg"</string>
+    <string name="it_a4">"https://i.imgur.com/QehftPU.jpg"</string>
+    <string name="it_b4">"https://i.imgur.com/yYz6TAP.jpg"</string>
+    <string name="se_a4">"https://i.imgur.com/0Fn8yML.jpg"</string>
+    <string name="se_b4">"https://i.imgur.com/xaHqews.jpg"</string>
+    <string name="ece_c4">"https://i.imgur.com/DmNOPzN.jpg"</string>
+    <string name="ece_d4">"https://i.imgur.com/vl6yPJ4.jpg"</string>
+    <string name="ece_e4">"https://i.imgur.com/pzZQ70v.jpg"</string>
+    <string name="eee14">"https://i.imgur.com/2PzrLiW.jpg"</string>
+    <string name="eee24">"https://i.imgur.com/JmTcjC8.jpg"</string>
+    <string name="ee14">"https://i.imgur.com/90jpcpM.jpg"</string>
+    <string name="ee24">"https://i.imgur.com/Cx1CCAS.jpg"</string>
+    <string name="mechlmn4">"https://i.imgur.com/W08KtuT.jpg"</string>
+    <string name="mechopq4">"https://i.imgur.com/3UxjZXh.jpg"</string>
+    <string name="civil_a4">"https://i.imgur.com/TWK858Q.jpg"</string>
+    <string name="civil_b4">"https://i.imgur.com/cBQ81jc.jpg"</string>
+    <string name="psct4">"https://i.imgur.com/dE8PXH1.jpg"</string>
+    <string name="bt4">"http://i.imgur.com/O7ndQyO.jpg"</string>
+    <string name="ep4">"https://i.imgur.com/E9UMXni.jpg"</string>
+    <string name="prod4">"https://i.imgur.com/GOd7Td1.jpg"</string>
+    <string name="en4">"https://i.imgur.com/S9wgCyj.jpg"</string>
+    <string name="coe_a6">"https://i.imgur.com/6zKAIMr.jpg"</string>
+    <string name="coe_b6">"https://i.imgur.com/30lqiIt.jpg"</string>
+    <string name="it_a6">"https://i.imgur.com/bMMJWBa.jpg"</string>
+    <string name="ece_c6">"https://i.imgur.com/noJABI1.jpg"</string>
+    <string name="ece_d6">"https://i.imgur.com/uGEP9of.jpg"</string>
+    <string name="ece_e6">"https://i.imgur.com/zChW8Tp.jpg"</string>
+    <string name="mce_a6">"https://i.imgur.com/U4hJJdO.jpg"</string>
+    <string name="mce_b6">"https://i.imgur.com/p07C8d0.jpg"</string>
+    <string name="mechijk6">"https://i.imgur.com/GLxxWeL.jpg"</string>
+    <string name="mechlmn6">"https://i.imgur.com/FPlZG2a.jpg"</string>
+    <string name="mechopq6">"https://i.imgur.com/o74pg5i.jpg"</string>
+    <string name="civil_a6">"https://i.imgur.com/qF3CFt5.jpg"</string>
+    <string name="civil_b6">"https://i.imgur.com/vXbqMEw.jpg"</string>
+    <string name="psct6">"https://i.imgur.com/x99GftJ.jpg"</string>
+    <string name="ep6">"https://i.imgur.com/baqYyLp.jpg"</string>
+    <string name="prod6">"https://i.imgur.com/d674K2c.jpg"</string>
+    <string name="title_activity_comment">CommentActivity</string>
+
+    <string name="title_activity_main2">DTU Guide</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_maps">Campus Map</string>
+    <string name="title_activity_society">Societies</string>
+    <string name="title_activity_note">Notes</string>
+    <string name="title_activity_timetables">Timetables</string>
+    <string name="title_activity_campus_map">Campus Map</string>
+
+</resources>

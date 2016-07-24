@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#EEEEEE"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.rnrapps.user.dtuguide.AboutDevelopers"
+    tools:showIn="@layout/activity_about_developers">
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardElevation="3dp"
+        card_view:contentPaddingLeft="-6dp"
+        card_view:contentPaddingRight="-6dp"
+        card_view:contentPaddingTop="-6dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About Developers"
+        android:textSize="27sp"
+        android:padding="10dp"
+        android:background="#00BCD4"
+        android:textColor="#FFFFFF"
+        android:textAlignment="center"/>
+    </android.support.v7.widget.CardView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="App Developers"
+                android:textSize="22sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rohan Agarwal (@rohanagarwal94)"
+                android:padding="10dp"
+                android:textSize="17sp"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:weightSum="1">
+
+                <ImageButton
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:id="@+id/imageButton3"
+                    android:background="@drawable/twitter"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="onClick"/>
+
+                <ImageButton
+                    android:layout_width="35dp"
+                    android:layout_height="34dp"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/imageButton4"
+                    android:onClick="onClick"
+                    android:background="@drawable/linkedin"
+                    />
+
+                <ImageButton
+                    android:layout_width="37dp"
+                    android:layout_height="36dp"
+                    android:id="@+id/imageButton5"
+                    android:layout_marginLeft="10dp"
+                    android:onClick="onClick"
+                    android:background="@drawable/github"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rishabh Gupta (@imRishabhGupta)"
+                android:textSize="17sp"
+                android:padding="10dp"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:onClick="onClick"
+                    android:id="@+id/imageButton"
+                    android:background="@drawable/twitter"
+                    android:layout_marginLeft="10dp"
+                   />
+
+                <ImageButton
+                    android:layout_width="35dp"
+                    android:layout_height="34dp"
+                    android:id="@+id/imageButton2"
+                    android:onClick="onClick"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/linkedin"
+                    />
+
+                <ImageButton
+                    android:layout_width="37dp"
+                    android:layout_height="36dp"
+                    android:id="@+id/imageButton6"
+                    android:onClick="onClick"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/github"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data Compiled By"
+                android:textSize="20sp"
+                android:textColor="#000000"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tanmay ECE(1st Year)"
+                android:textSize="17sp"
+                android:padding="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pratik IT(1st Year)"
+                android:textSize="17sp"
+                android:padding="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
