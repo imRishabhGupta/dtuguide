@@ -3,30 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#E0F2F1"
+    android:background="#EEEEEE"
     android:layout_height="match_parent"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.rnrapps.user.dtuguide.AboutDevelopers"
     tools:showIn="@layout/activity_about_developers">
-    <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        card_view:cardElevation="3dp"
-        card_view:contentPaddingLeft="-6dp"
-        card_view:contentPaddingRight="-6dp"
-        card_view:contentPaddingTop="-6dp">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="About Developers"
-        android:textSize="27sp"
-        android:padding="10dp"
-        android:background="#8D6E63"
-        android:textColor="#FFFFFF"
-        android:textAlignment="center"/>
-    </android.support.v7.widget.CardView>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

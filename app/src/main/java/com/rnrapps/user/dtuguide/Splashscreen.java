@@ -14,8 +14,6 @@ import android.widget.ImageView;
  */
 public class Splashscreen extends Activity {
 
-    private  static int SPLASH_TIME_OUT=3000;
-
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -29,17 +27,16 @@ public class Splashscreen extends Activity {
         anim.setRepeatMode(Animation.RESTART);
         image.startAnimation(anim);
         new Handler().postDelayed(new Runnable(){
-
             @Override
             public void run(){
 
-                Intent i = new Intent(Splashscreen.this, MainActivity.class);
+                Intent i = new Intent(Splashscreen.this, Main2Activity.class);
                 startActivity(i);
 
                 finish();
             }
 
-        },SPLASH_TIME_OUT);
+        },3000);
     }
 
 }
