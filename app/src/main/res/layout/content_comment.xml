@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.rnrapps.user.dtuguide.DceSpeaksUp.CommentActivity"
+    tools:context="com.rnrapps.user.dtuguide.CommentActivity"
     android:fillViewport="false">
 <LinearLayout
     android:layout_width="match_parent"
@@ -83,7 +83,7 @@
         android:paddingRight="@dimen/feed_item_status_pad_left_right"
         android:textColorLink="@color/link" />
 
-    <com.rnrapps.user.dtuguide.DceSpeaksUp.FeedImageView
+    <com.rnrapps.user.dtuguide.FeedImageView
         android:id="@+id/feedImage1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

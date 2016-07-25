@@ -1,6 +1,9 @@
 package com.rnrapps.user.dtuguide;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -26,15 +29,19 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main2Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private FeedListAdapter listAdapter;
     private List<FeedItem> feedItems;
+    private Map<FeedItem,ArrayList<CommentItem>> feedsWithComments;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private String URL_FEED = "https://graph.facebook.com/382057938566656/feed?fields=id,full_picture,message,story,created_time,link&access_token=1610382879221507|eQEEkGV4wk9PHCBzrw9Whbdzyuc";
-
+    private String timestamp="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +61,14 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
 
         ListView listView = (ListView) findViewById(R.id.list);
 
-        feedItems = new ArrayList<>();
 
-        listAdapter = new FeedListAdapter(this, feedItems);
-        listView.setAdapter(listAdapter);
+        feedItems=new ArrayList<>();
+
+        listView=(ListView)findViewById(R.id.list);
+        feedsWithComments = Collections.synchronizedMap(new HashMap<FeedItem, ArrayList<CommentItem>>());
+
+        listAdapter = new FeedListAdapter(this, feedsWithComments,feedItems);
+
 
         // We first check for cached request
         Cache cache = AppController.getInstance().getRequestQueue().getCache();
@@ -130,46 +141,98 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
             }
         });
 
+        listView.setAdapter(listAdapter);
+
     }
 
-    private void parseJsonFeed(JSONObject response) {
+    private void parseJsonFeed(final JSONObject response) {
         mSwipeRefreshLayout.setRefreshing(true);
-        try {
-            JSONArray feedArray = response.getJSONArray("data");
 
-            for (int i = 0; i < feedArray.length(); i++) {
-                JSONObject feedObj = (JSONObject) feedArray.get(i);
+        new Thread() {
+            @Override
+            public void run() {
+                try {
+                    JSONArray feedArray = response.getJSONArray("data");
 
-                FeedItem item = new FeedItem();
-                item.setId(feedObj.getString("id"));
+                    for (int i = 0; i < feedArray.length(); i++) {
+                        JSONObject feedObj = (JSONObject) feedArray.get(i);
 
-                // Image might be null sometimes
-                String image = feedObj.isNull("full_picture") ? null : feedObj
-                        .getString("full_picture");
-                item.setImge(image);
+                        FeedItem item = new FeedItem();
+                        item.setId(feedObj.getString("id"));
 
-                if(feedObj.opt("message")!=null)
-                    item.setStatus(feedObj.getString("message"));
-                else
-                    item.setStatus(feedObj.getString("story"));
 
-                item.setTimeStamp(feedObj.getString("created_time"));
+                        // Image might be null sometimes
+                        String image = feedObj.isNull("full_picture") ? null : feedObj
+                                .getString("full_picture");
+                        item.setImge(image);
 
-                // url might be null sometimes
-                String feedUrl = feedObj.isNull("link") ? null : feedObj
-                        .getString("link");
-                item.setUrl(feedUrl);
+                        JSONObject comments=null;
+                        ArrayList<CommentItem> commentItems = new ArrayList<>();
+                        if(feedObj.has("comments")) {
 
-                feedItems.add(item);
+                            comments = feedObj.getJSONObject("comments");
+                            JSONArray commentsData = comments.getJSONArray("data");
+                            for (int j = 0; j < commentsData.length(); j++) {
+                                JSONObject commentsObject = (JSONObject) commentsData.get(j);
+                                CommentItem commentItem = new CommentItem();
+                                commentItem.setId(commentsObject.getString("id"));
+                                commentItem.setComment(commentsObject.getString("message"));
+                                commentItem.setFrom(commentsObject.getJSONObject("from").getString("name"));
+                                commentItem.setTimeStamp(commentsObject.getString("created_time"));
+                                commentItems.add(commentItem);
+                            }
+                        }
+
+                        if(feedObj.opt("message")!=null)
+                            item.setStatus(feedObj.getString("message"));
+                        else
+                            item.setStatus(feedObj.getString("story"));
+
+                        item.setTimeStamp(feedObj.getString("created_time"));
+
+                        if(i==0){
+                            timestamp=item.getTimeStamp();
+                        }
+
+                        // url might be null sometimes
+                        String feedUrl = feedObj.isNull("link") ? null : feedObj
+                                .getString("link");
+                        item.setUrl(feedUrl);
+
+                        feedItems.add(item);
+
+                        if(comments!=null)
+                            feedsWithComments.put(item, commentItems);
+                        else
+                            feedsWithComments.put(item,null);
+                    }
+                    SharedPreferences prefs = getSharedPreferences("notify", 0);
+                    SharedPreferences.Editor editor = prefs.edit();
+
+                    // Increment launch counter
+                    long launch_count = prefs.getLong("launch_count", 0) + 1;
+                    editor.putLong("launch_count", launch_count);
+
+                    if(launch_count==1){
+                        AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
+                        Intent intent=new Intent(getApplicationContext(), NotifyService.class);
+                        intent.putExtra("timestamp",timestamp);
+                        alarm.set(
+                                alarm.RTC_WAKEUP,
+                                System.currentTimeMillis() + (1000 * 60*2),
+                                PendingIntent.getService(getApplicationContext(), 0, intent, 0)
+                        );
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
+        }.start();
 
-            // notify data changes to list adapter
-            listAdapter.notifyDataSetChanged();
-            mSwipeRefreshLayout.setRefreshing(false);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        listAdapter.notifyDataSetChanged();
+        mSwipeRefreshLayout.setRefreshing(false);
     }
+
 
     @Override
     public void onBackPressed() {

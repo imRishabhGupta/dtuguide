@@ -16,13 +16,13 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:scaleType="centerCrop"
-        android:src="@mipmap/logo3" />
+        android:src="@drawable/dtulogo" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
-        android:textColor="@color/colorAccent"
+        android:textColor="#1B5E20"
         android:text="DTU Guide"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
@@ -30,7 +30,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/colorAccent"
+        android:textColor="#1B5E20"
         android:text="Delhi Technological University" />
 
 </LinearLayout>

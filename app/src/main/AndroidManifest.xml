@@ -25,15 +25,13 @@
     <application
         android:name=".AppController"
         android:allowBackup="true"
-        android:icon="@mipmap/logo3"
+        android:icon="@drawable/dtulogo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="d488085ff564cab2d2e6838e51827c587012a189" />
         <activity
             android:name=".Splashscreen"
             android:label="@string/app_name"
@@ -52,21 +50,11 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
+        <service android:name=".NotifyService"/>
         <activity
-            android:name=".ContactActivity"
-            android:label="@string/title_activity_contact"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.rnrapps.user.dtuguide.SocietyActivity" />
-        </activity>
-        <activity
-            android:name=".AboutDevelopers"
+            android:name="com.rnrapps.user.dtuguide.AboutDevelopers"
             android:label="@string/title_activity_about_developers"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".Main2Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -74,11 +62,11 @@
                 android:value="com.rnrapps.user.dtuguide.Main2Activity" />
         </activity>
         <activity
-            android:name=".Main2Activity"
+            android:name="com.rnrapps.user.dtuguide.Main2Activity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SocietyActivity"
+            android:name="com.rnrapps.user.dtuguide.SocietyActivity"
             android:label="@string/title_activity_society"
             android:parentActivityName=".Main2Activity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -87,7 +75,7 @@
                 android:value="com.rnrapps.user.dtuguide.Main2Activity" />
         </activity>
         <activity
-            android:name=".NotesActivity"
+            android:name="com.rnrapps.user.dtuguide.NotesActivity"
             android:label="@string/title_activity_note"
             android:parentActivityName=".Main2Activity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -96,7 +84,7 @@
                 android:value="com.rnrapps.user.dtuguide.Main2Activity" />
         </activity>
         <activity
-            android:name=".TimetableActivity"
+            android:name="com.rnrapps.user.dtuguide.TimetableActivity"
             android:label="@string/title_activity_timetables"
             android:parentActivityName=".Main2Activity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -105,7 +93,24 @@
                 android:value="com.rnrapps.user.dtuguide.Main2Activity" />
         </activity>
         <activity
-            android:name=".CampusMap"
+            android:name="com.rnrapps.user.dtuguide.CommentActivity"
+            android:label="@string/title_activity_comment"
+            android:theme="@style/AppTheme.NoActionBar">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.rnrapps.user.dtuguide.Main2Activity" />
+        </activity>
+        <activity
+            android:name="com.rnrapps.user.dtuguide.ContactActivity"
+            android:label="@string/title_activity_timetables"
+            android:parentActivityName=".SocietyActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.rnrapps.user.dtuguide.SocietyActivity" />
+        </activity>
+        <activity
+            android:name="com.rnrapps.user.dtuguide.CampusMap"
             android:label="@string/title_activity_campus_map"
             android:parentActivityName=".Main2Activity"
             android:theme="@style/AppTheme.NoActionBar">

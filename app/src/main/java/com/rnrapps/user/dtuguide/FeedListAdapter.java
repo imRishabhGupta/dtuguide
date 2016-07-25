@@ -7,33 +7,37 @@ package com.rnrapps.user.dtuguide;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.text.Html;
 import android.text.TextUtils;
-import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 public class FeedListAdapter extends BaseAdapter {
     private Activity activity;
     private LayoutInflater inflater;
     private List<FeedItem> feedItems;
+    private ArrayList<CommentItem> commentItems;
+    private Map<FeedItem,ArrayList<CommentItem>> feedsWithComments;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
-    public FeedListAdapter(Activity activity, List<FeedItem> feedItems) {
+    public FeedListAdapter(Activity activity, Map<FeedItem,ArrayList<CommentItem>> feedsWithComments,List<FeedItem> feedItems) {
         this.activity = activity;
-        this.feedItems = feedItems;
+        this.feedsWithComments = feedsWithComments;
+        this.feedItems=feedItems;
     }
 
     @Override
@@ -54,6 +58,14 @@ public class FeedListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
+        final FeedItem item=feedItems.get(position);
+
+        if(feedsWithComments.get(item)!=null) {
+            commentItems = new ArrayList<>();
+            commentItems = feedsWithComments.get(item);
+        }
+
+
         if (inflater == null)
             inflater = (LayoutInflater) activity
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -73,27 +85,26 @@ public class FeedListAdapter extends BaseAdapter {
         FeedImageView feedImageView = (FeedImageView) convertView
                 .findViewById(R.id.feedImage1);
 
-        FeedItem item = feedItems.get(position);
+        final Button getComments=(Button)convertView.findViewById(R.id.commentsbutton);
+        getComments.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    Intent i = new Intent(activity, CommentActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putParcelable("status", item);
+                    bundle.putParcelableArrayList("comments",commentItems);
+                    i.putExtras(bundle);
+                    activity.startActivity(i);
 
-
+            }
+        });
 
         // Converting timestamp into x ago format
         String a=item.getTimeStamp();
-        a=a.replace("T"," ").replace("+",".");
-
-        SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
-        try {
-            Date timeCreatedDate = dateFormat.parse(a);
-            String timeAgo =(String) DateUtils.getRelativeTimeSpanString(
-                    (timeCreatedDate.getTime()),
-                    System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS);
-            timestamp.setText(timeAgo);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        timestamp.setText(Utils.getTimeFromTimestamp(a));
 
 
-        // Chcek for empty status message
+        // Check for empty status message
         if (!TextUtils.isEmpty(item.getStatus())) {
             statusMsg.setText(item.getStatus());
             statusMsg.setVisibility(View.VISIBLE);

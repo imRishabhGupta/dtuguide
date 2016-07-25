@@ -11,7 +11,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
-import com.rnrapps.user.dtuguide.Utils;
 
 import java.util.ArrayList;
 

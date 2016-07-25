@@ -6,8 +6,8 @@ android:background="@color/feed_bg"
 android:orientation="vertical" >
 
 <LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
 
     android:layout_marginLeft="@dimen/feed_item_margin"
     android:layout_marginRight="@dimen/feed_item_margin"
@@ -83,5 +83,21 @@ android:orientation="vertical" >
         android:scaleType="fitXY"
         android:visibility="visible" />
 </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/comments"
+            android:layout_marginLeft="@dimen/feed_item_margin"
+            android:layout_marginRight="@dimen/feed_item_margin"
+            android:background="@color/colorAccent"
+            android:textColor="#ffffff"
+            android:id="@+id/commentsbutton" />
+
+    </FrameLayout>
 
 </LinearLayout>

@@ -9,8 +9,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.rnrapps.user.dtuguide.Utils;
-
 import java.util.List;
 
 
