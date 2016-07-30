@@ -8,6 +8,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
@@ -16,6 +17,8 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.rnrapps.user.dtuguide.DceSpeaksUp.FeedItem;
+import com.rnrapps.user.dtuguide.DceSpeaksUp.Main2Activity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -108,6 +111,7 @@ public class NotifyService extends Service{
                     .setSubText(status)
                     .setAutoCancel(true)
                     .setDefaults(Notification.DEFAULT_SOUND)
+                    .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.dtulogo))
                     .setSmallIcon(R.drawable.dtulogo)
                     .setColor(getResources().getColor(R.color.colorPrimary))
                     .setContentIntent(pendingIntent).build();

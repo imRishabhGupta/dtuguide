@@ -8,6 +8,8 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 
+import com.rnrapps.user.dtuguide.DceSpeaksUp.Main2Activity;
+
 /**
  * Created by rohanpc on 10/20/2015.
  */

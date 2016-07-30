@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.rnrapps.user.dtuguide.Main2Activity">
+    android:id="@+id/cordinatorlayout"
+    tools:context="com.rnrapps.user.dtuguide.DceSpeaksUp.Main2Activity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -21,6 +22,24 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/progressBardce"
+        android:layout_marginTop="270dp"
+        />
+
+
     <include layout="@layout/content_main2" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/go_right" />
 
 </android.support.design.widget.CoordinatorLayout>
