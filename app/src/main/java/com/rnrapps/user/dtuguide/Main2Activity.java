@@ -13,6 +13,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -41,7 +42,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
     private Map<FeedItem,ArrayList<CommentItem>> feedsWithComments;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private String URL_FEED = "https://graph.facebook.com/382057938566656/feed?fields=id,full_picture,message,story,created_time,link&access_token=1610382879221507|eQEEkGV4wk9PHCBzrw9Whbdzyuc";
-    private String timestamp="";
+    private String id ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -191,7 +192,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                         item.setTimeStamp(feedObj.getString("created_time"));
 
                         if(i==0){
-                            timestamp=item.getTimeStamp();
+                            id =item.getId();
                         }
 
                         // url might be null sometimes
@@ -208,20 +209,17 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                     }
                     SharedPreferences prefs = getSharedPreferences("notify", 0);
                     SharedPreferences.Editor editor = prefs.edit();
-
-                    // Increment launch counter
+                    String currentId=prefs.getString("id","00");
+                    editor.putString("id",id);
                     long launch_count = prefs.getLong("launch_count", 0) + 1;
                     editor.putLong("launch_count", launch_count);
-
+                    editor.apply();
                     if(launch_count==1){
+                        Log.d("main ","launching "+prefs.getString("id","00"));
                         AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
                         Intent intent=new Intent(getApplicationContext(), NotifyService.class);
-                        intent.putExtra("timestamp",timestamp);
-                        alarm.set(
-                                alarm.RTC_WAKEUP,
-                                System.currentTimeMillis() + (1000 * 60*2),
-                                PendingIntent.getService(getApplicationContext(), 0, intent, 0)
-                        );
+                        alarm.set(alarm.RTC_WAKEUP,System.currentTimeMillis() + 1000*60,
+                                PendingIntent.getService(getApplicationContext(), 0, intent,  PendingIntent.FLAG_UPDATE_CURRENT));
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

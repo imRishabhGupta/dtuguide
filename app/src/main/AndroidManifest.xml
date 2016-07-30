@@ -44,13 +44,13 @@
             </intent-filter>
         </activity>
 
+        <service android:name=".NotifyService" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCdF4kS7Aw8jdVbW7PK95QfqHhyngMVkJs" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-        <service android:name=".NotifyService"/>
         <activity
             android:name="com.rnrapps.user.dtuguide.AboutDevelopers"
             android:label="@string/title_activity_about_developers"
