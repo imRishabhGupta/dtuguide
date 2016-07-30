@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.rnrapps.user.dtuguide.R;
 import com.rnrapps.user.dtuguide.Utils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -19,20 +20,18 @@ import java.util.List;
  * Created by rohanagarwal94 on 20/7/16.
  */
 public class CommentsAdapter extends BaseAdapter {
-    private Activity activity;
+    private Context context;
     private LayoutInflater inflater;
-    private List<CommentItem> commentItems;
+    private ArrayList<CommentItem> commentItems;
 
-    public CommentsAdapter(Activity activity,List<CommentItem> commentItems) {
-        this.activity = activity;
+    public CommentsAdapter(Context context,ArrayList<CommentItem> commentItems) {
+        this.context=context;
         this.commentItems = commentItems;
+        inflater=LayoutInflater.from(context);
     }
     @Override
     public int getCount() {
-        if(commentItems.size()>0)
             return commentItems.size();
-        else
-            return 0;
     }
 
     @Override
@@ -47,9 +46,7 @@ public class CommentsAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (inflater == null)
-            inflater = (LayoutInflater) activity
-                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
         if (convertView == null)
             convertView = inflater.inflate(R.layout.commentview, null);
 
@@ -60,7 +57,7 @@ public class CommentsAdapter extends BaseAdapter {
         TextView commentTime = (TextView) convertView
                 .findViewById(R.id.commenttime);
 
-        if(commentItems.size()!=0) {
+
             CommentItem commentItem = commentItems.get(position);
 
             if (commentItem.getTimeStamp() != null) {
@@ -83,7 +80,6 @@ public class CommentsAdapter extends BaseAdapter {
                 // status is empty, remove from view
                 from.setVisibility(View.GONE);
             }
-        }
 
         return convertView;
 

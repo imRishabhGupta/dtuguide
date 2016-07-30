@@ -1,31 +1,35 @@
 package com.rnrapps.user.dtuguide.DceSpeaksUp;
 
+import android.app.FragmentManager;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.ListView;
-import android.widget.Toast;
-
+import android.view.View;
+import android.widget.ProgressBar;
 import com.android.volley.Cache;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.rnrapps.user.dtuguide.AboutDevelopers;
 import com.rnrapps.user.dtuguide.AppController;
-import com.rnrapps.user.dtuguide.CollegeMap.CampusMap;
-import com.rnrapps.user.dtuguide.ImpContacts.SocietyActivity;
-import com.rnrapps.user.dtuguide.Notes.NotesActivity;
 import com.rnrapps.user.dtuguide.R;
-import com.rnrapps.user.dtuguide.TimeTables.TimetableActivity;
+import com.rnrapps.user.dtuguide.Utils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,18 +37,16 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-public class Main2Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Main2Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,PostsAdapter.AdapterCallback {
 
-    private ListView listView;
-    private Map<FeedItem,ArrayList<CommentItem>> feedsWithComments;
-    private FeedListAdapter listAdapter;
+    private PostsAdapter postsAdapter;
     private List<FeedItem> feedItems;
+    private RecyclerView recyclerView;
     private SwipeRefreshLayout mSwipeRefreshLayout;
+    public static String FACEBOOK_URL = "https://www.facebook.com/DceSpeaksUp";
+    public static String FACEBOOK_PAGE_ID = "382057938566656";
     private String URL_FEED = "https://graph.facebook.com/382057938566656/feed?fields=id,full_picture,message,story,created_time,link,comments&access_token=1610382879221507|eQEEkGV4wk9PHCBzrw9Whbdzyuc";
 
 
@@ -54,6 +56,8 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         setContentView(R.layout.activity_main2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBardce);
+        final CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(R.id.cordinatorlayout);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -64,13 +68,27 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        feedItems=new ArrayList<>();
+        FloatingActionButton floatingActionButton = (FloatingActionButton)findViewById(R.id.fab);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent facebookIntent = new Intent(Intent.ACTION_VIEW);
+                String facebookUrl = getFacebookPageURL(getApplicationContext());
+                facebookIntent.setData(Uri.parse(facebookUrl));
+                startActivity(facebookIntent);
+            }
+        });
+        feedItems = new ArrayList<>();
 
-        listView=(ListView)findViewById(R.id.list);
+//        listView=(ListView)findViewById(R.id.list);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
 //        feedsWithComments = Collections.synchronizedMap(new HashMap<FeedItem, ArrayList<CommentItem>>());
-        mSwipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipeContainer);
-        listAdapter = new FeedListAdapter(this,feedItems);
-
+        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
+//        listAdapter = new FeedListAdapter(this,feedItems);
+        postsAdapter = new PostsAdapter(this, feedItems);
 
 
         // We first check for cached request
@@ -96,9 +114,10 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
 
                 @Override
                 public void onResponse(JSONObject response) {
-
+                    progressBar.setVisibility(View.VISIBLE);
                     if (response != null) {
                         parseJsonFeed(response);
+                        progressBar.setVisibility(View.GONE);
                     }
                 }
             }, new Response.ErrorListener() {
@@ -106,7 +125,9 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                 @Override
                 public void onErrorResponse(VolleyError error) {
 
-                    Toast.makeText(getApplicationContext(),"NO INTERNET",Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
+                    Snackbar.make(coordinatorLayout, "No Internet :(", Snackbar.LENGTH_SHORT)
+                            .setAction("Action", null).show();
                 }
             });
 
@@ -120,6 +141,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
             public void onRefresh() {
                 //Refreshing data on server
                 feedItems.clear();
+                progressBar.setVisibility(View.GONE);
                 JsonObjectRequest jsonReq = new JsonObjectRequest(Request.Method.GET,
                         URL_FEED, null, new Response.Listener<JSONObject>() {
 
@@ -144,7 +166,8 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
             }
         });
 
-        listView.setAdapter(listAdapter);
+//        listView.setAdapter(listAdapter);
+        recyclerView.setAdapter(postsAdapter);
 
     }
 
@@ -155,70 +178,71 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         new Thread() {
             @Override
             public void run() {
-        try {
-            JSONArray feedArray = response.getJSONArray("data");
+                try {
+                    JSONArray feedArray = response.getJSONArray("data");
 
-            for (int i = 0; i < feedArray.length(); i++) {
-                JSONObject feedObj = (JSONObject) feedArray.get(i);
+                    for (int i = 0; i < feedArray.length(); i++) {
+                        JSONObject feedObj = (JSONObject) feedArray.get(i);
 
-                FeedItem item = new FeedItem();
-                item.setId(feedObj.getString("id"));
+                        FeedItem item = new FeedItem();
+                        item.setId(feedObj.getString("id"));
 
-                // Image might be null sometimes
-                String image = feedObj.isNull("full_picture") ? null : feedObj
-                        .getString("full_picture");
-                item.setImge(image);
+                        // Image might be null sometimes
+                        String image = feedObj.isNull("full_picture") ? null : feedObj
+                                .getString("full_picture");
+                        item.setImge(image);
 
-                JSONObject comments=null;
-                ArrayList<CommentItem> commentItems = new ArrayList<>();
-                if(feedObj.has("comments")) {
+                        JSONObject comments = null;
+                        ArrayList<CommentItem> commentItems = new ArrayList<>();
+                        if (feedObj.has("comments")) {
 
-                    comments = feedObj.getJSONObject("comments");
-                    JSONArray commentsData = comments.getJSONArray("data");
-                    for (int j = 0; j < commentsData.length(); j++) {
-                        JSONObject commentsObject = (JSONObject) commentsData.get(j);
-                        CommentItem commentItem = new CommentItem();
-                        commentItem.setId(commentsObject.getString("id"));
-                        commentItem.setComment(commentsObject.getString("message"));
-                        commentItem.setFrom(commentsObject.getJSONObject("from").getString("name"));
-                        commentItem.setTimeStamp(commentsObject.getString("created_time"));
-                        commentItems.add(commentItem);
-                    }
-                }
+                            comments = feedObj.getJSONObject("comments");
+                            JSONArray commentsData = comments.getJSONArray("data");
+                            for (int j = 0; j < commentsData.length(); j++) {
+                                JSONObject commentsObject = (JSONObject) commentsData.get(j);
+                                CommentItem commentItem = new CommentItem();
+                                commentItem.setId(commentsObject.getString("id"));
+                                commentItem.setComment(commentsObject.getString("message"));
+                                commentItem.setFrom(commentsObject.getJSONObject("from").getString("name"));
+                                commentItem.setTimeStamp(commentsObject.getString("created_time"));
+                                commentItems.add(commentItem);
+                            }
+                        }
 
-                item.setCommentItems(commentItems);
+                        item.setCommentItems(commentItems);
 
-                if(feedObj.opt("message")!=null)
-                    item.setStatus(feedObj.getString("message"));
-                else
-                    item.setStatus(feedObj.getString("story"));
+                        if (feedObj.opt("message") != null)
+                            item.setStatus(feedObj.getString("message"));
+                        else
+                            item.setStatus(feedObj.getString("story"));
 
-                item.setTimeStamp(feedObj.getString("created_time"));
+                        item.setTimeStamp(feedObj.getString("created_time"));
 
-                // url might be null sometimes
-                String feedUrl = feedObj.isNull("link") ? null : feedObj
-                        .getString("link");
-                item.setUrl(feedUrl);
+                        // url might be null sometimes
+                        String feedUrl = feedObj.isNull("link") ? null : feedObj
+                                .getString("link");
+                        item.setUrl(feedUrl);
 
-                feedItems.add(item);
+                        feedItems.add(item);
 
 //                if(comments!=null)
 //                    feedsWithComments.put(item, commentItems);
 //                else
 //                    feedsWithComments.put(item,null);
-            }
+                    }
 
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    listAdapter.notifyDataSetChanged();
-                    mSwipeRefreshLayout.setRefreshing(false);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+//                    listAdapter.notifyDataSetChanged();
+                            postsAdapter.notifyDataSetChanged();
+                            mSwipeRefreshLayout.setRefreshing(false);
+                        }
+                    });
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-            });
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
             }
         }.start();
 
@@ -238,45 +262,40 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-
-        if (id == R.id.nav_map) {
-            Intent intent=new Intent(this,CampusMap.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_societies) {
-            Intent intent=new Intent(this,SocietyActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_notes) {
-            Intent intent=new Intent(this,NotesActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_timetable) {
-            Intent intent=new Intent(this,TimetableActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_share) {
-            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-            sharingIntent.setType("text/plain");
-            String shareBody = "share body";
-            sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
-            startActivity(Intent.createChooser(sharingIntent, "Share via"));
-        } else if (id == R.id.nav_rate) {
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + this.getPackageName())));
-        } else if (id == R.id.nav_about) {
-            Intent intent=new Intent(getApplicationContext(),AboutDevelopers.class);
-            startActivity(intent);
-        }
-        else if(id == R.id.nav_feedback){
-            Intent intent = new Intent(Intent.ACTION_SENDTO);
-            intent.setType("text/plain");
-            intent.putExtra(Intent.EXTRA_SUBJECT, "feedback");
-            intent.putExtra(Intent.EXTRA_TEXT, "Body of email");
-            intent.setData(Uri.parse("mailto:dtuapp16@gmail.com"));
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-        }
-
+        Utils.NavDrawer(item, this);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-}
+
+
+        @Override
+        public void onMethodCallback ( final ArrayList<CommentItem> commentItems){
+            FragmentManager fm = getFragmentManager();
+            CommentsDialogFragment newFragment = new CommentsDialogFragment();
+            Bundle b=new Bundle();
+            b.putParcelableArrayList("comments",commentItems);
+            newFragment.setArguments(b);
+//            newFragment.setShowsDialog(true);
+            newFragment.show(fm,"Comments");
+
+        }
+
+    //method to get the right URL to use in the intent
+    public String getFacebookPageURL(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        try {
+            int versionCode = packageManager.getPackageInfo("com.facebook.katana", 0).versionCode;
+            if (versionCode >= 3002850) { //newer versions of fb app
+                return "fb://facewebmodal/f?href=" + FACEBOOK_URL;
+            } else { //older versions of fb app
+                return "fb://page/" + FACEBOOK_PAGE_ID;
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            return FACEBOOK_URL; //normal web url
+        }
+    }
+
+    }
+
+

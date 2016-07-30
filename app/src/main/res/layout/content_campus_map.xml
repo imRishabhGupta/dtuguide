@@ -22,15 +22,13 @@
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:padding="10dp"
+            android:textColor="@color/tabsScrollColor"
             android:hint="Search"
             android:elevation="1dp"
             android:layout_marginTop="5dp"
-
-
             android:id="@+id/autoCompleteTextView"
             android:layout_marginLeft="85dp"
             android:layout_marginRight="85dp"
-
             android:layout_above="@+id/button"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal|top" />

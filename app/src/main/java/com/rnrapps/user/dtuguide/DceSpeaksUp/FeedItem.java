@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by rohanpc on 4/10/2016.
  */
-public class FeedItem implements Parcelable {
+public class FeedItem {
 
     private String  id,status, image, timeStamp, url;
     private ArrayList<CommentItem> commentItems = new ArrayList<>();
@@ -17,30 +17,6 @@ public class FeedItem implements Parcelable {
     public FeedItem() {
     }
 
-
-    protected FeedItem(Parcel in) {
-        id = in.readString();
-        status = in.readString();
-        image = in.readString();
-        timeStamp = in.readString();
-        url = in.readString();
-        if(commentItems!=null) {
-//        in.readTypedList(commentItems,CommentItem.CREATOR);
-            in.createTypedArrayList(CommentItem.CREATOR);
-        }
-    }
-
-    public static final Creator<FeedItem> CREATOR = new Creator<FeedItem>() {
-        @Override
-        public FeedItem createFromParcel(Parcel in) {
-            return new FeedItem(in);
-        }
-
-        @Override
-        public FeedItem[] newArray(int size) {
-            return new FeedItem[size];
-        }
-    };
 
     public String getId() {
         return id;
@@ -86,23 +62,14 @@ public class FeedItem implements Parcelable {
         return commentItems;
     }
 
+    public int getCommentsSize()
+    {
+        return commentItems.size();
+    }
+
     public void setCommentItems(ArrayList<CommentItem> commentItems)
     {
         this.commentItems=commentItems;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(id);
-        dest.writeString(status);
-        dest.writeString(image);
-        dest.writeString(timeStamp);
-        dest.writeString(url);
-        dest.writeTypedList(commentItems);
-    }
 }

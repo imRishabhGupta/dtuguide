@@ -2,8 +2,13 @@ package com.rnrapps.user.dtuguide.CollegeMap;
 
 import android.location.Location;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,6 +25,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.maps.android.clustering.Cluster;
 import com.google.maps.android.clustering.ClusterManager;
 import com.rnrapps.user.dtuguide.R;
+import com.rnrapps.user.dtuguide.Utils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,7 +39,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CampusMap extends AppCompatActivity {
+public class CampusMap extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private AutoCompleteTextView actv;
     private List<MyItem> items = new ArrayList<>();
@@ -47,16 +53,27 @@ public class CampusMap extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_campus_map);
+        setContentView(R.layout.nav_activity_map);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
 
         mGoogleApiClient = new GoogleApiClient.Builder(getApplicationContext())
                 .addApi(LocationServices.API)
                 .build();
         actv=(AutoCompleteTextView)findViewById(R.id.autoCompleteTextView);
+        actv.setDropDownBackgroundResource(R.color.stroke_color);
         setUpMapIfNeeded();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     @Override
@@ -188,28 +205,28 @@ public class CampusMap extends AppCompatActivity {
                 //... your stuff
                 String s=parent.getItemAtPosition(position).toString();
                 int pos= Arrays.asList(countries).indexOf(s);
-//                    Toast.makeText(getActivity(),s,Toast.LENGTH_LONG).show();
-
-
-//                        LatLng lng=new LatLng(Double.parseDouble(moviemap.get("E")),Double.parseDouble(moviemap.get("F")));
                 LatLng lng=new LatLng(users.get(pos).getLat(),users.get(pos).getLng());
-//                        Toast.makeText(getActivity(),String.valueOf(lng),Toast.LENGTH_LONG).show();
-
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(lng,(float)Math.floor(mMap.getCameraPosition().zoom+8)));
-
-
-
-
             }
-
-
-//                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(
-//                                cluster.getPosition(), (float) Math.floor(mMap
-//                                        .getCameraPosition().zoom + 2)), 300,
-//                        null);
-
-
-
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        Utils.NavDrawer(item,this);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 }

@@ -13,13 +13,13 @@ public class CommentItem implements Parcelable{
     public CommentItem() {
     }
 
+
     protected CommentItem(Parcel in) {
         id = in.readString();
         comment = in.readString();
         from = in.readString();
         timeStamp = in.readString();
     }
-    
 
     public static final Creator<CommentItem> CREATOR = new Creator<CommentItem>() {
         @Override
@@ -73,8 +73,8 @@ public class CommentItem implements Parcelable{
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(id);
-        dest.writeString(comment);
         dest.writeString(from);
+        dest.writeString(comment);
         dest.writeString(timeStamp);
     }
 }

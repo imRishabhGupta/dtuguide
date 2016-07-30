@@ -18,6 +18,10 @@
             android:id="@+id/nav_timetable"
             android:icon="@drawable/ic_schedule_black_24dp"
             android:title="Timetable" />
+        <item
+            android:id="@+id/nav_dcespeaksup"
+            android:icon="@drawable/ic_textsms_black_24dp"
+            android:title="Dce Speaks Up" />
     </group>
 
     <item android:title="More">

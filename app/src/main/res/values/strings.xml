@@ -183,5 +183,6 @@ The team is developing it's 5th Generation AUV with a completely new mechanical 
     <string name="title_activity_note">Notes</string>
     <string name="title_activity_timetables">Timetables</string>
     <string name="title_activity_campus_map">Campus Map</string>
+    <string name="title_activity_abs">AbsActivity</string>
 
 </resources>
