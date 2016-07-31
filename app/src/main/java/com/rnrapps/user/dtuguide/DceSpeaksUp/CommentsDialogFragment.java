@@ -1,8 +1,6 @@
 package com.rnrapps.user.dtuguide.DceSpeaksUp;
 
 import android.app.DialogFragment;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;

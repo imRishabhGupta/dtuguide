@@ -1,8 +1,11 @@
 package com.rnrapps.user.dtuguide.DceSpeaksUp;
 
+import android.app.AlarmManager;
 import android.app.FragmentManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,6 +22,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -28,6 +32,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.rnrapps.user.dtuguide.AppController;
+import com.rnrapps.user.dtuguide.NotifyService;
 import com.rnrapps.user.dtuguide.R;
 import com.rnrapps.user.dtuguide.Utils;
 
@@ -48,7 +53,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
     public static String FACEBOOK_URL = "https://www.facebook.com/DceSpeaksUp";
     public static String FACEBOOK_PAGE_ID = "382057938566656";
     private String URL_FEED = "https://graph.facebook.com/382057938566656/feed?fields=id,full_picture,message,story,created_time,link,comments&access_token=1610382879221507|eQEEkGV4wk9PHCBzrw9Whbdzyuc";
-
+    private String id ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -186,7 +191,8 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
 
                         FeedItem item = new FeedItem();
                         item.setId(feedObj.getString("id"));
-
+                        if(i==0)
+                            id=item.getId();
                         // Image might be null sometimes
                         String image = feedObj.isNull("full_picture") ? null : feedObj
                                 .getString("full_picture");
@@ -225,10 +231,6 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
 
                         feedItems.add(item);
 
-//                if(comments!=null)
-//                    feedsWithComments.put(item, commentItems);
-//                else
-//                    feedsWithComments.put(item,null);
                     }
 
                     runOnUiThread(new Runnable() {
@@ -239,14 +241,25 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                             mSwipeRefreshLayout.setRefreshing(false);
                         }
                     });
-
+                    SharedPreferences prefs = getSharedPreferences("notify", 0);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    String currentId=prefs.getString("id","00");
+                    editor.putString("id",id);
+                    long launch_count = prefs.getLong("launch_count", 0) + 1;
+                    editor.putLong("launch_count", launch_count);
+                    editor.apply();
+                    if(launch_count==1){
+                        Log.d("main ","launching "+prefs.getString("id","00"));
+                        AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
+                        Intent intent=new Intent(getApplicationContext(), NotifyService.class);
+                        alarm.set(alarm.RTC_WAKEUP,System.currentTimeMillis() + 1000*60,
+                                PendingIntent.getService(getApplicationContext(), 0, intent,  PendingIntent.FLAG_UPDATE_CURRENT));
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
         }.start();
-
-
     }
 
     @Override

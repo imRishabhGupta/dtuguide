@@ -224,6 +224,13 @@ public class GridAdapter  extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
         society.setContactNumber(" 9560600595");
         mItems.add(society);
 
+        society=new Society();
+        society.setTitle("SD DTU");
+        society.setImage(R.drawable.sddtulogo);
+        society.setDescription(R.string.sddtu);
+        society.setContactName("Krishna Rai");
+        society.setContactNumber("9717430033");
+        mItems.add(society);
 
     }
 

@@ -3,7 +3,6 @@ package com.rnrapps.user.dtuguide;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
@@ -28,17 +27,21 @@ public class Splashscreen extends Activity {
         anim.setRepeatCount(Animation.INFINITE);
         anim.setRepeatMode(Animation.RESTART);
         image.startAnimation(anim);
-        new Handler().postDelayed(new Runnable(){
-            @Override
-            public void run(){
-
-                Intent i = new Intent(Splashscreen.this, Main2Activity.class);
-                startActivity(i);
-
-                finish();
-            }
-
-        },3000);
+        new Thread(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(3000);
+                            Intent i = new Intent(Splashscreen.this, Main2Activity.class);
+                            startActivity(i);
+                            finish();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+        ).start();
     }
 
 }
