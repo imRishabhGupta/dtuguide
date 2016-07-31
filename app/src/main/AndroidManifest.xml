@@ -63,7 +63,7 @@
                 android:value="com.rnrapps.user.dtuguide.ImpContacts.SocietyActivity" />
         </activity>
         <activity
-            android:name="com.rnrapps.user.dtuguide.AboutDevelopers"
+            android:name=".AboutDevelopers"
             android:label="@string/title_activity_about_developers"
             android:parentActivityName=".DceSpeaksUp.Main2Activity"
             android:screenOrientation="portrait"

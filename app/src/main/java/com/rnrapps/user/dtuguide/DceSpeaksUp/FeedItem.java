@@ -1,18 +1,11 @@
 package com.rnrapps.user.dtuguide.DceSpeaksUp;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import java.util.ArrayList;
-import java.util.List;
-
-import android.os.Parcel;
-import android.os.Parcelable;
 
 /**
  * Created by rohanpc on 4/10/2016.
  */
-public class FeedItem implements Parcelable {
+public class FeedItem {
 
     private String  id,status, image, timeStamp, url;
     private ArrayList<CommentItem> commentItems = new ArrayList<>();
@@ -20,34 +13,6 @@ public class FeedItem implements Parcelable {
     public FeedItem() {
     }
 
-    public FeedItem(String id, String image, String status, String timeStamp, String url) {
-        super();
-        this.id = id;
-        this.image = image;
-        this.status = status;
-        this.timeStamp = timeStamp;
-        this.url = url;
-    }
-
-    protected FeedItem(Parcel in) {
-        id = in.readString();
-        status = in.readString();
-        image = in.readString();
-        timeStamp = in.readString();
-        url = in.readString();
-    }
-
-    public static final Creator<FeedItem> CREATOR = new Creator<FeedItem>() {
-        @Override
-        public FeedItem createFromParcel(Parcel in) {
-            return new FeedItem(in);
-        }
-
-        @Override
-        public FeedItem[] newArray(int size) {
-            return new FeedItem[size];
-        }
-    };
 
     public String getId() {
         return id;
@@ -87,20 +52,6 @@ public class FeedItem implements Parcelable {
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(id);
-        dest.writeString(status);
-        dest.writeString(image);
-        dest.writeString(timeStamp);
-        dest.writeString(url);
     }
 
     public ArrayList<CommentItem> getCommentItems() {

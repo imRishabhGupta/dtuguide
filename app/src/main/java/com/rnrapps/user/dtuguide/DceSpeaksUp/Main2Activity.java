@@ -191,7 +191,8 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
 
                         FeedItem item = new FeedItem();
                         item.setId(feedObj.getString("id"));
-
+                        if(i==0)
+                            id=item.getId();
                         // Image might be null sometimes
                         String image = feedObj.isNull("full_picture") ? null : feedObj
                                 .getString("full_picture");
