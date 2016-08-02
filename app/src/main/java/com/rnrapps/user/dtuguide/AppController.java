@@ -14,6 +14,7 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 import com.crashlytics.android.Crashlytics;
 import com.google.api.client.googleapis.util.Utils;
+import com.squareup.leakcanary.LeakCanary;
 
 import io.fabric.sdk.android.Fabric;
 
@@ -34,6 +35,7 @@ public class AppController extends Application {
         //crashlytics
         Fabric.with(this, new Crashlytics());
         setupCrashlyticsParameters();
+        LeakCanary.install(this);
 
     }
 
