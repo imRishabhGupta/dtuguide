@@ -84,19 +84,13 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
             }
         });
         feedItems = new ArrayList<>();
-
-//        listView=(ListView)findViewById(R.id.list);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-//        feedsWithComments = Collections.synchronizedMap(new HashMap<FeedItem, ArrayList<CommentItem>>());
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
-//        listAdapter = new FeedListAdapter(this,feedItems);
         postsAdapter = new PostsAdapter(this, feedItems);
 
-
-        // We first check for cached request
         Cache cache = AppController.getInstance().getRequestQueue().getCache();
         Cache.Entry entry = cache.get(URL_FEED);
         if (entry != null) {
@@ -146,6 +140,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
             public void onRefresh() {
                 //Refreshing data on server
                 feedItems.clear();
+                postsAdapter.notifyDataSetChanged();
                 progressBar.setVisibility(View.GONE);
                 JsonObjectRequest jsonReq = new JsonObjectRequest(Request.Method.GET,
                         URL_FEED, null, new Response.Listener<JSONObject>() {
@@ -224,7 +219,6 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
 
                         item.setTimeStamp(feedObj.getString("created_time"));
 
-                        // url might be null sometimes
                         String feedUrl = feedObj.isNull("link") ? null : feedObj
                                 .getString("link");
                         item.setUrl(feedUrl);
@@ -236,25 +230,13 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-//                    listAdapter.notifyDataSetChanged();
                             postsAdapter.notifyDataSetChanged();
                             mSwipeRefreshLayout.setRefreshing(false);
                         }
                     });
-                    SharedPreferences prefs = getSharedPreferences("notify", 0);
-                    SharedPreferences.Editor editor = prefs.edit();
-                    String currentId=prefs.getString("id","00");
-                    editor.putString("id",id);
-                    long launch_count = prefs.getLong("launch_count", 0) + 1;
-                    editor.putLong("launch_count", launch_count);
-                    editor.apply();
-                    if(launch_count==1){
-                        Log.d("main ","launching "+prefs.getString("id","00"));
-                        AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
-                        Intent intent=new Intent(getApplicationContext(), NotifyService.class);
-                        alarm.set(alarm.RTC_WAKEUP,System.currentTimeMillis() + 1000*60,
-                                PendingIntent.getService(getApplicationContext(), 0, intent,  PendingIntent.FLAG_UPDATE_CURRENT));
-                    }
+
+                    Utils.configureNotificationService(getApplicationContext(),id);
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -289,7 +271,6 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
             Bundle b=new Bundle();
             b.putParcelableArrayList("comments",commentItems);
             newFragment.setArguments(b);
-//            newFragment.setShowsDialog(true);
             newFragment.show(fm,"Comments");
 
         }
