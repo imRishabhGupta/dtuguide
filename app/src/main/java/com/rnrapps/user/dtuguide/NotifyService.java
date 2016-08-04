@@ -1,5 +1,4 @@
 package com.rnrapps.user.dtuguide;
-
 import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -17,8 +16,10 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.rnrapps.user.dtuguide.AppController;
 import com.rnrapps.user.dtuguide.DceSpeaksUp.FeedItem;
 import com.rnrapps.user.dtuguide.DceSpeaksUp.Main2Activity;
+import com.rnrapps.user.dtuguide.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;

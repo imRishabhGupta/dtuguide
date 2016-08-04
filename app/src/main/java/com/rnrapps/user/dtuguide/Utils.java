@@ -1,12 +1,16 @@
 package com.rnrapps.user.dtuguide;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -86,5 +90,44 @@ public class Utils {
         }
 
     }
+
+    public static void configureNotificationService(Context context, String id)
+    {
+        SharedPreferences prefs = context.getSharedPreferences("notify", 0);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("id",id);
+        long launch_count = prefs.getLong("launch_count", 0) + 1;
+        editor.putLong("launch_count", launch_count);
+        editor.apply();
+        if(launch_count==1){
+            Log.d("main ","launching "+prefs.getString("id","00"));
+            AlarmManager alarm = (AlarmManager)context.getSystemService(context.ALARM_SERVICE);
+            Intent intent=new Intent(context, NotifyService.class);
+            alarm.set(alarm.RTC_WAKEUP,System.currentTimeMillis() + 1000*60,
+                    PendingIntent.getService(context, 0, intent,  PendingIntent.FLAG_UPDATE_CURRENT));
+        }
+    }
+
+    //TODO: check this alternate implementation
+
+//    public static void configureNotificationService(Context context, String id)
+//    {
+//        SharedPreferences prefs = context.getSharedPreferences("notify", 0);
+//        SharedPreferences.Editor editor = prefs.edit();
+//        editor.putString("id",id);
+//        Boolean isFirstTime=!prefs.contains("app used");
+//        editor.putLong("launch_count", launch_count);
+//        editor.apply();
+//        if(isFirstTime){
+//            Log.d("main ","launching "+prefs.getString("id","00"));
+//            AlarmManager alarm = (AlarmManager)context.getSystemService(context.ALARM_SERVICE);
+//            Intent intent=new Intent(context, NotifyService.class);
+//            alarm.set(alarm.RTC_WAKEUP,System.currentTimeMillis() + 1000*60,
+//                    PendingIntent.getService(context, 0, intent,  PendingIntent.FLAG_UPDATE_CURRENT));
+//        }
+//       SharedPreferences.Editor editor = sharedpreferences.edit();
+//       editor.putBoolean("app used", true);
+//       editor.apply();
+//    }
 
 }

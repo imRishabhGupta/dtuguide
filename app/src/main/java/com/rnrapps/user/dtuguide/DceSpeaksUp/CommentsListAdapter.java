@@ -4,7 +4,6 @@ package com.rnrapps.user.dtuguide.DceSpeaksUp;
  * Created by rohanagarwal94 on 27/7/16.
  */
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
