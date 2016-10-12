@@ -6,13 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.rnrapps.user.dtuguide.CollegeMap.CampusMap;
 import com.rnrapps.user.dtuguide.DceSpeaksUp.Main2Activity;

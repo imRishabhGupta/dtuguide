@@ -1,6 +1,5 @@
 package com.rnrapps.user.dtuguide.DceSpeaksUp;
 
-import android.app.Activity;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -13,7 +12,6 @@ import com.rnrapps.user.dtuguide.R;
 import com.rnrapps.user.dtuguide.Utils;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 /**
