@@ -1,10 +1,6 @@
 package com.rnrapps.user.dtuguide.DceSpeaksUp;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by rohanpc on 4/10/2016.

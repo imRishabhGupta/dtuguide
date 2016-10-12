@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.rnrapps.user.dtuguide.*;
+import com.rnrapps.user.dtuguide.R;
 
 import java.util.ArrayList;
 /**
