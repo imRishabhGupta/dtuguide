@@ -4,6 +4,7 @@ package com.rnrapps.user.dtuguide;
  * Created by rohanpc on 4/10/2016.
  */
 import android.app.Application;
+import android.content.Context;
 import android.os.Build;
 import android.provider.Settings;
 import android.text.TextUtils;
@@ -14,6 +15,8 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 import com.crashlytics.android.Crashlytics;
 import com.google.api.client.googleapis.util.Utils;
+import com.squareup.leakcanary.LeakCanary;
+import com.squareup.leakcanary.RefWatcher;
 
 import io.fabric.sdk.android.Fabric;
 
@@ -23,6 +26,7 @@ public class AppController extends Application {
 
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
+    private RefWatcher refWatcher;
     LruBitmapCache mLruBitmapCache;
 
     private static AppController mInstance;
@@ -34,7 +38,13 @@ public class AppController extends Application {
         //crashlytics
         Fabric.with(this, new Crashlytics());
         setupCrashlyticsParameters();
+        refWatcher=LeakCanary.install(this);
 
+    }
+
+    public static RefWatcher getRefWatcher(Context context) {
+        AppController application = (AppController) context.getApplicationContext();
+        return application.refWatcher;
     }
 
     public static synchronized AppController getInstance() {
