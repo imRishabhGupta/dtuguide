@@ -2,7 +2,7 @@
 
 Dtu Guide is a one-stop info portal for all DTUites.
 
-#### :link:  See on [PLAY Store](https://play.google.com/store/apps/details?id=com.rnrapps.user.dtuguide&hl=en)
+#### :link:  [See on PLAY STORE](https://play.google.com/store/apps/details?id=com.rnrapps.user.dtuguide&hl=en)
 
 ##  What it provides?
 <img src="https://lh3.googleusercontent.com/ahH3n2hV-8n4Uk7OGwkev_zHXPxt9rsI_hOrQiKb788DgR8JyTYnDz_gW-pLc9A7GYg=h310-rw" width="170">
