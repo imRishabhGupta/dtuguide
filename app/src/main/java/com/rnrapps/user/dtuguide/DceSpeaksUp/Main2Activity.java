@@ -246,11 +246,10 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
                         Log.d("main ","launching "+prefs.getString("id","00"));
                         AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
                         Intent intent=new Intent(getApplicationContext(), NotifyService.class);
-                        alarm.set(alarm.RTC_WAKEUP,System.currentTimeMillis() + 1000*60,
+                        intent.putExtra("id",currentId);
+                        alarm.set(alarm.RTC_WAKEUP,System.currentTimeMillis() + 1000*60*30,
                                 PendingIntent.getService(getApplicationContext(), 0, intent,  PendingIntent.FLAG_UPDATE_CURRENT));
                     }
-
-                    Utils.configureNotificationService(getApplicationContext(),id);
 
                 } catch (JSONException e) {
                     e.printStackTrace();

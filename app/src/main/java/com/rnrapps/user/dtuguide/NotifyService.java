@@ -16,10 +16,8 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.rnrapps.user.dtuguide.AppController;
 import com.rnrapps.user.dtuguide.DceSpeaksUp.FeedItem;
 import com.rnrapps.user.dtuguide.DceSpeaksUp.Main2Activity;
-import com.rnrapps.user.dtuguide.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,6 +30,7 @@ public class NotifyService extends Service{
 
     private NotificationCompat.Builder builder;
     private  PendingIntent pendingIntent;
+    private String currentId;
 
     @Override
     public int onStartCommand(Intent inte, int flags, int startId) {
@@ -41,6 +40,9 @@ public class NotifyService extends Service{
         notIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         pendingIntent = PendingIntent.getActivity(this, 0,
                 notIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        SharedPreferences prefs = getSharedPreferences("notify", 0);
+        currentId=prefs.getString("id","00");
 
         String URL_FEED = "https://graph.facebook.com/382057938566656/feed?fields=id,full_picture,message,story,created_time,link&access_token=1610382879221507|eQEEkGV4wk9PHCBzrw9Whbdzyuc";
         JsonObjectRequest jsonReq = new JsonObjectRequest(Request.Method.GET,
@@ -56,19 +58,19 @@ public class NotifyService extends Service{
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                SharedPreferences prefs = getSharedPreferences("notify", 0);
-                String currentId=prefs.getString("id","00");
-                AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
-                Intent intent=new Intent(getApplicationContext(), NotifyService.class);
-                intent.putExtra("id", currentId);
-                alarm.set(alarm.RTC_WAKEUP,System.currentTimeMillis()+60*1000*60*3,PendingIntent.getService(getApplicationContext(), 0, intent, 0)
-                );
+//                SharedPreferences prefs = getSharedPreferences("notify", 0);
+//                String currentId=prefs.getString("id","00");
+//                AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
+//                Intent intent=new Intent(getApplicationContext(), NotifyService.class);
+//                intent.putExtra("id", currentId);
+//                alarm.set(alarm.RTC_WAKEUP,System.currentTimeMillis()+30*1000,PendingIntent.getService(getApplicationContext(), 0, intent, 0)
+//                );
                 Log.d("here","no internet");
                 stopSelf();
             }
         });
         AppController.getInstance().addToRequestQueue(jsonReq);
-        stopSelf();
+        //stopSelf();
         return START_NOT_STICKY;
     }
 
@@ -93,14 +95,15 @@ public class NotifyService extends Service{
             item.setTimeStamp(feedObj.getString("created_time"));
             String status = item.getStatus();
             SharedPreferences prefs = getSharedPreferences("notify", 0);
-            String currentId=prefs.getString("id","00");
+            currentId=prefs.getString("id","00");
             if(item.getId().equals(currentId)){
                 AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
                 Intent intent=new Intent(getApplicationContext(), NotifyService.class);
                 intent.putExtra("id", currentId);
-                alarm.set(alarm.RTC_WAKEUP,System.currentTimeMillis()+60*1000*60*3,PendingIntent.getService(getApplicationContext(), 0, intent, 0)
+                alarm.set(alarm.RTC_WAKEUP,System.currentTimeMillis()+30*1000,PendingIntent.getService(getApplicationContext(), 0, intent, 0)
                 );
                 Log.d("here 1 ","equal "+currentId+" "+item.getId());
+                stopSelf();
                 return;
             }
             Log.d("here reaching ", item.getId()+" "+ status+" "+currentId);
@@ -117,16 +120,26 @@ public class NotifyService extends Service{
                     .setColor(getResources().getColor(R.color.colorPrimary))
                     .setContentIntent(pendingIntent).build();
 
+            currentId=item.getId();
             NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             notificationManager.notify(1, notification);
-            AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
-            Intent intent=new Intent(getApplicationContext(), NotifyService.class);
-            intent.putExtra("id", item.getId());
-            alarm.set(alarm.RTC_WAKEUP,System.currentTimeMillis()+60*1000*60*3,PendingIntent.getService(getApplicationContext(), 0, intent, 0)
-            );
+//            AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
+//            Intent intent=new Intent(getApplicationContext(), NotifyService.class);
+//            intent.putExtra("id", item.getId());
+//            alarm.set(alarm.RTC_WAKEUP,System.currentTimeMillis()+1000*30,PendingIntent.getService(getApplicationContext(), 0, intent, 0)
+//            );
+            stopSelf();
 
          } catch (JSONException e) {
+//            SharedPreferences prefs = getSharedPreferences("notify", 0);
+//            String currentId=prefs.getString("id","00");
+//            AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
+//            Intent intent=new Intent(getApplicationContext(), NotifyService.class);
+//            intent.putExtra("id", currentId);
+//            alarm.set(alarm.RTC_WAKEUP,System.currentTimeMillis()+1000*30,PendingIntent.getService(getApplicationContext(), 0, intent, 0)
+//            );
             e.printStackTrace();
+            stopSelf();
         }
     }
 
@@ -137,6 +150,13 @@ public class NotifyService extends Service{
 
     @Override
     public void onDestroy() {
+        //SharedPreferences prefs = getSharedPreferences("notify", 0);
+        //String currentId=prefs.getString("id","00");
+        AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
+        Intent intent=new Intent(getApplicationContext(), NotifyService.class);
+        intent.putExtra("id", currentId);
+        alarm.set(alarm.RTC_WAKEUP,System.currentTimeMillis()+1000*60*60,PendingIntent.getService(getApplicationContext(), 0, intent, 0)
+        );
         Log.d("here"," destroys");
     }
 }

@@ -1,8 +1,11 @@
 package com.rnrapps.user.dtuguide.CollegeMap;
 
-import android.location.Location;
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,10 +18,9 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
@@ -39,16 +41,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CampusMap extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class CampusMap extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback {
 
     private AutoCompleteTextView actv;
     private List<MyItem> items = new ArrayList<>();
     private String m;
-    private ArrayList<getmarkerfromstring> users=new ArrayList<>();
-    private String[] countries=new String[576];
+    private ArrayList<getmarkerfromstring> users = new ArrayList<>();
+    private String[] countries = new String[576];
     private GoogleMap mMap;
-    private GoogleApiClient
-            mGoogleApiClient;
+    //private GoogleApiClient mGoogleApiClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,35 +68,55 @@ public class CampusMap extends AppCompatActivity implements NavigationView.OnNav
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        mGoogleApiClient = new GoogleApiClient.Builder(getApplicationContext())
-                .addApi(LocationServices.API)
-                .build();
-        actv=(AutoCompleteTextView)findViewById(R.id.autoCompleteTextView);
+//        mGoogleApiClient = new GoogleApiClient.Builder(getApplicationContext())
+//                .addApi(LocationServices.API)
+//                .build();
+        actv = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
         actv.setDropDownBackgroundResource(R.color.stroke_color);
-        setUpMapIfNeeded();
+        //setUpMapIfNeeded();
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
 
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        initCamera();
+        setUpMap();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        setUpMapIfNeeded();
+   //     setUpMapIfNeeded();
     }
 
-    private void setUpMapIfNeeded() {
-        // Do a null check to confirm that we have not already instantiated the map.
-        if (mMap == null) {
-            // Try to obtain the map from the SupportMapFragment.
-            mMap = ((SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
-//             Check if we were successful in obtaining the map.
-            if (mMap != null) {
-                setUpMap();
-            }
+//    private void setUpMapIfNeeded() {
+//        // Do a null check to confirm that we have not already instantiated the map.
+//        if (mMap == null) {
+//            // Try to obtain the map from the SupportMapFragment.
+//            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
+////             Check if we were successful in obtaining the map.
+//            if (mMap != null) {
+//                setUpMap();
+//            }
+//        }
+//    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case 11:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    setUpMap();
+                }
         }
     }
 
-
-    private void initCamera(Location location) {
+    private void initCamera() {
         CameraPosition position = CameraPosition.builder()
                 .target(new LatLng(28.75007207311156, 77.11772996932268))
                 .zoom(18f)
@@ -106,23 +127,23 @@ public class CampusMap extends AppCompatActivity implements NavigationView.OnNav
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(position), null);
 
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        mMap.setTrafficEnabled(true);
-        mMap.setMyLocationEnabled(true);
         mMap.getUiSettings().setZoomControlsEnabled(true);
-
+        mMap.setTrafficEnabled(true);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(CampusMap.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION},11);
+        }
+        else
+            mMap.setMyLocationEnabled(true);
     }
 
-    /**
-     * This is where we can add markers or lines, add listeners or move the camera. In this case, we
-     * just add a marker near Africa.
-     * <p/>
-     * This should only be called once and when we are sure that {@link #mMap} is not null.
-     */
     private void setUpMap() {
-        Location mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-        initCamera(mCurrentLocation);
+
+        //Location mCurrentLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
+        //initCamera();
         ClusterManager<MyItem> mClusterManager = new ClusterManager<>(getApplicationContext(), mMap);
-        mMap.setOnCameraChangeListener(mClusterManager);
+        //mMap.setOnCameraChangeListener(this);
+        mMap.setOnCameraIdleListener(mClusterManager);
+        //mMap.setOnCameraMoveListener(mClusterManager);
         mMap.setOnMarkerClickListener(mClusterManager);
 
         mClusterManager

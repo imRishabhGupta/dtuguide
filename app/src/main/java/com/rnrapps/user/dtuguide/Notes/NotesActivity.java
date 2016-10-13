@@ -7,7 +7,6 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -21,7 +20,6 @@ import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.rnrapps.user.dtuguide.R;
@@ -30,7 +28,6 @@ import com.rnrapps.user.dtuguide.Utils;
 public class NotesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private WebView webView;
-    private ProgressBar progressBar;
 
     @SuppressLint("SetJavaScriptEnabled")
     @Override
@@ -39,7 +36,6 @@ public class NotesActivity extends AppCompatActivity implements NavigationView.O
         setContentView(R.layout.nav_activity_note);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -51,12 +47,11 @@ public class NotesActivity extends AppCompatActivity implements NavigationView.O
 
         webView = (WebView) findViewById(R.id.webView);
         webView.setWebViewClient(new MyWebViewClient());
-        progressBar=(ProgressBar)findViewById(R.id.progressBar);
-
 
         webView.getSettings().setJavaScriptEnabled(true);
-
-        String url = "https://drive.google.com/folderview?id=0B5WAUv2qkI6zZHBuVWNBNWNMYlE&usp=sharing";
+     //   https://drive.google.com/drive/folders/0B_wShFEhFWJDZHdpVzUyX0Fja0E
+        String url = "https://drive.google.com/drive/folders/0B_wShFEhFWJDZHdpVzUyX0Fja0E";
+        //https://drive.google.com/folderview?id=0B5WAUv2qkI6zZHBuVWNBNWNMYlE&usp=sharing
         webView.loadUrl(url);
         webView.setDownloadListener(new DownloadListener() {
             public void onDownloadStart(String url, String userAgent, String contentDisposition, String mimetype, long contentLength) {
@@ -85,19 +80,16 @@ public class NotesActivity extends AppCompatActivity implements NavigationView.O
 
         @Override
         public void onPageFinished(WebView view, String url) {
-            progressBar.setVisibility(View.INVISIBLE);
             super.onPageFinished(view, url);
         }
 
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
-            progressBar.setVisibility(View.VISIBLE);
             super.onPageStarted(view, url, favicon);
         }
 
         @Override
         public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
-            progressBar.setVisibility(View.INVISIBLE);
             TextView tv=(TextView)view.findViewById(R.id.texxt);
             tv.setVisibility(View.VISIBLE);
             super.onReceivedError(view, request, error);
@@ -110,7 +102,9 @@ public class NotesActivity extends AppCompatActivity implements NavigationView.O
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            if(webView.canGoBack()){
+                webView.goBack();
+            }
         }
     }
 

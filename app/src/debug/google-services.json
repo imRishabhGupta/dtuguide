@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "636120028745",
+    "firebase_url": "https://dtuapp-21a2e.firebaseio.com",
+    "project_id": "dtuapp-21a2e",
+    "storage_bucket": "dtuapp-21a2e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636120028745:android:06531905762a2f85",
+        "android_client_info": {
+          "package_name": "com.rnrapps.user.dtuguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636120028745-493ab7euobeni3fd2unhsansisfhnqiv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_vZ6B7EXiElUEbHSep0NWvXOgps4oG5k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -29,102 +29,102 @@ public class TimetableAdapter extends ArrayAdapter<Timetable> {
         this.context=context;
 
         Timetable timetables = new Timetable();
-        timetables.setName("2nd Sem Group A1");
+        timetables.setName("1st Sem Group A1");
         timetables.setThumbnail(R.string.a1);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group A2");
+        timetables.setName("1st Sem Group A2");
         timetables.setThumbnail(R.string.a2);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group A3");
+        timetables.setName("1st Sem Group A3");
         timetables.setThumbnail(R.string.a3);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group A4");
+        timetables.setName("1st Sem Group A4");
         timetables.setThumbnail(R.string.a4);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group A5");
+        timetables.setName("1st Sem Group A5");
         timetables.setThumbnail(R.string.a5);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group A6");
+        timetables.setName("1st Sem Group A6");
         timetables.setThumbnail(R.string.a6);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group A7");
+        timetables.setName("1st Sem Group A7");
         timetables.setThumbnail(R.string.a7);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group A8");
+        timetables.setName("1st Sem Group A8");
         timetables.setThumbnail(R.string.a8);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group A9");
+        timetables.setName("1st Sem Group A9");
         timetables.setThumbnail(R.string.a9);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group A10");
+        timetables.setName("1st Sem Group A10");
         timetables.setThumbnail(R.string.a10);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group B1");
+        timetables.setName("1st Sem Group B1");
         timetables.setThumbnail(R.string.b1);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group B2");
+        timetables.setName("1st Sem Group B2");
         timetables.setThumbnail(R.string.b2);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group B3");
+        timetables.setName("1st Sem Group B3");
         timetables.setThumbnail(R.string.b3);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group B4");
+        timetables.setName("1st Sem Group B4");
         timetables.setThumbnail(R.string.b4);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group B5");
+        timetables.setName("1st Sem Group B5");
         timetables.setThumbnail(R.string.b5);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group B6");
+        timetables.setName("1st Sem Group B6");
         timetables.setThumbnail(R.string.b6);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group B7");
+        timetables.setName("1st Sem Group B7");
         timetables.setThumbnail(R.string.b7);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group B8");
+        timetables.setName("1st Sem Group B8");
         timetables.setThumbnail(R.string.b8);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group B9");
+        timetables.setName("1st Sem Group B9");
         timetables.setThumbnail(R.string.b9);
         mItems.add(timetables);
 
         timetables = new Timetable();
-        timetables.setName("2nd Sem Group B10");
+        timetables.setName("1st Sem Group B10");
         timetables.setThumbnail(R.string.b10);
         mItems.add(timetables);
 

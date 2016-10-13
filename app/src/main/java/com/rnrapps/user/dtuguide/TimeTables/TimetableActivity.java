@@ -36,9 +36,10 @@ import uk.co.senab.photoview.PhotoViewAttacher;
 
 public class TimetableActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
+    private static final String TAG = TimetableActivity.class.getSimpleName();
     private ArrayList<Timetable> mItems;
-    private AutoCompleteTextView actv;
-    private NetworkImageView iv;
+    private AutoCompleteTextView autoCompleteTextView;
+    private NetworkImageView networkImageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,18 +56,18 @@ public class TimetableActivity extends AppCompatActivity implements NavigationVi
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        actv=(AutoCompleteTextView)findViewById(R.id.actv);
-        iv=(NetworkImageView)findViewById(R.id.iv);
+        autoCompleteTextView =(AutoCompleteTextView)findViewById(R.id.actv);
+        networkImageView =(NetworkImageView)findViewById(R.id.iv);
         final CardView cardView=(CardView)findViewById(R.id.timetable);
         final ImageButton download_timetable=(ImageButton)findViewById(R.id.download_timetable);
 
 
         mItems=new ArrayList<>();
         TimetableAdapter endangeredItemAdapter = new TimetableAdapter(getApplicationContext(), R.layout.list_item, mItems);
-        actv.setAdapter(endangeredItemAdapter);
+        autoCompleteTextView.setAdapter(endangeredItemAdapter);
 
 
-        actv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick (AdapterView<?> parent, View view, int position, long id) {
 
@@ -76,13 +77,13 @@ public class TimetableActivity extends AppCompatActivity implements NavigationVi
                 try {
                     ImageLoader.ImageCache imageCache = new LruBitmapCache();
                     ImageLoader imageLoader = new ImageLoader(Volley.newRequestQueue(getApplicationContext()), imageCache);
-                    iv.setImageUrl(url,imageLoader);
-                    PhotoViewAttacher photoViewAttacher=new PhotoViewAttacher(iv);
+                    networkImageView.setImageUrl(url,imageLoader);
+                    PhotoViewAttacher photoViewAttacher=new PhotoViewAttacher(networkImageView);
                     cardView.setVisibility(View.VISIBLE);
                     download_timetable.setVisibility(View.VISIBLE);
                 }
                 catch (Exception e){
-                    iv.setImageResource(R.drawable.nointernet);
+                    networkImageView.setImageResource(R.drawable.nointernet);
                     e.printStackTrace();
                 }
             }
@@ -104,8 +105,61 @@ public class TimetableActivity extends AppCompatActivity implements NavigationVi
                 }
             }
         });
-
+//        Log.d(TAG," came here1");
+//        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+//
+//            mAuth.signInAnonymously()
+//                    .addOnSuccessListener(this, new OnSuccessListener<AuthResult>() {
+//                        @Override
+//                        public void onSuccess(AuthResult authResult) {
+//                            Log.d(TAG, "signInAnonymously:SUCCESS");
+//                        }
+//                    })
+//                    .addOnFailureListener(this, new OnFailureListener() {
+//                        @Override
+//                        public void onFailure(@NonNull Exception exception) {
+//                            Log.e(TAG, "signInAnonymously:FAILURE", exception);
+//                        }
+//                    });
+//        FirebaseStorage storage = FirebaseStorage.getInstance();
+//        StorageReference storageRef = storage.getReferenceFromUrl("gs://dtuapp-21a2e.appspot.com/");
+//        StorageReference imagesRef = storageRef.child("timetables/13022408_233165693711679_201599212_n.jpg");
+//        final long ONE_MEGABYTE = 1024 * 1024;
+//        imagesRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+//            @Override
+//            public void onSuccess(byte[] bytes) {
+//                Log.d(TAG," came here2");
+//                Bitmap bmp;
+//                bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+//                Bitmap mutableBitmap = bmp.copy(Bitmap.Config.ARGB_8888, true);
+//                String location="/sdcard/DtuApp/Timetables";
+//                File file=new File(location);
+//                if(!file.exists()) {
+//                    File wallpaperDirectory = new File("/sdcard/DtuApp/Timetables/");
+//                    wallpaperDirectory.mkdirs();
+//                }
+//                File file1 = new File(new File("/sdcard/DtuApp/Timetables/"), "firebase.jpg");
+//                try {
+//                    FileOutputStream out = new FileOutputStream(file1);
+//                    mutableBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+//                    Toast.makeText(getApplicationContext(),"Timetable saved at "+location,Toast.LENGTH_LONG).show();
+//                    out.flush();
+//                    out.close();
+//
+//                } catch (Exception e) {
+//                    Toast.makeText(getApplicationContext()," Error ocurred while downloading! ",Toast.LENGTH_LONG).show();
+//                    e.printStackTrace();
+//                }
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception exception) {
+//                Log.d(TAG,"could not download");
+//                // Handle any errors
+//            }
+//        });
     }
+
     public void saveTimetable(){
         String location="/sdcard/DtuApp/Timetables";
         File file=new File(location);
@@ -113,10 +167,10 @@ public class TimetableActivity extends AppCompatActivity implements NavigationVi
             File wallpaperDirectory = new File("/sdcard/DtuApp/Timetables/");
             wallpaperDirectory.mkdirs();
         }
-        File file1 = new File(new File("/sdcard/DtuApp/Timetables/"), actv.getText().toString()+".jpg");
+        File file1 = new File(new File("/sdcard/DtuApp/Timetables/"), autoCompleteTextView.getText().toString()+".jpg");
         try {
             FileOutputStream out = new FileOutputStream(file1);
-            Bitmap bitmap=((BitmapDrawable)iv.getDrawable()).getBitmap();
+            Bitmap bitmap=((BitmapDrawable) networkImageView.getDrawable()).getBitmap();
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
             Toast.makeText(getApplicationContext(),"Timetable saved at "+location,Toast.LENGTH_LONG).show();
             out.flush();

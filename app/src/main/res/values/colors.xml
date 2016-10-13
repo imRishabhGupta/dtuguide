@@ -6,7 +6,7 @@
     <color name="colorPrimaryLight">#B2EBF2</color>
     <color name="tabsScrollColor">#004D40</color>
     <color name="fill_color">#6600FFFF</color>
-    <color name="stroke_color">#BB00FFFF</color>
+    <color name="stroke_color">#BB00BCD4</color>
     <color name="grey">#EEEEEE</color>
     <color name="grey2">#F5F5F5</color>
     <color name="white">#FFFFFF</color>
