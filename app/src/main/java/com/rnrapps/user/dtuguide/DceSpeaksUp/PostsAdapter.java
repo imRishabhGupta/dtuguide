@@ -156,28 +156,6 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
     }
 
 
-//    public void showDialog(View v)
-//    {
-////        CommentsAdapter commentsAdapter;
-//        CommentsListAdapter commentsListAdapter;
-//        final Dialog dialog = new Dialog(v.getContext(), R.style.cust_dialog);
-//        dialog.setTitle("Comments");
-//        View layout = activity.getLayoutInflater().inflate(R.layout.content_comment,null);
-////        final LinearLayoutManager layoutManager = new LinearLayoutManager(activity);
-////        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-//        final RecyclerView recyclerView=(RecyclerView) layout.findViewById(R.id.recycler_view_comment);
-//        Log.d("comment items",String.valueOf(commentItems));
-////        recyclerView.setLayoutManager(layoutManager);
-//        commentsListAdapter = new CommentsListAdapter(commentItems);
-//        commentsListAdapter.notifyDataSetChanged();
-//        recyclerView.setAdapter(commentsListAdapter);
-//        dialog.setContentView(R.layout.content_comment);
-//        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//        dialog.setCanceledOnTouchOutside(true);
-//        dialog.setCancelable(true);
-//        dialog.show();
-//    }
-
     public static interface AdapterCallback {
         void onMethodCallback(ArrayList<CommentItem> commentItems);
     }
