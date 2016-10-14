@@ -1,13 +1,43 @@
-# dtuguide
+# dtuguide 
 
-Live feed from Facebook page of DCE Speaks Up.
+Dtu Guide is a one-stop info portal for all DTUites.
 
-Map of college with all the necessary markers.
+#### :link:  [See on PLAY STORE](https://play.google.com/store/apps/details?id=com.rnrapps.user.dtuguide&hl=en)
 
-Contacts of all tech & cultural societies of college.
+##  What it provides?
+<img src="https://lh3.googleusercontent.com/ahH3n2hV-8n4Uk7OGwkev_zHXPxt9rsI_hOrQiKb788DgR8JyTYnDz_gW-pLc9A7GYg=h310-rw" width="170">
+<img src="https://lh3.googleusercontent.com/ctWWodZSArpdkMRjEVqPxmmVdcKj1LMY040mpJkCviFXLbLtlQJ6YC8jQCwQB4ZxsKw=h900-rw" width="170">
+<img src="https://lh3.googleusercontent.com/YKxRp5uc9EXRphQU8A5bGuoxUz3MSEyRasK9ypDiErEpON611nBaTG46gLDSJWwGfkQ=h900-rw" width="170">
+<img src="https://lh3.googleusercontent.com/ZzN07yAcSQSEGv7s-vpG10TbE_u-_50wgRUSpfMZqUAlrKU5TMM1DyswMf_yPlvXtQ=h900-rw" width="170">
+<img src="https://lh3.googleusercontent.com/y4IU-iswNztC8gWGe5rQRlEnGNoI3OMX4EamqWP6yvfqmkKvXnRvzWv1sW2GffRp6g=h900-rw" width="170">
 
-College notes uploaded on Google Drive.
+- Live feed from Facebook page of DCE Speaks Up.
 
-Time-Tables of each and every stream semester-wise.
+- Map of college with all the necessary markers.
 
-https://play.google.com/store/apps/details?id=com.rnrapps.user.dtuguide&hl=en
+- Contacts of all tech & cultural societies of college.
+
+- College notes uploaded on Google Drive.
+
+- Time-Tables of each and every stream semester-wise.
+
+## Contributing
+
+To contribute like a boss, follow these steps:
+
+**#1** Fork it.
+
+**#2** Create your feature branch: `git checkout -b my-new-feature`
+
+**#3** Commit your changes: `git commit -m 'My new commit'`
+
+**#4** Push to the branch: `git push origin my-new-feature`
+
+**#5** Submit your pull request! :trophy: 
+
+
+## License
+
+dtuguide is released under the terms of the [MIT license](https://github.com/tiagoporto/generator-swill-boilerplate/blob/master/LICENSE).
+
+
