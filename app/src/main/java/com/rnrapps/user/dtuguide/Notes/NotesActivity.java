@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -21,6 +23,7 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rnrapps.user.dtuguide.R;
 import com.rnrapps.user.dtuguide.Utils;
@@ -46,6 +49,10 @@ public class NotesActivity extends AppCompatActivity implements NavigationView.O
         navigationView.setNavigationItemSelectedListener(this);
 
         webView = (WebView) findViewById(R.id.webView);
+        if(!checkInternet()){
+            Toast.makeText(this, "Connect to the Internet", Toast.LENGTH_SHORT).show();
+        }
+        else{
         webView.setWebViewClient(new MyWebViewClient());
 
         webView.getSettings().setJavaScriptEnabled(true);
@@ -66,7 +73,7 @@ public class NotesActivity extends AppCompatActivity implements NavigationView.O
         });
 
 
-    }
+    }}
 
     private class MyWebViewClient extends WebViewClient {
         @Override
@@ -115,5 +122,15 @@ public class NotesActivity extends AppCompatActivity implements NavigationView.O
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public boolean checkInternet () {
+        ConnectivityManager cm =
+                (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+        NetworkInfo ni = cm.getActiveNetworkInfo();
+        if (ni != null && ni.isConnected()) {
+            return true;
+        }
+        return false;
     }
 }
